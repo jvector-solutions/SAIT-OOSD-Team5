@@ -5,7 +5,7 @@ I’ve set up this repository for us to work on our OOSD Fall 2014 Project #1. T
 - John Nguyen
 - Megha Patel
 - Brian
-- Mahmood
+- Mahmood Qureshi
 
 To use this github directory, download the desktop client from the following website:
 Windows: https://windows.github.com
