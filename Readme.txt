@@ -1,4 +1,4 @@
-Welcome to the github repository!
+﻿Welcome to the github repository!
 
 I’ve set up this repository for us to work on our OOSD Fall 2014 Project #1. The people on this team are:
 
@@ -11,7 +11,7 @@ To use this github directory, download the desktop client from the following web
 Windows: https://windows.github.com
 Mac: 	 https://mac.github.com	
 
-
+ 
 The repository I’ve set up for us is at this URL:
 https://github.com/jhatnguyen/OOSD---Team-5.git
 
@@ -25,3 +25,4 @@ If you have any questions, you can also ask me (John), my email is jhatnguyen@gm
 Thanks guys, looking forward to working with all of you!
 
 John
+megha mghptl@yahoo.com
