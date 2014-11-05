@@ -1,0 +1,111 @@
+@charset "UTF-8";
+/* CSS Document 
+Author Name: John Nguyen
+Creation Date: November 4th, 2014
+Course: OOSD Fall 2014
+Description: A default stylesheet for the Travel Experts website, the first threaded project for the course with a focus on HTML, CSS, JavaScript, PHP & MySQL.
+*/
+
+html,body {
+    height: 100%;
+    margin: 0px;
+}
+html, body, div, p, table, tr, td, th, tbody, tfoot, ul, li, ol, dl, dd, dt, fieldset, blockquote, cite, input, select, textarea, button, a, section, article, aside, header, footer, nav {
+	font-size: 14px;
+	font-weight: 400;
+    font-family: 'Maven Pro', sans-serif;
+	line-height: 1.429em; <!--- Equal to 20px -->
+	color: #939393;
+	-webkit-font-smoothing: subpixel-antialiased;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Magra', sans-serif;
+	margin: 0;
+	color: #3d3d3d;
+}
+a, a:hover, a:focus {
+	text-decoration: none;
+    color: inherit;
+    font-weight: inherit;
+}
+:focus, :active {
+	outline: none !important;
+}
+.header {
+    position: fixed;
+    display: block;
+    top: 0px;
+    width: 100%;
+    min-height: 75px;
+    background-color: rgba(47, 115, 193, 0.95);
+    z-index: 999;
+    border-top: 5px solid rgb(255,255,255);
+    box-shadow: 0 12px 12px -12px rgba(0,0,0,0.6);
+}
+.slider {
+    width: 100%;
+    height: 280px;
+    background-image:url(../img/slider01.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:cover;
+    z-index: -100;
+    box-shadow: inset 0 -14px 14px -14px rgb(0, 0, 0);
+}
+.welcome h1 {
+    position: relative;
+    top: 190px;
+    color: #fff;
+    font-size: 40px;
+}
+nav {
+    width: 100%;
+    text-align: right;
+    vertical-align: bottom;
+    padding-top: 20px;
+}
+nav ul {
+    display: inline-block;
+    width: 300px;
+    padding: 0;
+}
+nav li, nav span {
+    list-style: none;
+    display: inline-block;
+    padding: 5px 15px;
+    margin: 10px 0;
+    font-weight: 800;
+    background-color: rgba(0, 109, 203, 0);
+    color: #fff;
+    border-radius: 3px;
+}
+nav li:hover {
+    background-color: #fff;
+    color: rgb(47, 115, 193);
+}
+#body {
+    margin: 20px 0;
+    display: block;
+}
+#footer {
+    clear: both;
+    display: block;
+    text-align: center;
+    height: 110px;
+    width: 100%;
+    color: #f4f4f4;
+    background-color: rgb(108, 108, 108);
+    border-top: 7px solid rgb(47, 115, 193);
+}
+a.top {
+    color: #000;
+    position: fixed;
+    bottom: 1em;
+    right: 1em;
+    margin: 0;
+    padding: 0.8em;
+    opacity: 0.4;
+}
+a.top:hover {
+    opacity: 0.9;
+}
