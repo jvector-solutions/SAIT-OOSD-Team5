@@ -1,0 +1,52 @@
+@charset "UTF-8";
+/* CSS Document 
+Author Name: John Nguyen
+Creation Date: November 4th, 2014
+Course: OOSD Fall 2014
+Description: A default stylesheet for the Travel Experts website, the first threaded project for the course with a focus on HTML, CSS, JavaScript, PHP & MySQL.
+*/
+
+@media screen and (max-width : 800px) {
+    .logo {
+         width: 330px;
+    }
+    .nav {
+        display: none;
+        position: absolute;
+        top: 69px;
+        right: 10px;
+        height: 113px;
+        width: auto;
+        margin: 0;
+        padding: 0;
+        background-color: rgba(47, 115, 193, 0.9);
+        z-index: 1;
+        border-bottom-left-radius: 3px;
+        border-bottom-right-radius: 3px;
+    }
+    .nav li {
+        display: block;
+        padding: 7px 15px;
+    }
+    .nav_mobile {
+        display: block;
+    }
+    .nav_mobile:hover {
+        cursor: pointer;
+    }
+    
+}
+
+@media screen and (max-width : 480px) {
+    .header_wrap {
+        width: 465px;
+        z-index: 0;
+    }
+}
+
+@media screen and (min-width : 1170px) {
+    .header, .slider {
+        width: 1170px;
+        margin: 0 auto;
+    }
+}

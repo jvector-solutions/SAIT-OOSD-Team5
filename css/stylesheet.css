@@ -9,11 +9,12 @@ Description: A default stylesheet for the Travel Experts website, the first thre
 html,body {
     height: 100%;
     margin: 0px;
+    background-color: #fff;
 }
 html, body, div, p, table, tr, td, th, tbody, tfoot, ul, li, ol, dl, dd, dt, fieldset, blockquote, cite, input, select, textarea, button, a, section, article, aside, header, footer, nav {
 	font-size: 14px;
 	font-weight: 400;
-    font-family: 'Maven Pro', sans-serif;
+    font-family: 'Open Sans', sans-serif;
 	line-height: 1.429em; <!--- Equal to 20px -->
 	color: #939393;
 	-webkit-font-smoothing: subpixel-antialiased;
@@ -31,16 +32,21 @@ a, a:hover, a:focus {
 :focus, :active {
 	outline: none !important;
 }
-.header {
+.header_wrap {
     position: fixed;
-    display: block;
     top: 0px;
     width: 100%;
-    min-height: 75px;
-    background-color: rgba(47, 115, 193, 0.95);
-    z-index: 999;
+    height: auto;
+    background-color: rgba(47, 115, 193, 0.9);
+    z-index: 1;
     border-top: 5px solid rgb(255,255,255);
     box-shadow: 0 12px 12px -12px rgba(0,0,0,0.6);
+}
+.header {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
 }
 .slider {
     width: 100%;
@@ -55,37 +61,59 @@ a, a:hover, a:focus {
 .welcome h1 {
     position: relative;
     top: 190px;
+    left: 30px;
     color: #fff;
     font-size: 40px;
 }
-nav {
-    width: 100%;
-    text-align: right;
-    vertical-align: bottom;
-    padding-top: 20px;
-}
-nav ul {
+.logo {
     display: inline-block;
-    width: 300px;
+    float: left;
+    padding-left: 20px;
+}
+.nav {
+    display: inline-block;
+    float: right;
+    width: auto;
+    padding-top: 32px;
+    padding-right: 20px;
+    text-align: right;
+}
+.nav ul {
+    display: inline-block;
     padding: 0;
 }
-nav li, nav span {
+.nav li {
     list-style: none;
     display: inline-block;
     padding: 5px 15px;
-    margin: 10px 0;
-    font-weight: 800;
-    background-color: rgba(0, 109, 203, 0);
+    font-size: 1.2em;
+    font-weight: 600;
+    background-color: rgba(47, 115, 193, 0);
     color: #fff;
     border-radius: 3px;
 }
-nav li:hover {
+.nav li:hover {
     background-color: #fff;
     color: rgb(47, 115, 193);
+}
+.nav_mobile {
+    display: none;
+    position: absolute;
+    right: 21px;
+    top: 21px;
+    color: #fff;
+}
+.img-responsive {
+    width: 100%;
 }
 #body {
     margin: 20px 0;
     display: block;
+}
+.row {
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 2px -2px rgba(0,0,0,0.6);
+    padding: 10px 20px;
 }
 #footer {
     clear: both;
@@ -104,8 +132,17 @@ a.top {
     right: 1em;
     margin: 0;
     padding: 0.8em;
-    opacity: 0.4;
+    opacity: 0.7;
+    border-radius: 5px;
 }
 a.top:hover {
-    opacity: 0.9;
+    color: #ccc;
+    background-color: #222;
 }
+
+
+/* Registration Page */
+p.label {
+    padding: 10px;
+}
+

@@ -9,32 +9,41 @@
         
         <!-- Mobile Specific Meta -->
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
+        
+        <!-- JavaScript -->
+        <script language="javascript" type="text/javascript" src="js/default.js"></script>
+        
         <!-- Stylesheets -->
-        <link rel="stylesheet" type="text/css" href="css/transitions.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="css/font-awesome-4.2.0/css/font-awesome.min.css">
         <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+        <link rel="stylesheet" type="text/css" href="css/responsive.css">
+        <link rel="stylesheet" type="text/css" href="css/transitions.css">
         
         <!-- Google Font Code -->
         <link href='http://fonts.googleapis.com/css?family=Magra:400,700|Maven+Pro:400,500,700,800' rel='stylesheet' type='text/css'>
         
     </head>
     <body>
-        <div class="header">
-            <div class="col-md-6"><a href="index.html"><img src="img/logo.png"></a></div>
-            <nav class="col-md-6">
-                <ul class="text-right">
+        <div class="header_wrap">
+            <div class="header">
+            <div class="logo"><a href="index.html"><img src="img/logo.png" class="img-responsive"></a></div>
+            <div class="nav" id="dropmenu">
+                <ul>
                     <a href="#"><li>Login <i class="fa fa-chevron-circle-right"></i></li></a>
-                        <a href="#"><li>Support <i class="fa fa-chevron-circle-right"></i></li></a>
-                        <a href="#"><li>Contact <i class="fa fa-chevron-circle-right"></i></li></a>
-                    </ul>
-                <span><i class="fa fa-phone"></i> 1-888-123-4567</span>
-            </nav>
+                    <a href="#"><li>Support <i class="fa fa-chevron-circle-right"></i></li></a>
+                    <a href="#"><li>Contact <i class="fa fa-chevron-circle-right"></i></li></a>
+                </ul>
+                <!-- <span><i class="fa fa-phone"></i> 1-888-123-4567</span> -->
+            </div>
+            <div class="nav_mobile" onclick="toggle_visibility('dropmenu');">
+               <i class="fa fa-bars fa-2x"></i>
+            </div>
+        </div>
         </div>
         <div class="slider"> <!--- Slider Image --->
              <div class="welcome col-xs-12">
-                <h1>Welcome to Travel Experts</h1>
+                 <h1>Welcome to Travel Experts</h1>
             </div>      
         </div>
         <div class="container"> <!--- Start of Container --->
@@ -64,6 +73,5 @@
             <br><p>Copyright &copy; 2014 Travel Experts Inc. All rights reserved.</p>
         </div>
         <a href="#top" class="top"><i class="fa fa-arrow-up fa-lg"></i></a>
-        <script language="javascript" type="text/javascript" src="js/default.js"></script>
     </body>
 </html>
