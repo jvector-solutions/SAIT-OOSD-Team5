@@ -9,6 +9,7 @@ Description: A default stylesheet for the Travel Experts website, the first thre
 html,body {
     height: 100%;
     margin: 0px;
+    padding: 0px;
     background-color: #fff;
 }
 html, body, div, p, table, tr, td, th, tbody, tfoot, ul, li, ol, dl, dd, dt, fieldset, blockquote, cite, input, select, textarea, button, a, section, article, aside, header, footer, nav {
@@ -35,6 +36,8 @@ a, a:hover, a:focus {
 }
 .header_wrap {
     position: fixed;
+    padding: 0px;
+    margin: 0px;
     top: 0px;
     width: 100%;
     height: auto;
@@ -48,19 +51,20 @@ a, a:hover, a:focus {
     width: 100%;
     height: auto;
     margin: 0 auto;
+    padding: 0px;
 }
 .logo {
     display: inline-block;
     float: left;
-    padding-left: 20px;
+    margin-left: 20px;
 }
 .nav {
     display: inline-block;
     float: right;
     width: auto;
     padding-top: 32px;
-    padding-right: 20px;
     text-align: right;
+    margin-right: 10px;
 }
 .nav ul {
     display: inline-block;
@@ -80,12 +84,16 @@ a, a:hover, a:focus {
     background-color: #fff;
     color: rgb(47, 115, 193);
 }
+.nav li:active {
+    opacity: 0.8;
+}
 .nav_mobile {
     display: none;
     position: absolute;
     right: 18px;
-    top: 10px;
+    top: 9px;
     color: #fff;
+    padding: 10px;
 }
 .slider {
     width: 100%;
@@ -95,27 +103,92 @@ a, a:hover, a:focus {
     background-size:cover;
     z-index: -100;
     box-shadow: inset 0 -14px 14px -14px rgb(0, 0, 0);
+    border-bottom: 1px solid rgba(153, 153, 153, 0.9);
 }
 .welcome h1 {
     position: relative;
     top: 210px;
     left: 22px;
+    width: 91%;
     color: rgba(255, 255, 255, 0.95);
     font-size: 40px;
     text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.5);
 }
 .help {
     position: absolute;
-    right: 10px;
-    top: 256px;
-    width: 41px;
-    height: 24px;
+    right: 86px;
+    top: 252px;
+    width: 36px;
+    height: 28px;
     background-color: #fff;
     text-align: center;
-    padding-top: 4px;
-    border-top-left-radius: 14px;
-    border-top-right-radius: 14px;
-    box-shadow: 0 -6px 6px 0 rgba(0, 0, 0, 0.3);
+    padding-top: 3px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    opacity: 0.8;
+    border: 1px solid rgba(153, 153, 153, 0.9);
+}
+a.help:hover {
+    opacity: 0.9;
+}
+a.help:active {
+    border: 1px solid rgba(153, 153, 153, 0.9);
+    opacity: 1;
+}
+.lang {
+    position: absolute;
+    right: 20px;
+    top: 252px;
+    width: 58px;
+    height: 28px;
+    background-color: #fff;
+    text-align: center;
+    padding-top: 2px;
+    padding-right: 4px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border: 1px solid rgba(153, 153, 153, 0.9);
+    opacity: 0.8;
+}
+.lang_menu {
+    display: none;
+    position: absolute;
+    right: 20px;
+    height: auto;
+    width: 58px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(153, 153, 153, 0.9);
+    border-top: 0px;
+    border-bottom: 3px solid rgba(47, 115, 193, 1);
+    z-index: 1;
+    padding-left: 4px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.lang img, .lang_menu img {
+    height: 24px;
+}
+.lang_menu ul {
+    list-style: none;
+    display: block;
+    padding: 0px
+
+}
+.lang_menu ul li {
+    padding: 4px 2px;
+}
+.lang_menu ul li:hover {
+    background-color: rgba(124, 152, 181, 0.9);  
+    cursor: pointer;
+    opacity: 1;
+}
+a.lang:hover {
+    opacity: 0.9;
+}
+a.lang:active {
+    border: 1px solid rgba(153, 153, 153, 0.9);
+    border-bottom: 0px;
+    opacity: 1;
 }
 .img-responsive {
     width: 100%;
@@ -143,10 +216,13 @@ a, a:hover, a:focus {
     border-top: 7px solid rgb(47, 115, 193);
 }
 .email {
+    width: 100%;
+    height: 76px;
+    clear: both;
+    display: block;
     background-color: rgba(47, 115, 193,1); 
-    padding: 15px;
+    padding: 15px 0;
     color: #fff;
-    text-align: left;
 }
 hr.style-one {
     border: 0;
@@ -157,16 +233,13 @@ hr.style-one {
     background-image:     -ms-linear-gradient(left, #ddd, #aaa, #ddd); 
     background-image:      -o-linear-gradient(left, #ddd, #aaa, #ddd); 
 }
-a.help:hover {
-    color: rgba(47, 115, 193, 1);
-}
 a.top {
     color: #000;
     position: fixed;
     bottom: 1em;
     right: 1em;
     margin: 0;
-    padding: 0.8em;
+    padding: 10px;
     opacity: 0.7;
     border-radius: 5px;
 }
