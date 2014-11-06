@@ -30,7 +30,7 @@
             <div class="logo"><a href="index.html"><img src="img/logo.png" class="img-responsive"></a></div>
             <div class="nav" id="dropmenu">
                 <ul>
-                    <a href="#"><li>Login <i class="fa fa-chevron-circle-right"></i></li></a>
+                    <a href="registration.html"><li>Account <i class="fa fa-chevron-circle-right"></i></li></a>
                     <a href="#"><li>Support <i class="fa fa-chevron-circle-right"></i></li></a>
                     <a href="#"><li>Contact <i class="fa fa-chevron-circle-right"></i></li></a>
                 </ul>
@@ -46,23 +46,26 @@
                  <h1>Account</h1>
             </div>      
         </div>
+        <div>
+            <a href="#" class="help"><i class="fa fa-question-circle fa-lg" style="padding: 5px 12px;"></i></a>
+        </div>
         <div class="container"> <!--- Start of Container --->
             <!--- Main body begins here --->
             <div id="body">
                 <div class="row">
                     <div class="style col-md-4" style="margin: 5px 10px;">
-                        <h1>Login</h1><br>
-                        <form name="login" method="post" class="form-horizontal" role="form">
+                        <h1>Login</h1><hr class="style-one">
+                        <form name="login" method="post" class="form-horizontal" role="form" action="bouncer.php">
                             <div class="form-group">
-                                <label for="inputEmail3" class="col-sm-4 control-label">Email</label>
+                                <label for="login_email" class="col-sm-4 control-label">Email</label>
                                 <div class="col-sm-8">
-                                    <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                                    <input type="email" class="form-control" id="login_email" required="" placeholder="Email">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="inputPassword3" class="col-sm-4 control-label">Password</label>
+                                <label for="login_password" class="col-sm-4 control-label">Password</label>
                                 <div class="col-sm-8">
-                                    <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                                    <input type="password" class="form-control" id="login_password" required="" placeholder="Password">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -80,7 +83,9 @@
                         </form>
                     </div>
                     <div class="style col-md-7" style="margin: 5px 10px;">
-                        <h1>Registration</h1><br>   
+                        <h1>Registration</h1>
+                        <hr class="style-one">
+                        <br>
                         <form name="register" method="post" action="bouncer.php" class="form-horizontal" role="form">
                         <div class="form-group">
 	                       <label for="fname" class="col-sm-4 control-label">First Name</label>
@@ -91,50 +96,50 @@
                         <div class="form-group">    
 	                       <label for="lname" class="col-sm-4 control-label">Last Name</label>
                             <div class="col-sm-8">
-                                <input  name="lname" type="text" placeholder="Last Name" required=" " tabindex="2" size="30" maxlength="30" class="form-control">
+                                <input  name="lname" type="text" placeholder="Last Name" required="" tabindex="2" size="30" maxlength="30" class="form-control">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="email" class="col-sm-4 control-label">Email or Username</label>
                             <div class="col-sm-8">
-                                <input name="email" type="email" placeholder="example: ab@yahoo.com" required=" " tabindex="3" size="30" maxlength="30" class="form-control">
+                                <input name="email" type="email" placeholder="example: ab@yahoo.com" required="" tabindex="3" size="30" maxlength="30" class="form-control">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="password" class="col-sm-4 control-label">Create a password</label>
                             <div class="col-sm-8">
-                                <input type="password" name="password" reuired=" " tabindex="4" size="30" maxlength="30" class="form-control">
+                                <input type="password" name="password" reuired="" tabindex="4" size="30" maxlength="30" class="form-control">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="repassword" class="col-sm-4 control-label">Confirm password</label>
                             <div class="col-sm-8">
-                                <input type="repassword" name="repassword" reuired=" " tabindex="5" size="30" maxlength="30" class="form-control">
+                                <input type="repassword" name="repassword" reuired="" tabindex="5" size="30" maxlength="30" class="form-control">
                             </div>
                         </div>
                             <hr>
                         <div class="form-group">
                             <label for="add" class="col-sm-4 control-label">Address</label>
                             <div class="col-sm-8">
-                                <input name="add" type="text" placeholder="Street 1" required=" " tabindex="6" size="30" maxlength="30" class="form-control">
+                                <input name="add" type="text" placeholder="Street 1" required="" tabindex="6" size="30" maxlength="30" class="form-control">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="add" class="col-sm-4 control-label"></label>
                             <div class="col-sm-8">
-                                <input name="add" type="text" placeholder="Street 2" required=" " tabindex="7" size="30" maxlength="30" class="form-control">
+                                <input name="add" type="text" placeholder="Street 2" required="" tabindex="7" size="30" maxlength="30" class="form-control">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="city" class="col-sm-4 control-label">City</label>
                             <div class="col-sm-8">
-                                <input name="city" type="text" placeholder="City" required=" " tabindex="8" class="form-control">
+                                <input name="city" type="text" placeholder="City" required="" tabindex="8" class="form-control">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="province" class="col-sm-4 control-label">Province</label>
                             <div class="col-sm-8">
-                                <input name="province" type="text" placeholder="Province" required=" " tabindex="9" class="form-control">
+                                <input name="province" type="text" placeholder="Province" required="" tabindex="9" class="form-control">
                            </div>
                         </div>
                         <div class="form-group">
@@ -154,18 +159,18 @@
                         <div class="form-group">
                             <label for="postal" class="col-sm-4 control-label">Postal Code</label>
                             <div class="col-sm-8">
-                                <input name="postal" type="text" placeholder="Postal Code" required=" " tabindex="11" class="form-control">
+                                <input name="postal" type="text" placeholder="Postal Code" required="" tabindex="11" class="form-control">
                             </div>
                         </div>
                         <div class="form-group"> 
                             <label for="phone" class="col-sm-4 control-label">Phone Number</label>
                             <div class="col-sm-8">
-                                <input name="phone" type="text" placeholder="(555) 555-5555" required=" " tabindex="12" class="form-control">
+                                <input name="phone" type="text" placeholder="(555) 555-5555" required="" tabindex="12" class="form-control">
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-offset-1 col-sm-10">
-                                <button type="submit" class="btn btn-default" name="submit" onsubmit= "return formvalidation();">Submit</button>
+                                <button type="submit" class="btn btn-default" name="submit" onsubmit="return formvalidation();">Submit</button>
                             </div>
                         </div>
                     </form>

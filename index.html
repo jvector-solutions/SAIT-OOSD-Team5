@@ -21,7 +21,7 @@
         <link rel="stylesheet" type="text/css" href="css/transitions.css">
         
         <!-- Google Font Code -->
-        <link href='http://fonts.googleapis.com/css?family=Magra:400,700|Maven+Pro:400,500,700,800' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Magra:400,700|Ek+Mukta:400,600,700' rel='stylesheet' type='text/css'>
         
     </head>
     <body>
@@ -30,14 +30,14 @@
             <div class="logo"><a href="index.html"><img src="img/logo.png" class="img-responsive"></a></div>
             <div class="nav" id="dropmenu">
                 <ul>
-                    <a href="registration.html"><li>Login <i class="fa fa-chevron-circle-right"></i></li></a>
+                    <a href="registration.html"><li>Account <i class="fa fa-chevron-circle-right"></i></li></a>
                     <a href="#"><li>Support <i class="fa fa-chevron-circle-right"></i></li></a>
                     <a href="#"><li>Contact <i class="fa fa-chevron-circle-right"></i></li></a>
                 </ul>
                 <!-- <span><i class="fa fa-phone"></i> 1-888-123-4567</span> -->
             </div>
-            <div class="nav_mobile" onclick="toggle_visibility('dropmenu');">
-               <i class="fa fa-bars fa-2x"></i>
+            <div class="nav_mobile" onclick="dropMenu('dropmenu');">
+               <i class="fa fa-bars fa-2x" style="padding: 10px;"></i>
             </div>
         </div>
         </div>
@@ -45,6 +45,9 @@
              <div class="welcome col-xs-12">
                  <h1>Welcome to Travel Experts</h1>
             </div>      
+        </div>
+        <div>
+            <a href="#" class="help"><i class="fa fa-question-circle fa-lg" style="padding: 5px 12px;"></i></a>
         </div>
         <div class="container"> <!-- Start of Container -->
             <!-- Main body begins here -->
@@ -69,6 +72,17 @@
                 </div>
             </div> <!-- End of body -->
         </div> <!-- End of Container -->
+        <div class="row email">
+            <div class="col-xs-6 col-md-6 text-right">
+            <h2 style="color: #fff;">Sign up for Exclusive Package Deals</h2><h5 style="color: #fff;">Exclusive access to coupons, special offers and promotions.</h5>
+            </div>
+            <div class="col-xs-6 col-md-6">
+                <form class="form-inline" role="form">
+                    <input type="text" size="39" name="subscribe" class="form-control" style="margin-top: 10px;">
+                    <input type="button" value="Sign Up" class="form-control" style="width: 86px; margin-top: 10px;">
+                </form>
+            </div>
+        </div>
         <div id="footer">
             <br><p>Copyright &copy; 2014 Travel Experts Inc. All rights reserved.</p>
         </div>

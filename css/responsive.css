@@ -8,19 +8,20 @@ Description: A default stylesheet for the Travel Experts website, the first thre
 
 @media screen and (max-width : 800px) {
     html, body, div, p, table, tr, td, th, tbody, tfoot, ul, li, ol, dl, dd, dt, fieldset, blockquote, cite, input, select, textarea, button, a, section, article, aside, header, footer, nav {
-	   font-size: 11px;
+	   font-size: 12px;
     }
     .welcome h1 {
-        font-size: 34px;
+        font-size: 32px;
     }
     .logo {
-         width: 330px;
+        width: 280px;
+        padding-left: 4px;
     }
     .nav {
         display: none;
         position: absolute;
-        top: 69px;
-        right: 10px;
+        top: 62px;
+        right: 0px;
         height: auto;
         width: auto;
         margin: 0;
@@ -37,9 +38,11 @@ Description: A default stylesheet for the Travel Experts website, the first thre
     }
     .nav_mobile {
         display: block;
+        right: 6px;
     }
     .nav_mobile:hover {
         cursor: pointer;
+        opacity: 0.8;
     }
     .style {
         margin: 0 10px;
@@ -47,9 +50,9 @@ Description: A default stylesheet for the Travel Experts website, the first thre
     
 }
 
-@media screen and (max-width : 380px) {
+@media screen and (max-width : 320px) {
     .header_wrap {
-        width: 380px;
+        width: 320px;
 
     }
 }
