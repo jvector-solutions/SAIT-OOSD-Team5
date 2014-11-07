@@ -30,10 +30,10 @@
             <div class="logo"><a href="index.html"><img src="img/logo.png" class="img-responsive"></a></div>
             <div class="nav" id="dropmenu">
                 <ul>
-                    <a href="registration.html"><li>Account <i class="fa fa-chevron-circle-right"></i></li></a>
-                    <a href="packages.html"><li>Packages <i class="fa fa-chevron-circle-right"></i></li></a>
+                    <a href="registration.php"><li>Account <i class="fa fa-chevron-circle-right"></i></li></a>
+                    <a href="packages.php"><li>Packages <i class="fa fa-chevron-circle-right"></i></li></a>
                     <a href="#"><li>Support <i class="fa fa-chevron-circle-right"></i></li></a>
-                    <a href="#"><li>Contact <i class="fa fa-chevron-circle-right"></i></li></a>
+                    <a href="contact.php"><li>Contact <i class="fa fa-chevron-circle-right"></i></li></a>
                 </ul>
                 <!-- <span><i class="fa fa-phone"></i> 1-888-123-4567</span> -->
             </div>
