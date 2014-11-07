@@ -6,7 +6,7 @@ Course: OOSD Fall 2014
 Description: A default stylesheet for the Travel Experts website, the first threaded project for the course with a focus on HTML, CSS, JavaScript, PHP & MySQL.
 */
 
-@media screen and (max-width : 800px) {
+@media screen and (max-width : 880px) {
     html, body, div, p, table, tr, td, th, tbody, tfoot, ul, li, ol, dl, dd, dt, fieldset, blockquote, cite, input, select, textarea, button, a, section, article, aside, header, footer, nav {
 	   font-size: 12px;
     }
@@ -24,17 +24,17 @@ Description: A default stylesheet for the Travel Experts website, the first thre
         right: 0px;
         height: auto;
         width: auto;
-        margin: 0;
-        padding: 0;
+        margin: 0px;
+        padding: 0px;
         background-color: rgba(47, 115, 193, 0.9);
         z-index: 1;
         border-bottom-left-radius: 3px;
         border-bottom-right-radius: 3px;
-        border-bottom: 3px solid #fff;
     }
     .nav li {
         display: block;
         padding: 7px 15px;
+        margin: 0px;
     }
     .nav_mobile {
         display: block;
@@ -46,6 +46,19 @@ Description: A default stylesheet for the Travel Experts website, the first thre
     }
     .style {
         margin: 0 10px;
+    }
+    .pkg_image {
+        width: 100%;
+        border-right: 0px;
+        border-bottom: 3px solid #fff;
+    }
+    .pkg_image img {
+        width: inherit;
+        border-bottom-left-radius: 0px
+    }
+    .book_btn {
+        font-size: 12px;
+        bottom: 10px;
     }
     
 }
