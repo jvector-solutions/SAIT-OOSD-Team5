@@ -81,7 +81,10 @@ a, a:hover, a:focus {
     color: #fff;
     border-radius: 3px;
 }
-.nav li:hover {
+.nav.home {
+    padding: 5px;
+}
+.nav li:not(.home):hover {
     background-color: #fff;
     color: rgb(47, 115, 193);
 }
@@ -263,7 +266,12 @@ p.label {
     margin: 0px;
     padding: 0px;
 }
+.pkg:hover {
+    -moz-box-shadow:    0 0 5px 1px rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.5);
+    box-shadow:         0 0 5px 1px rgba(0, 0, 0, 0.5);
     
+}
 .pkg_title {
     width: auto;
     height: auto;
@@ -289,11 +297,26 @@ p.label {
     border-right: 3px solid #fff;
 }
 .pkg_image img {
+    width: 250px;
     border-bottom-left-radius: 28px;
 }
 .pkg_desc {
-    display: inline-block;
-    padding: 10px;
+    display: block;
+    padding: 10px 10px 10px 20px;
+    margin-left: 250px;
+}
+.pkg_price {
+    position: relative;
+    float: right;
+    top: 12px;
+    right: -130px;
+    text-align: center;
+}
+.pkg_price span {
+    font-size: 46px;  
+    font-weight: 600;
+    color: rgb(222, 55, 55);
+    text-shadow: 1px 1px 4px rgba(8, 0, 0, 0.7);
 }
 .pkg_book {
     position: relative;
@@ -303,12 +326,15 @@ p.label {
     height: auto;
     float: right;
     text-align: left;
-    background-color: rgba(27, 64, 109, 0.8);
+    background-color: rgba(27, 64, 109, 0.9);
     color: #fff;
     border-radius: 5px;
-    padding: 6px 10px;;
-    font-size: 14px;
+    padding: 6px 10px;
+    font-size: 16px;
     border: 1px solid #999;
+    -moz-box-shadow:    1px 1px 6px 1px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 1px 1px 6px 1px rgba(0, 0, 0, 0.5);
+    box-shadow:         1px 1px 4px 1px rgba(0, 0, 0, 0.5);
 }
 .pkg_book:hover {
     cursor: pointer;

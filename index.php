@@ -1,4 +1,7 @@
 <?php
+    $title = "Home";
+    $display = "Welcome to Travel Experts";
+    $slider = "01";
     include('header.php');
 ?>
         <div class="container-fluid"> <!-- Start of Container -->

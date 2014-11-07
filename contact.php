@@ -6,6 +6,9 @@ Description: Displaying dynamic information for contact page
 //-->
 
 <?php
+    $title = "Contact";
+    $display = "Contact Information";
+    $slider = "04";
     include('header.php');
 ?>
         <div class="container-fluid"> <!-- Start of Container -->

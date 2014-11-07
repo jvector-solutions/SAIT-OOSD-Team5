@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-        <title>Welcome to The Travel Experts | Home</title>
+        <title>Travel Experts Inc. | <?php print($title); ?></title>
         <meta name="description" content="SAIT Fall 2014 Object-Oriented Software Development Project #1 (HTML, CSS, JavaScript, PHP & MySQL)">
         <meta name="author" content="John Nguyen, Megha Patel, Brian Pang, Mahmood Qureshi">
         
@@ -21,7 +21,7 @@
         <link rel="stylesheet" type="text/css" href="css/transitions.css">
         
         <!-- Google Font Code -->
-        <link href='http://fonts.googleapis.com/css?family=Open+Sans:700,400|Ek+Mukta:400,600,700' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:700,600,400|Ek+Mukta:400,600,700' rel='stylesheet' type='text/css'>
         
     </head>
     <body>
@@ -30,9 +30,9 @@
             <div class="logo"><a href="index.php"><img src="img/logo.png" class="img-responsive"></a></div>
             <div class="nav" id="dropmenu">
                 <ul>
+                    <a href="index.php"><li class="home"><i class="fa fa-home fa-lg"></i></li></a>
                     <a href="registration.php"><li>Account <i class="fa fa-chevron-circle-right"></i></li></a>
                     <a href="packages.php"><li>Packages <i class="fa fa-chevron-circle-right"></i></li></a>
-                    <a href="#"><li>Support <i class="fa fa-chevron-circle-right"></i></li></a>
                     <a href="contact.php"><li>Contact <i class="fa fa-chevron-circle-right"></i></li></a>
                 </ul>
                 <!-- <span><i class="fa fa-phone"></i> 1-888-123-4567</span> -->
@@ -42,9 +42,9 @@
             </div>
         </div>
         </div>
-        <div class="slider" style="background-image: url(img/slider02.jpg);"> <!-- Slider Image -->
+        <div class="slider" style="background-image: url(img/slider<?php print($slider); ?>.jpg);"> <!-- Slider Image -->
              <div class="welcome">
-                 <h1>Account</h1>
+                 <h1><?php print($display); ?></h1>
             </div>      
         </div>
         <div>

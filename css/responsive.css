@@ -47,18 +47,46 @@ Description: A default stylesheet for the Travel Experts website, the first thre
     .style {
         margin: 0 10px;
     }
+    .pkg {
+        max-width: 600px;
+        margin: 0 auto;
+    }
     .pkg_image {
         width: 100%;
         border-right: 0px;
         border-bottom: 3px solid #fff;
+        margin-top: -63px;
     }
     .pkg_image img {
         width: inherit;
         border-bottom-left-radius: 0px
     }
+    .pkg_desc {
+        width: 100%;
+        margin-left: 0;
+        display: inline-block
+    }
+    .pkg_price {
+        left: 116px;
+        color: #eee;  
+        text-shadow: 1px 1px 7px rgba(0, 0, 0, 0.8);
+    }
     .pkg_book {
-        font-size: 12px;
-        bottom: 10px;
+        top: 90px;
+        right: 15px;
+        font-size: 14px;
+        font-weight: 600;
+        background-color: rgba(255, 255, 255, 0.85);
+        color: #333;
+    }
+    .pkg_book:hover {
+        color: #fff;
+        -moz-box-shadow:    0 0 5px 1px rgba(255, 255, 255, 0.5);
+        -webkit-box-shadow: 0 0 5px 1px rgba(255, 255, 255, 0.5);
+        box-shadow:         0 0 5px 1px rgba(255, 255, 255, 0.5);
+    }
+    span.book_arrow {
+        border-left: 1px solid rgba(51, 51, 51, 0.9); 
     }
     
 }

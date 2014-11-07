@@ -1,4 +1,7 @@
 <?php
+    $title = "Registration";
+    $display = "Account";
+    $slider = "02";
     include('header.php');
 ?>
         <div class="container-fluid"> <!--- Start of Container --->
