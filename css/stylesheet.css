@@ -42,7 +42,7 @@ a, a:hover, a:focus {
     width: 100%;
     height: auto;
     background-color: rgba(47, 115, 193, 0.9);
-    z-index: 1;
+    z-index: 100;
     border-top: 5px solid rgb(255,255,255);
     box-shadow: 0 12px 12px -12px rgba(0,0,0,0.6);
 }
@@ -295,10 +295,10 @@ p.label {
     display: inline-block;
     padding: 10px;
 }
-.book_btn {
+.pkg_book {
     position: relative;
     right: 12px;
-    bottom: 0px;
+    top: 100px;
     width: auto;
     height: auto;
     float: right;
@@ -310,7 +310,7 @@ p.label {
     font-size: 14px;
     border: 1px solid #999;
 }
-.book_btn:hover {
+.pkg_book:hover {
     cursor: pointer;
     background-color: rgba(27, 64, 109, 1);
 }

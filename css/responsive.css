@@ -56,7 +56,7 @@ Description: A default stylesheet for the Travel Experts website, the first thre
         width: inherit;
         border-bottom-left-radius: 0px
     }
-    .book_btn {
+    .pkg_book {
         font-size: 12px;
         bottom: 10px;
     }
@@ -70,7 +70,7 @@ Description: A default stylesheet for the Travel Experts website, the first thre
 }
 
 @media screen and (min-width : 1170px) {
-    .header, .welcome {
+    .header, .welcome, .container-fluid {
         width: 1170px;
         margin: 0 auto;
     }
