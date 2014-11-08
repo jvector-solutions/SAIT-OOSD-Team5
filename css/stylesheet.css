@@ -238,6 +238,15 @@ hr.style-one {
     background-image:     -ms-linear-gradient(left, #ddd, #aaa, #ddd); 
     background-image:      -o-linear-gradient(left, #ddd, #aaa, #ddd); 
 }
+hr.style-two {
+    border: 1;
+    height: 1px;
+    margin: 10px;
+    background-image: -webkit-linear-gradient(left, #ddd, #aaa, #ddd); 
+    background-image:    -moz-linear-gradient(left, #ddd, #aaa, #ddd); 
+    background-image:     -ms-linear-gradient(left, #ddd, #aaa, #ddd); 
+    background-image:      -o-linear-gradient(left, #ddd, #aaa, #ddd); 
+}
 a.top {
     color: #000;
     position: fixed;
@@ -254,12 +263,13 @@ a.top:hover {
 }
 
 
-/* Registration Page */
+/****************** Registration Page *********************/
 p.label {
     padding: 10px;
 }
 
-/* Packages Page */
+/****************** Packages Page *********************/
+
 .pkg {
     border-top-right-radius: 12px;
     border-bottom-left-radius: 28px;
@@ -347,4 +357,67 @@ span.book_arrow {
 .packages hr {
     margin: 12px;
 }
+
+
+/****************** Contact Page *********************/
+span.agency_title {
+    display: inline-block;
+    position: relative;
+    left: 200px;
+}   
+span.agents_title {
+    display: inline-block;
+    position: relative;
+    left: 400px;
+}
+.agency {
+    clear: both;
+    display: block;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 20px 0;
+    vertical-align: top;
+}
+.agency_map {
+    display: inline-block;
+    height: auto;
+    max-width: 280px;
+    padding: 0px;
+}
+.agency_address {
+    display: inline-block;
+    height: 100%;
+    max-width: 200px;
+    vertical-align: top;
+    padding: 10px;
+    margin: 0px;
+    border-left: 1px solid #ccc;
+}
+.agency_address h3, .agents_list h3 {
+    margin: 0px 0px -5px 10px;
+}
+.agency_address td, .agent td {
+    padding: 1px 6px;
+    margin: 0;
+}
+.agents_list {
+    display: inline-block;
+    padding: 10px;
+    height: 100%;
+    min-width: 400px;
+    vertical-align: top;
+    border-left: 1px solid #ccc;
+}
+
+.agent {
+    padding: 8px 0;
+    border-bottom: 1px solid #ccc;
+    
+}
+.agent h3 {
+    display: inline;
+}
+    
+
 

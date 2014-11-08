@@ -31,8 +31,8 @@
             <div class="nav" id="dropmenu">
                 <ul>
                     <a href="index.php"><li class="home"><i class="fa fa-home fa-lg"></i></li></a>
-                    <a href="registration.php"><li>Account <i class="fa fa-chevron-circle-right"></i></li></a>
                     <a href="packages.php"><li>Packages <i class="fa fa-chevron-circle-right"></i></li></a>
+                    <a href="registration.php"><li>Account <i class="fa fa-chevron-circle-right"></i></li></a>
                     <a href="contact.php"><li>Contact <i class="fa fa-chevron-circle-right"></i></li></a>
                 </ul>
                 <!-- <span><i class="fa fa-phone"></i> 1-888-123-4567</span> -->

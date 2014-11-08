@@ -47,7 +47,7 @@ Description: A default stylesheet for the Travel Experts website, the first thre
     .style {
         margin: 0 10px;
     }
-    .pkg {
+    .pkg, .agency {
         max-width: 600px;
         margin: 0 auto;
     }
@@ -88,7 +88,26 @@ Description: A default stylesheet for the Travel Experts website, the first thre
     span.book_arrow {
         border-left: 1px solid rgba(51, 51, 51, 0.9); 
     }
+    .agents {
+        max-width: 880px;
+        margin-left: 15px;
+    }
+    .agency_map {
+        max-width: 180px;
+    }
+    .agents_list {
+        max-width: 180px;
+    }
+    .agency {
+        margin: 20px 0;
+    }
     
+}
+
+@media screen and (max-width : 400px) {
+    .agency_map {
+        min-width: 100%;
+    }
 }
 
 @media screen and (max-width : 320px) {
