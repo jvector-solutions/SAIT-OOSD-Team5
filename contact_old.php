@@ -13,14 +13,14 @@ Description: Displaying dynamic information for contact page
 ?>
         <div class="container-fluid"> <!-- Start of Container -->
             <!--Google Map Style-->
-	<!--	<style>
+		<style>
         #map-canvas {
                      height: 300px;
                      width:300px;
                      }
         </style>
 		
-		<!--define Google map for agencies position --
+		<!--define Google map for agencies position -->
         <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
         <script>
            function initialize() {
@@ -47,51 +47,53 @@ Description: Displaying dynamic information for contact page
 
             google.maps.event.addDomListener(window, 'load', initialize);
 
-        </script> //-->
+        </script> 
             <!-- Main body begins here -->
             <div id="body">
 
                 <!---display Google Map-->
-            <!--    <div id="map-canvas"></div>  //-->
-                   <!--- Main Contact information begins here --->
-                   <table cellspacing="0" cellpadding="1" border="1" width="300" >
-                     <thead>
-                        <tr>
-                          <th>Agencies</th>
-                          <th>Agents</th>
-                        </tr>
-                     </thead>
-                     <tbody style="height:48px; overflow:auto;">
-                       <tr>
-                         <td rowspan="4">AgencyAddress <br>AgencyCity<br>AgencyProv<br>AgncyPostal<br>AgncyCountry><br>AgtPosition</td>
-                         <td >Tom TH. Smith<br> (587)9686733<br>tom@gmail.com<br>junior</td>
-                       </tr>
-                       <tr>
-
-                         <td >Anny  Wood<br> (587)96865555<br>anny@gmail.com<br>senior</td>
-                       </tr>
-                       <tr>
-
-                         <td >Tom TH. Smith<br> (587)9686733<br>tom@gmail.com<br>junior</td>
-                       </tr>
-                       <tr>
-
-                         <td >Tom TH. Smith<br> (587)9686733<br>tom@gmail.com<br>junior</td>
-                       </tr>
-                       <tr>
-                         <td rowspan="2">24 39 street <br>AgencyCity<br>AgencyProv<br>AgncyPostal<br>AgncyCountry><br>AgtPosition</td>
-                         <td >Tom TH. Smith<br> (587)9686733<br>tom@gmail.com<br>junior</td>
-                       </tr>
-                       <tr>
-
-                         <td >Tom TH. Smith<br> (587)9686733<br>tom@gmail.com<br>junior</td>
-                       </tr>
-                     </tbody>
-                   </table>
-                
-                
-            </div> <!-- End of body -->
+                <div id="map-canvas"></div>  
+                   <!--- Main Contact information begins here--> 
+                   
+					 <?php
+					   $html ="<table cellspacing='0' cellpadding='1' border='1' width='300' ><thead><tr><th>Agencies</th><th>Agents</th></tr></thead><tbody style='height:48px; overflow:auto;'>";
+					   $link=mysqli_connect("localhost","root","","travelexperts") or 
+	                         die("Connect error:". mysqli_connect_error());
+	                         $table="agencies";
+							 $sql = "select * from agencies";
+							 $result = mysqli_query($link,$sql);
+							 
+							 if(mysqli_num_rows($result)>0)
+							 {
+							    while($row = mysqli_fetch_assoc($result))
+								{
+								   
+								   $sql1 = "select * from agents where AgencyId=" . $row["AgencyId"];
+								   $result1  = mysqli_query($link,$sql1);
+								   $html .="<tr><td rowspan=" . mysqli_num_rows($result1) . ">"
+                                         . $row["AgncyAddress"] ."<br>" . $row["AgncyCity"] .
+								          "<br>" . $row["AgncyProv"] . "<br>" . $row["AgncyPostal"] . "<br>" . $row["AgncyCountry"] .
+										  "<br>" . $row["AgncyPhone"] . $row["AgncyFax"] . "</td>";
+								   $row1 = mysqli_fetch_assoc($result1);
+								   $html .= "<td>" . $row1["AgtFirstName"] . " " . $row1["AgtMiddleInitial"] . " " . $row1["AgtLastName"] . "<br>"
+								            . $row1["AgtBusPhone"] . "<br>" . $row1["AgtEmail"] . "<br>" . $row1["AgtPosition"] . "</td></tr>";
+								   while($row1 = mysqli_fetch_assoc($result1))
+								   {
+								    $html .=  "<td>" . $row1["AgtFirstName"] . " " . $row1["AgtMiddleInitial"] . " " . $row1["AgtLastName"] . "<br>"
+								            . $row1["AgtBusPhone"] . "<br>" . $row1["AgtEmail"] . "<br>" . $row1["AgtPosition"] . "</td></tr>";
+								   }
+								   $html .= "</tr>";
+								   
+								}
+								$html .= "</tbody></table>";
+								print($html);
+								mysqli_close($link);
+							 }
+							 
+					 ?>
+				
         </div> <!-- End of Container -->
+	
         <div id="footer">
             <br><p>Copyright &copy; 2014 Travel Experts Inc. All rights reserved.</p>
         </div>
