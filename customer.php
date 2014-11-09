@@ -1,7 +1,4 @@
 <?php
-    $title = "Registration";
-    $display = "Account";
-    $slider = "02";
     include('header.php');
 ?>
         <div class="container-fluid"> <!--- Start of Container --->
@@ -15,7 +12,7 @@
                                 <label for="login_email" class="col-sm-4 control-label">Email</label>
                                 <div class="col-sm-8">
                                     <input id="loginemail" type="loginemail" class="form-control" id="login_email" required placeholder="Enter a valid Email address">
-									<span id="loginemailError" style="display:none">You must enter your  User name</span>
+									<span id="loginemailError" style="display:none">You must enter User name</span>
 									
                                 </div>
                             </div>
@@ -40,78 +37,58 @@
                         </form>
                     </div>
                     <div class="style col-xs-11 col-sm-7" style="margin: 5px 10px;">
-                        <h1>Registration</h1>
+                        <h3>Customer Information</h3>
                         <hr class="style-one">
                         <br>
-                        <form name="register" method="post" action="bouncer.php" class="form-horizontal" role="form" onsubmit=" return formvalidation()">
+                        <form name="custform" method="" class="form-horizontal" role="form">
                         <div class="form-group">
 	                       <label for="fname" class="col-sm-4 control-label">First Name</label>
 	                       <div class="col-sm-8">
-                                <input id="fname" name="fname" type="text" placeholder="First Name" tabindex="1" size="30" maxlength="30" class="form-control" onblur="validateFname(value)">
-								<span id="fnameError" style="display: none;">You can only use alphabetic characters.</span>
+                                <input id="fname" name="fname" type="text" placeholder="First Name" tabindex="1" size="30" maxlength="30" class="form-control">
+								<!--<span id="fnameError" style="display: none;">You can only use alphabetic characters.</span> -->
                            </div>
                         </div>
                         <div class="form-group">    
 	                       <label for="lname" class="col-sm-4 control-label">Last Name</label>
                             <div class="col-sm-8">
-                                <input id="lname" name="lname" type="text" placeholder="Last Name" tabindex="2" size="30" maxlength="30" class="form-control" onblur="validateLname(value)">
-								<span id="lnameError" style="display: none;">You can only use alphabetic characters.</span>
+                                <input id="lname" name="lname" type="text" placeholder="Last Name" tabindex="2" size="30" maxlength="30" class="form-control">
+								<!--<span id="lnameError" style="display: none;">You can only use alphabetic characters.</span> -->
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label for="email" class="col-sm-4 control-label">Email or Username</label>
-                            <div class="col-sm-8">
-                                <input id="email" name="email" type="email" placeholder="example: ab@yahoo.com" tabindex="3" size="30" maxlength="30" class="form-control" onblur="validateEmail(value)">
-								<span id="emailError" style="display: none;">You must enter valid Email address</span>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="password" class="col-sm-4 control-label">Create a password</label>
-                            <div class="col-sm-8">
-                                <input id="password1" type="password" name="password1" tabindex="4" size="30" maxlength="30" class="form-control">
-								<span id ="password1Error"  style="color:#ccffcc"></span>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="repass" class="col-sm-4 control-label">Confirm password</label>
-                            <div class="col-sm-8">
-                                <input id="password2" type="password" name="password2"  tabindex="5" size="30" maxlength="30" class="form-control">
-								<span id="password2Error" style="color:#ccffcc"></span>
-                            </div>
-                        </div>
-                            <hr>
+                        
                         <div class="form-group">
                             <label for="add1" class="col-sm-4 control-label">Address</label>
                             <div class="col-sm-8">
-                                <input id="add1" name="add1" type="text" placeholder="Street 1" tabindex="6" size="30" maxlength="30" class="form-control" onblur="validateAddress(value)">
-								<span id="addressError" style="display: none;">You must enter valid address...</span>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="add2" class="col-sm-4 control-label"></label>
-                            <div class="col-sm-8">
-                                <input id="add2" name="add2" type="text" placeholder="Street 2" tabindex="7" size="30" maxlength="30" class="form-control" onblur="validateAddress1(value)">
-								<span id="address2Error" style="display: none;">You must enter valid address...</span>
+                                <input id="address" name="address" type="text" placeholder="Address" tabindex="3" size="30" maxlength="30" class="form-control">
+								<!--<span id="addressError" style="display: none;">You must enter valid address...</span>-->
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="city" class="col-sm-4 control-label">City</label>
                             <div class="col-sm-8">
-                                <input id="city" name="city" type="text" placeholder="City" tabindex="8" class="form-control" onblur="validateCity(value)">
-								<span id="cityError" style="display: none;">You must enter city...</span>
+                                <input id="city" name="city" type="text" placeholder="City" tabindex="4" class="form-control">
+								<!--<span id="cityError" style="display: none;">You must enter city...</span>-->
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="province" class="col-sm-4 control-label">Province</label>
                             <div class="col-sm-8">
-                                <input  id= "province" name="province" type="text" placeholder="Province" tabindex="9" class="form-control" onblur="validateProv(value)">
-								<span id="provError" style="display: none;">You must enter first two digit of province...</span>
+                                <input  id= "province" name="province" type="text" placeholder="Province" tabindex="5" class="form-control">
+								<!--<span id="provError" style="display: none;">You must enter first two digit of province...</span>-->
                            </div>
                         </div>
+                        
                         <div class="form-group">
+                            <label for="postal" class="col-sm-4 control-label">Postal Code</label>
+                            <div class="col-sm-8">
+                                <input id="postal" name="postal" type="text" placeholder="Postal Code" tabindex="6" class="form-control">
+								<!--<span id="postalError" style="display: none;">You must enter Postal code</span>-->
+                            </div>
+                        </div>
+						<div class="form-group">
                             <label for="country" class="col-sm-4 control-label">Country</label>
                             <div class="col-sm-8">
-                                <input type="text" name="country"  size="30" list="countries" tabindex="10" placeholder="select one.." class="form-control">
+                                <input type="text" name="country"  size="30" list="countries" tabindex="7" placeholder="select one.." class="form-control">
                                 <datalist id="countries">
                                     <option value="Australia">
                                     <option value="Canada">
@@ -122,18 +99,32 @@
                                 </datalist>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label for="postal" class="col-sm-4 control-label">Postal Code</label>
+                        <div class="form-group"> 
+                            <label for="hp" class="col-sm-4 control-label">Home Number</label>
                             <div class="col-sm-8">
-                                <input id="postal" name="postal" type="text" placeholder="Postal Code" tabindex="11" class="form-control" onblur="validatePostal(value)">
-								<span id="postalError" style="display: none;">You must enter Postal code</span>
+                                <input id="hp" name="hp" type="text" placeholder="(555) 555-5555" tabindex="8" class="form-control">
+								<!--<span id="phoneError" style="display:none;">You must enter valid phone number</span>-->
                             </div>
                         </div>
-                        <div class="form-group"> 
-                            <label for="phone" class="col-sm-4 control-label">Phone Number</label>
+						<div class="form-group"> 
+                            <label for="busp" class="col-sm-4 control-label">Business Number</label>
                             <div class="col-sm-8">
-                                <input id="phone" name="phone" type="text" placeholder="(555) 555-5555" tabindex="12" class="form-control" onblur="validatePhone(value)">
-								<span id="phoneError" style="display:none;">You must enter valid phone number</span>
+                                <input id="busp" name="busp" type="text" placeholder="(555) 555-5555" tabindex="9" class="form-control">
+								<!--<span id="phoneError" style="display:none;">You must enter valid phone number</span>-->
+                            </div>
+                        </div>
+						<div class="form-group">
+                            <label for="email" class="col-sm-4 control-label">Email or Username</label>
+                            <div class="col-sm-8">
+                                <input id="email" name="email" type="email" placeholder="example: ab@yahoo.com" tabindex="10" size="30" maxlength="30" class="form-control">
+								<!--<span id="emailError" style="display: none;">You must enter valid Email address</span>-->
+                            </div>
+                        </div>
+						<div class="form-group">
+                            <label for="agid" class="col-sm-4 control-label">AgentId</label>
+                            <div class="col-sm-8">
+                                <input id="agid" name="agid" type="text" placeholder="Enter any one value(1 or 2)" tabindex="11" size="30" maxlength="30" class="form-control">
+								<!--<span id="emailError" style="display: none;">You must enter valid Email address</span>-->
                             </div>
                         </div>
                         <div class="form-group">
