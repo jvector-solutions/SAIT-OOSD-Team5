@@ -2,19 +2,35 @@
     $title = "Registration";
     $display = "Account";
     $slider = "02";
+    // Login Functions
+    session_start();
+    include("functions.php");
+    if (isset($_POST['login_email'])) {
+        if (verifyLogin($_POST['login_email'], $_POST['login_pass'])) {
+            // Set session variable
+            $_SESSION['loggedin'] = true;
+            header("Location: registration.php");
+            $message = "You are successfully logged in;";
+        } else {
+            // Set Login Error Message
+            $message = "Incorrect Email or Password";
+        }
+    }
     include('header.php');
 ?>
         <div class="container-fluid"> <!--- Start of Container --->
             <!--- Main body begins here --->
             <div id="body">
                 <div class="row">
-                    <div class="style col-xs-8 col-sm-4" style="margin: 5px 10px;">
+                    <div class="style col-xs-11 col-sm-4" style="margin: 5px 10px;">
+                        
+                        <!-- BEGIN Login Form //-->
                         <h1>Login</h1><hr class="style-one">
                         <form name="login" method="post" class="form-horizontal" role="form" >
                             <div class="form-group">
                                 <label for="login_email" class="col-sm-4 control-label">Email</label>
                                 <div class="col-sm-8">
-                                    <input id="loginemail" type="loginemail" class="form-control" id="login_email" required placeholder="Enter a valid Email address">
+                                    <input type="text" name="login_email" class="form-control" id="login_email" required="" placeholder="Enter login email address">
 									<span id="loginemailError" style="display:none">You must enter your  User name</span>
 									
                                 </div>
@@ -22,7 +38,7 @@
                             <div class="form-group">
                                 <label for="login_password" class="col-sm-4 control-label">Password</label>
                                 <div class="col-sm-8">
-                                    <input type="password" class="form-control" id="login_password" required="" placeholder="Password">
+                                    <input type="password" name="login_pass" class="form-control" id="login_password" required="" placeholder="Password">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -38,12 +54,21 @@
                                 </div>
                             </div>
                         </form>
+                        <?php
+                            if (isset($message)) {
+                                print("<h4 style='color: red; text-align: center;'><i class='fa fa-exclamation-triangle'></i> <em>$message</em></h4>");
+                            }
+                        ?>
+                        <!-- END Login Form //-->
                     </div>
+                    
                     <div class="style col-xs-11 col-sm-7" style="margin: 5px 10px;">
                         <h1>Registration</h1>
                         <hr class="style-one">
                         <br>
-                        <form name="register" method="post" action="bouncer.php" class="form-horizontal" role="form" onsubmit=" return formvalidation()">
+                        
+                        <!-- BEGIN Registration Form //-->
+                        <form name="register" method="post" action="bouncer.php" class="form-horizontal" role="form" onsubmit="return formvalidation()">
                         <div class="form-group">
 	                       <label for="fname" class="col-sm-4 control-label">First Name</label>
 	                       <div class="col-sm-8">
@@ -66,20 +91,21 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="password" class="col-sm-4 control-label">Create a password</label>
+                            <label for="password1" class="col-sm-4 control-label">Create a password</label>
                             <div class="col-sm-8">
                                 <input id="password1" type="password" name="password1" tabindex="4" size="30" maxlength="30" class="form-control">
 								<span id ="password1Error"  style="color:#ccffcc"></span>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="repass" class="col-sm-4 control-label">Confirm password</label>
+                            <label for="password2" class="col-sm-4 control-label">Confirm password</label>
                             <div class="col-sm-8">
                                 <input id="password2" type="password" name="password2"  tabindex="5" size="30" maxlength="30" class="form-control">
 								<span id="password2Error" style="color:#ccffcc"></span>
+                                <span style="font-size: 0.8em;">Your password must be at least six characters and contain at least one number, one lowercase, one uppercase letter.</span>
                             </div>
                         </div>
-                            <hr>
+                        <hr>
                         <div class="form-group">
                             <label for="add1" class="col-sm-4 control-label">Address</label>
                             <div class="col-sm-8">
@@ -141,7 +167,8 @@
                                 <button type="submit" class="btn btn-default" name="submit">Submit</button>
                             </div>
                         </div>
-                    </form>
+                        </form>
+                        <!-- END Registration Form //-->
                     </div>
                 </div>
             </div> <!--- End of body --->
