@@ -57,7 +57,7 @@ Description: Displaying dynamic information for contact page
 					      $html .= "<div class='agent'>";
                           $html .= "<h3>". $row1["AgtFirstName"] . " " . $row1["AgtMiddleInitial"] . " " . $row1["AgtLastName"] . "</h3>, <em>" . $row1["AgtPosition"] . " Agent</em><br>";
 						  $html .= "<table><tr><td>&nbsp;</td><td><i class='fa fa-phone'></td><td>" . $row1["AgtBusPhone"] . "</td></tr>";
-						  $html .= "<tr><td>&nbsp;</td><td><i class='fa fa-envelope-o'></i></td><td><a href='mailto:tom@gmail.com'>" . $row1["AgtEmail"] . "</a></td></tr></table>
+						  $html .= "<tr><td>&nbsp;</td><td><i class='fa fa-envelope-o'></i></td><td><a href='mailto:" . $row1["AgtEmail"] . "'>" . $row1["AgtEmail"] . "</a></td></tr></table>
                                   </div>";
 					   }
 					   $html .= "</div>";

@@ -30,7 +30,11 @@
                         <div class="col-xs-7 col-sm-6 style" >
                             <h2>Package Information</h2>
                             <hr class="style-two">
-                            <h3><strong>$PkgName</strong></h3>
+                            <h3><strong><?php echo"$PkgName" ?></strong></h3>
+                            <h3><strong><?php echo"$PkgStartDate" ?></strong></h3>
+                            <h3><strong><?php echo"$PkgEndDate" ?></strong></h3>
+                            <h3><strong><?php echo"$PkgDesc" ?></strong></h3>
+                            <h3><strong><?php echo"$PkgBasePrice" ?></strong></h3>
                             
                         </div>
                         <div class="col-xs-4 col-sm-5 style">
