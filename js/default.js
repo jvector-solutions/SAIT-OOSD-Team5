@@ -191,6 +191,10 @@ function validatePass(register) {
     return true;
 }
 */
+
+function getDate() {
+    
+}
 	
 	
 	

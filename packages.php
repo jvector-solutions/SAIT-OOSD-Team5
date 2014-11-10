@@ -30,7 +30,7 @@ echo "           <div class='row style pkg'>
                     <div class='pkg_title'><h2> ".$row["PkgName"]." </h2></div>
                     <div class='pkg_book'><a href='bookings.php?PackageId=".$row["PackageId"]."'>BOOK NOW</a> &nbsp;<span class='book_arrow'><i class='fa fa-arrow-right'></i></span></div>
                     <div class='pkg_price'><span><i class='fa fa-usd'></i>".$row["PkgBasePrice"]."</span><br>per person, plus GST</div>
-                    <div class='pkg_image'> <img src = 'img/carribean.jpg'></div>
+                    <div class='pkg_image'> <img src = 'img/package0".$row["PackageId"].".jpg'></div>
                     <div class='pkg_desc'>
                         <p>".$row["PkgDesc"]."</p>
                         <div class='pkg_start_date'><p>Start date: ".$row["PkgStartDate"]." </p></div>
