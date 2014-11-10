@@ -8,7 +8,7 @@ Description: A default stylesheet for the Travel Experts website, the first thre
 
 @media screen and (max-width : 880px) {
     html, body, div, p, table, tr, td, th, tbody, tfoot, ul, li, ol, dl, dd, dt, fieldset, blockquote, cite, input, select, textarea, button, a, section, article, aside, header, footer, nav {
-	   font-size: 12px;
+	   font-size: 14px;
     }
     .welcome h1 {
         font-size: 32px;
@@ -67,13 +67,16 @@ Description: A default stylesheet for the Travel Experts website, the first thre
         display: inline-block
     }
     .pkg_price {
-        left: 116px;
-        color: #eee;  
-        text-shadow: 1px 1px 7px rgba(0, 0, 0, 0.8);
+        left: 118px;
+        top: 30px;
+        padding: 5px;
+        background-color: rgba(255, 255, 255, 0.7);
+        border-radius: 4px;
+        border: 1px solid #ccc;
     }
     .pkg_book {
-        top: 90px;
-        right: 15px;
+        top: 114px;
+        right: 12px;
         font-size: 14px;
         font-weight: 600;
         background-color: rgba(255, 255, 255, 0.85);
@@ -96,7 +99,8 @@ Description: A default stylesheet for the Travel Experts website, the first thre
         max-width: 180px;
     }
     .agents_list {
-        max-width: 180px;
+        min-width: 100%;
+        border-left: 0px;
     }
     .agency {
         margin: 20px 0;

@@ -17,7 +17,7 @@ Description: Displaying dynamic information for packages
                 <div class="packages">
                     <div class="row style pkg">
                         <div class="pkg_title"><h2>CARIBBEAN NEW YEAR</h2></div>
-                        <div class="pkg_book">BOOK NOW &nbsp;<span class="book_arrow"><i class="fa fa-arrow-right "></i></span></div>
+                        <div class="pkg_book"><a href="bookings.php?PackageId=1">BOOK NOW</a> &nbsp;<span class="book_arrow"><i class="fa fa-arrow-right "></i></span></div>
                         <div class="pkg_price"><span><i class="fa fa-usd"></i>4800</span><br>per person, plus GST</div>
                         <div class="pkg_image"><img src="img/carribean.jpg"></div>
                         <div class="pkg_desc">
@@ -28,7 +28,7 @@ Description: Displaying dynamic information for packages
                     <hr>
                     <div class="row style pkg">
                         <div class="pkg_title"><h2>POLYNESIAN PARADISE</h2></div>
-                        <div class="pkg_book">BOOK NOW &nbsp;<span class="book_arrow"><i class="fa fa-arrow-right "></i></span></div>
+                        <div class="pkg_book"><a href="bookings.php?PackageId=2">BOOK NOW</a> &nbsp;<span class="book_arrow"><i class="fa fa-arrow-right "></i></span></div>
                         <div class="pkg_price"><span><i class="fa fa-usd"></i>3000</span><br>per person, plus GST</div>
                         <div class="pkg_image"><img src="img/hawaii.jpg"></div>
                         <div class="pkg_desc">
@@ -39,7 +39,7 @@ Description: Displaying dynamic information for packages
                     <hr>
                     <div class="row style pkg">
                         <div class="pkg_title"><h2>ASIAN EXPEDITION</h2></div>
-                        <div class="pkg_book">BOOK NOW &nbsp;<span class="book_arrow"><i class="fa fa-arrow-right "></i></span></div>
+                        <div class="pkg_book"><a href="bookings.php?PackageId=3">BOOK NOW</a> &nbsp;<span class="book_arrow"><i class="fa fa-arrow-right "></i></span></div>
                         <div class="pkg_price"><span><i class="fa fa-usd"></i>2800</span><br>per person, plus GST</div>
                         <div class="pkg_image"><img src="img/asian.jpg"></div>
                         <div class="pkg_desc">
@@ -70,7 +70,7 @@ Description: Displaying dynamic information for packages
                     <hr>
                     <div class="row style pkg">
                         <div class="pkg_title"><h2>EUROPEAN VACATION</h2></div>
-                        <div class="pkg_book">BOOK NOW &nbsp;<span class="book_arrow"><i class="fa fa-arrow-right "></i></span></div>
+                        <div class="pkg_book"><a href="bookings.php?PackageId=4">BOOK NOW</a> &nbsp;<span class="book_arrow"><i class="fa fa-arrow-right "></i></span></div>
                         <div class="pkg_price"><span><i class="fa fa-usd"></i>3000</span><br>per person, plus GST</div>
                         <div class="pkg_image"><img src="img/europe.jpg"></div>
                         <div class="pkg_desc">
