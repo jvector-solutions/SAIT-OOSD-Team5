@@ -44,7 +44,7 @@
         </div>
         <div class="slider" style="background-image: url(img/slider<?php print($slider); ?>.jpg);"> <!-- Slider Image -->
              <div class="welcome">
-                 <h1><?php print($display); ?></h1>
+                 <h1><strong><?php print($display); ?></strong></h1>
             </div>      
         </div>
         <div>
