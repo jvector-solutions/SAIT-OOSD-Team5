@@ -1,8 +1,22 @@
 <?php
+    session_start();
+    if (!isset($_SESSION['loggedin']))
+	{
+	   $_SESSION['pagename']="bookings.php";
+	   header("Location: registration.php");
+	}
+	$link = mysqli_connect("localhost","root","","travelexperts") or die("Connection Error: " . mysqli_error());
+	$cust_email = $_SESSION['cust_email'];
+	$sql = "select * from customers where CustEmail = '$cust_email'";
+	$result = mysqli_query($link,$sql);
+	while ($row1 = mysqli_fetch_array($result)) {
+        extract($row1);          // extract() will assign each row as a variable
+    }
+	
     $title = "Home";
     $display = "Package Booking";
     $slider = "03";
-    $link = mysqli_connect("localhost","root","","travelexperts") or die("Connection Error: " . mysqli_error());
+    
     $pkg = $_GET['PackageId'];
     // This $sql will select the package information based on the GET variable passed from the Packages page.
     $sql = "select PkgName,PkgStartDate,PkgEndDate,PkgDesc,PkgBasePrice from Packages where PackageId='$pkg'"; 
@@ -10,11 +24,7 @@
     while ($row = mysqli_fetch_array($result)) {
         extract($row);          // extract() will assign each row as a variable, ie. $PkgName
     }
-    $sql = "select PkgName,PkgStartDate,PkgEndDate,PkgDesc,PkgBasePrice from Packages where PackageId='$pkg'"; 
-    $result = mysqli_query($link,$sql);
-    while ($row = mysqli_fetch_array($result)) {
-        extract($row);          // extract() will assign each row as a variable, ie. $PkgName
-    }
+    
 
     mysqli_close($link);
 
@@ -30,15 +40,37 @@
                         <div class="col-xs-7 col-sm-6 style" >
                             <h2>Package Information</h2>
                             <hr class="style-two">
-                            <h3><strong><?php echo"$PkgName" ?></strong></h3>
-                            <h3><strong><?php echo"$PkgStartDate" ?></strong></h3>
-                            <h3><strong><?php echo"$PkgEndDate" ?></strong></h3>
-                            <h3><strong><?php echo"$PkgDesc" ?></strong></h3>
-                            <h3><strong><?php echo"$PkgBasePrice" ?></strong></h3>
+							<?php
+							   $html = "<table border='1'><tr><td><h3><strong> Name </strong></h3></td>";
+							   $html .= "<td><h3><strong> $PkgName </strong></h3></td></tr>";
+							   $html .= "<tr><td><h3><strong> Star Date </strong></h3></td>";
+							   $html .= "<td><h3><strong> $PkgStartDate </strong></h3></td></tr>";
+							   $html .= "<tr><td><h3><strong> End Date </strong></h3></td>";
+							   $html .= "<td><h3><strong> $PkgEndDate </strong></h3></td></tr>";
+							   $html .= "<tr><td><h3><strong> Description </strong></h3></td>";
+							   $html .= "<td><h3><strong> $PkgDesc </strong></h3></td></tr>";
+							   $html .= "<tr><td><h3><strong> Base Price </strong></h3></td>";
+							   $html .= "<td><h3><strong> $PkgBasePrice </strong></h3></td></tr></table>";
+							   print($html);
+							?>
+                           
                             
                         </div>
                         <div class="col-xs-4 col-sm-5 style">
                             <h2>Customer Information</h2><hr class="style-two">
+							<?php 
+							   $html = "<table border='1'><tr><td><h3><strong> $CustFirstName, $CustLastName </strong></h3></td></tr>";
+							  
+							   $html .= "<tr><td><h3><strong> $CustAddress </strong></h3></td></tr>";
+							   
+							   $html .= "<tr><td><h3><strong> $CustCity, $CustProv  $CustCountry </strong></h3></td></tr>";
+							   
+							   $html .= "<tr><td><h3><strong> $CustPostal </strong></h3></td></tr>";
+							   
+							   $html .= "<tr><td><h3><strong> $CustHomePhone</strong></h3></td></tr>";
+							   $html .= "<tr><td><h3><strong> $CustBusPhone</strong></h3></td></tr></table>";
+							   print($html);
+							?>
                         </div>
                     </div>
                 </div>

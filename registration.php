@@ -9,6 +9,7 @@
         if (verifyLogin($_POST['login_email'], $_POST['login_pass'])) {
             // Set session variable
             $_SESSION['loggedin'] = true;
+			$_SESSION['cust_email'] = trim($_POST['login_email']);
             header("Location: registration.php");
             $message = "You are successfully logged in;";
         } else {
