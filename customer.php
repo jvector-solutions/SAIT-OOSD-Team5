@@ -1,5 +1,9 @@
 <?php
+	$title = "Customer";
+    $display = "Customer Information";
+	$slider = "05";
     include('header.php');
+    
 ?>
         <div class="container-fluid"> <!--- Start of Container --->
             <!--- Main body begins here --->
@@ -11,7 +15,7 @@
                             <div class="form-group">
                                 <label for="login_email" class="col-sm-4 control-label">Email</label>
                                 <div class="col-sm-8">
-                                    <input id="loginemail" type="loginemail" class="form-control" id="login_email" required placeholder="Enter a valid Email address">
+                                    <input id="loginemail" type="loginemail" class="form-control" id="login_email" placeholder="Enter a valid Email address">
 									<span id="loginemailError" style="display:none">You must enter User name</span>
 									
                                 </div>
@@ -19,7 +23,13 @@
                             <div class="form-group">
                                 <label for="login_password" class="col-sm-4 control-label">Password</label>
                                 <div class="col-sm-8">
-                                    <input type="password" class="form-control" id="login_password" required="" placeholder="Password">
+                                    <input type="password" class="form-control" id="login_password" placeholder="Password">
+                                </div>
+                            </div>
+							<div class="form-group">
+                                <label for="login_conpass" class="col-sm-4 control-label">Confirm Password</label>
+                                <div class="col-sm-8">
+                                    <input type="password" class="form-control" id="login_conpass" placeholder="Password">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -31,7 +41,7 @@
                             </div>
                             <div class="form-group">
                                 <div class="col-sm-offset-4 col-sm-8">
-                                    <button type="submit" class="btn btn-default">Sign in</button>
+                                    <button type="submit" class="btn btn-default" name="submit">Sign in</button>
                                 </div>
                             </div>
                         </form>
@@ -40,7 +50,7 @@
                         <h3>Customer Information</h3>
                         <hr class="style-one">
                         <br>
-                        <form name="custform" method="" class="form-horizontal" role="form">
+                        <form name="custform" method="post" action="" class="form-horizontal" role="form">
                         <div class="form-group">
 	                       <label for="fname" class="col-sm-4 control-label">First Name</label>
 	                       <div class="col-sm-8">

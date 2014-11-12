@@ -110,8 +110,8 @@
 		}
 		else
 		{
-			$display = $insertCustomer($_REQUEST)
-			if($display)
+			$result = $insertCustomer($_REQUEST)
+			if($result)
 			{
 				print("Thank you for Registration...");
 			}

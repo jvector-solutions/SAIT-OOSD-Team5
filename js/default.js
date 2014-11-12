@@ -27,10 +27,10 @@ function  formvalidation() {
 		document.getElementById('addressError').style.display = "block";
 		error++;
 	}
-	if(!validateAddress1(document.getElementById('add2').value)) {
+	/*if(!validateAddress1(document.getElementById('add2').value)) {
 		document.getElementById('address2Error').style.display = "block";
 		error++;
-	}
+	}*/
 	if(!validateCity(document.getElementById('city').value)) {
 		document.getElementById('cityError').style.display = "block";
 		error++;
@@ -86,7 +86,7 @@ function validateEmail(email) {
     }		
 }
 function validateAddress(add1) {
-	var re = /^[0-9\sa-zA-Z] +$/;
+	var re = /^[0-9 \s a-zA-Z] +$/;
 	if(re.test(add1)) {
 		document.getElementById('add1').style.background = '#ccffcc';
 		document.getElementById('addressError').style.display = "none";
@@ -96,7 +96,7 @@ function validateAddress(add1) {
 		return false;
 	}
 }
-function validateAddress1(add2) {
+/*function validateAddress1(add2) {
 	var re = /^[0-9a-zA-Z] +$/;
 	if(re.test(add2)) {
 		document.getElementById('add2').style.background = '#ccffcc';
@@ -106,7 +106,7 @@ function validateAddress1(add2) {
 		document.getElementById('add2').style.background = '#e35152'; 
 		return false;
 	}
-}
+}*/
 function validateCity(city) {
 	var re = /[A-Za-z - ']$/;
 	if(re.test(city)) {
@@ -191,10 +191,10 @@ function validatePass(register) {
     return true;
 }
 */
+function getdata()
+{}
 
-function getDate() {
-    
-}
+
 	
 	
 	
