@@ -1,6 +1,7 @@
 <?php
 function insertCustomer($test)
 {
+	//customer data..
 	$sql = "INSERT INTO customers values
 	(NULL,'$test[CustFirstName]',
 			'$test[CustLastName]',
@@ -17,9 +18,12 @@ function insertCustomer($test)
 	$con = mysqli_connect("localhost","root","","travelexperts") or 
 		                     die("Error: " .mysqli_connect_error());
 	//check connection
-	$display = mysqli_query($con , $sql) or 
+	$result = mysqli_query($con , $sql) or 
 			                 die("query Error:" .mysqli_error($con));
 	mysqli_close($con);
-	return $display;
+	return $result;	
 }	
+?>
+<?php
+	
 ?>

@@ -110,17 +110,17 @@
                         <div class="form-group">
                             <label for="add1" class="col-sm-4 control-label">Address</label>
                             <div class="col-sm-8">
-                                <input id="add1" name="add1" type="text" placeholder="Street 1" tabindex="6" size="30" maxlength="30" class="form-control" onblur="validateAddress(value)">
+                                <input id="add1" name="add1" type="text" placeholder="Address" tabindex="6" size="30" maxlength="30" class="form-control" onblur="validateAddress(value)">
 								<span id="addressError" style="display: none;">You must enter valid address...</span>
                             </div>
                         </div>
-                        <div class="form-group">
+                      <!--  <div class="form-group">
                             <label for="add2" class="col-sm-4 control-label"></label>
                             <div class="col-sm-8">
                                 <input id="add2" name="add2" type="text" placeholder="Street 2" tabindex="7" size="30" maxlength="30" class="form-control" onblur="validateAddress1(value)">
 								<span id="address2Error" style="display: none;">You must enter valid address...</span>
                             </div>
-                        </div>
+                        </div>-->
                         <div class="form-group">
                             <label for="city" class="col-sm-4 control-label">City</label>
                             <div class="col-sm-8">
