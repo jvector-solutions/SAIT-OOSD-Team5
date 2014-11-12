@@ -1,9 +1,11 @@
 <?php
     session_start();
+	$pkg = $_GET['PackageId'];
     if (!isset($_SESSION['loggedin']))
 	{
 	   $_SESSION['pagename']="bookings.php";
-	   header("Location: registration.php");
+	   
+	   header("Location: registration.php?PackageId=$pkg");
 	}
 	$link = mysqli_connect("localhost","root","","travelexperts") or die("Connection Error: " . mysqli_error());
 	$cust_email = $_SESSION['cust_email'];
@@ -17,7 +19,7 @@
     $display = "Package Booking";
     $slider = "03";
     
-    $pkg = $_GET['PackageId'];
+    
     // This $sql will select the package information based on the GET variable passed from the Packages page.
     $sql = "select PkgName,PkgStartDate,PkgEndDate,PkgDesc,PkgBasePrice from Packages where PackageId='$pkg'"; 
     $result = mysqli_query($link,$sql);
