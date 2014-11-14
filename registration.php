@@ -1,42 +1,68 @@
 <?php
     $title = "Registration";
-    $display = "Account";
+    $display = "Login or Register";
     $slider = "02";
+
+    // Written by John
+    function verifyLogin($u,$p) {
+        $link = mysqli_connect("localhost","root","","travelexperts") or die("Error: " . mysqli_connect_error());
+        $sql = "SELECT password FROM users WHERE userid='$u'";
+        $result = mysqli_query($link, $sql) or die("SQL Error:" . mysqli_error());
+        if ($pwd = mysqli_fetch_row($result)) {
+            if ($pwd[0] == $p) {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+        mysqli_close($link);
+    }
+
     // Login Functions
     session_start();
-    include("functions.php");
-    if (isset($_POST['login_email'])) {
-        if (verifyLogin($_POST['login_email'], $_POST['login_pass'])) {
-            // Set session variable
-            $_SESSION['loggedin'] = true;
-			$_SESSION['cust_email'] = trim($_POST['login_email']);
-			$pagename = $_SESSION['pagename'];
-			$PackageId = $_GET['PackageId'];
-			header("Location: $pagename?PackageId=$PackageId");
-            //header("Location: registration.php");
-            $message = "You are successfully logged in;";
-        } else {
-            // Set Login Error Message
-            $message = "Incorrect Email or Password";
+    if (!isset($_SESSION['loggedin'])) {
+        $message="<h4 style='text-align: center;'>Please log in.</h4><br>";
+        if (isset($_POST['login_email'])) {
+            if (verifyLogin($_POST['login_email'], $_POST['login_pass'])) {
+                // Set session variable
+                $_SESSION['loggedin'] = true;
+                $_SESSION['cust_email'] = trim($_POST['login_email']);
+                $pagename = (isset($_SESSION['pagename']) ? $_SESSION['pagename'] : null);
+                $PackageId = (isset($_GET['PackageId']) ? $_GET['PackageId'] : null);
+                if (isset($_GET['PackageId'])) {
+                    header("Location: $pagename?PackageId=$PackageId");
+                    //header("Location: registration.php");
+                } else {
+                    $message = "<h4 style='color: green; text-align: center;'><i class='fa fa-exclamation-triangle'></i> You are successfully logged in.</h4><br>";
+                }
+            } else {
+                // Set Login Error Message
+                $message = "<h4 style='color: red; text-align: center;'><i class='fa fa-exclamation-triangle'></i> Incorrect Email or Password.</h4><br>";
+            }
         }
     }
-    include('header.php');
+include("header.php");
 ?>
         <div class="container-fluid"> <!--- Start of Container --->
             <!--- Main body begins here --->
             <div id="body">
                 <div class="row">
                     <div class="style col-xs-11 col-sm-4" style="margin: 5px 10px;">
-                        
                         <!-- BEGIN Login Form //-->
-                        <h1>Login</h1><hr class="style-one">
+                        <h1><i class="fa fa-sign-in"></i> Login</h1><hr class="style-one">
+                        <?php
+                            if (isset($message)) {
+                                print("$message");
+                            }
+                        ?>
                         <form name="login" method="post" class="form-horizontal" role="form" >
                             <div class="form-group">
                                 <label for="login_email" class="col-sm-4 control-label">Email</label>
                                 <div class="col-sm-8">
                                     <input type="text" name="login_email" class="form-control" id="login_email" required="" placeholder="Enter login email address">
-									<span id="loginemailError" style="display:none">You must enter your  User name</span>
-									
+									<span id="loginemailError" style="display:none">You must enter your Email address.</span>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -47,50 +73,37 @@
                             </div>
                             <div class="form-group">
                                 <div class="col-sm-offset-4 col-sm-8">
-                                    <div class="checkbox">
-                                        <label><input type="checkbox"> Remember me</label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-sm-offset-4 col-sm-8">
                                     <button type="submit" class="btn btn-default">Sign in</button>
                                 </div>
                             </div>
                         </form>
-                        <?php
-                            if (isset($message)) {
-                                print("<h4 style='color: red; text-align: center;'><i class='fa fa-exclamation-triangle'></i> <em>$message</em></h4>");
-                            }
-                        ?>
                         <!-- END Login Form //-->
                     </div>
                     
                     <div class="style col-xs-11 col-sm-7" style="margin: 5px 10px;">
-                        <h1>Registration</h1>
+                        <h1><i class="fa fa-pencil-square-o"></i> Create an Account</h1>
                         <hr class="style-one">
-                        <br>
-                        
+                        <h4>Please enter your personal information.*</h4><br>
                         <!-- BEGIN Registration Form //-->
-                        <form name="register" method="post" action="bouncer.php" class="form-horizontal" role="form" onsubmit="return formvalidation()">
+                        <form name="register" method="post" action="customer.php" class="form-horizontal" role="form" onsubmit="return formvalidation()">
                         <div class="form-group">
 	                       <label for="fname" class="col-sm-4 control-label">First Name</label>
 	                       <div class="col-sm-8">
-                                <input id="fname" name="fname" type="text" placeholder="First Name" tabindex="1" size="30" maxlength="30" class="form-control" onblur="validateFname(value)">
+                                <input id="fname" name="CustFirstName" type="text" placeholder="First Name" tabindex="1" size="30" maxlength="30" class="form-control" onblur="validateFname(value)">
 								<span id="fnameError" style="display: none;">You can only use alphabetic characters.</span>
                            </div>
                         </div>
                         <div class="form-group">    
 	                       <label for="lname" class="col-sm-4 control-label">Last Name</label>
                             <div class="col-sm-8">
-                                <input id="lname" name="lname" type="text" placeholder="Last Name" tabindex="2" size="30" maxlength="30" class="form-control" onblur="validateLname(value)">
+                                <input id="lname" name="CustLastName" type="text" placeholder="Last Name" tabindex="2" size="30" maxlength="30" class="form-control" onblur="validateLname(value)">
 								<span id="lnameError" style="display: none;">You can only use alphabetic characters.</span>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="email" class="col-sm-4 control-label">Email or Username</label>
                             <div class="col-sm-8">
-                                <input id="email" name="email" type="email" placeholder="example: ab@yahoo.com" tabindex="3" size="30" maxlength="30" class="form-control" onblur="validateEmail(value)">
+                                <input id="email" name="CustEmail" type="email" placeholder="example: ab@yahoo.com" tabindex="3" size="30" maxlength="30" class="form-control" onblur="validateEmail(value)">
 								<span id="emailError" style="display: none;">You must enter valid Email address</span>
                             </div>
                         </div>
@@ -109,39 +122,33 @@
                                 <span style="font-size: 0.8em;">Your password must be at least six characters and contain at least one number, one lowercase, one uppercase letter.</span>
                             </div>
                         </div>
-                        <hr>
+                        <hr class="style-one">
+                        <h4>Please enter your contact information.</h4><br>
                         <div class="form-group">
                             <label for="add1" class="col-sm-4 control-label">Address</label>
                             <div class="col-sm-8">
-                                <input id="add1" name="add1" type="text" placeholder="Address" tabindex="6" size="30" maxlength="30" class="form-control" onblur="validateAddress(value)">
-								<span id="addressError" style="display: none;">You must enter valid address...</span>
+                                <input id="add1" name="CustAddress" type="text" placeholder="Address" tabindex="6" size="30" maxlength="30" class="form-control" onblur="validateAddress(value)">
+								<span id="addressError" style="display: none;">You must enter an address...</span>
                             </div>
                         </div>
-                      <!--  <div class="form-group">
-                            <label for="add2" class="col-sm-4 control-label"></label>
-                            <div class="col-sm-8">
-                                <input id="add2" name="add2" type="text" placeholder="Street 2" tabindex="7" size="30" maxlength="30" class="form-control" onblur="validateAddress1(value)">
-								<span id="address2Error" style="display: none;">You must enter valid address...</span>
-                            </div>
-                        </div>-->
                         <div class="form-group">
                             <label for="city" class="col-sm-4 control-label">City</label>
                             <div class="col-sm-8">
-                                <input id="city" name="city" type="text" placeholder="City" tabindex="8" class="form-control" onblur="validateCity(value)">
+                                <input id="city" name="CustCity" type="text" placeholder="City" tabindex="8" class="form-control" onblur="validateCity(value)">
 								<span id="cityError" style="display: none;">You must enter city...</span>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="province" class="col-sm-4 control-label">Province</label>
-                            <div class="col-sm-8">
-                                <input  id= "province" name="province" type="text" placeholder="Province" tabindex="9" class="form-control" onblur="validateProv(value)">
+                            <div class="col-sm-2">
+                                <input  id= "province" name="CustProv" type="text" placeholder="Province" tabindex="9" class="form-control" size="2" maxlength="2" onblur="validateProv(value)">
 								<span id="provError" style="display: none;">You must enter first two digit of province...</span>
                            </div>
                         </div>
                         <div class="form-group">
-                            <label for="country" class="col-sm-4 control-label">Country</label>
-                            <div class="col-sm-8">
-                                <input type="text" name="country"  size="30" list="countries" tabindex="10" placeholder="select one.." class="form-control">
+                            <label for="countries" class="col-sm-4 control-label">Country</label>
+                            <div class="col-sm-4">
+                                <input type="text" name="CustCountry"  size="30" list="countries" tabindex="10" placeholder="select one.." class="form-control">
                                 <datalist id="countries">
                                     <option value="Australia">
                                     <option value="Canada">
@@ -154,16 +161,23 @@
                         </div>
                         <div class="form-group">
                             <label for="postal" class="col-sm-4 control-label">Postal Code</label>
-                            <div class="col-sm-8">
-                                <input id="postal" name="postal" type="text" placeholder="Postal Code" tabindex="11" class="form-control" onblur="validatePostal(value)">
+                            <div class="col-sm-4">
+                                <input id="postal" name="CustPostal" type="text" placeholder="Postal Code" tabindex="11" class="form-control" onblur="validatePostal(value)">
 								<span id="postalError" style="display: none;">You must enter Postal code</span>
                             </div>
                         </div>
                         <div class="form-group"> 
-                            <label for="phone" class="col-sm-4 control-label">Phone Number</label>
-                            <div class="col-sm-8">
-                                <input id="phone" name="phone" type="text" placeholder="(555) 555-5555" tabindex="12" class="form-control" onblur="validatePhone(value)">
-								<span id="phoneError" style="display:none;">You must enter valid phone number</span>
+                            <label for="homephone" class="col-sm-4 control-label">Home Phone</label>
+                            <div class="col-sm-4">
+                                <input id="homephone" name="CustHomePhone" type="text" placeholder="(555) 555-5555" tabindex="12" class="form-control" onblur="validatePhone(value)">
+								<span id="homephoneError" style="display:none;">You must enter valid phone number</span>
+                            </div>
+                        </div>
+                        <div class="form-group"> 
+                            <label for="busphone" class="col-sm-4 control-label">Business Phone</label>
+                            <div class="col-sm-4">
+                                <input id="busphone" name="CustBusPhone" type="text" placeholder="(555) 555-5555" tabindex="12" class="form-control" onblur="validatePhone(value)">
+								<span id="busphoneError" style="display:none;">You must enter valid phone number</span>
                             </div>
                         </div>
                         <div class="form-group">
@@ -177,9 +191,6 @@
                 </div>
             </div> <!--- End of body --->
         </div> <!-- End of Container -->
-        <div id="footer">
-            <br><p>Copyright &copy; 2014 Travel Experts Inc. All rights reserved.</p>
-        </div>
-        <a href="#top" class="top"><i class="fa fa-arrow-up fa-lg"></i></a>
-    </body>
-</html>
+<?php
+    include("footer.php");
+?>

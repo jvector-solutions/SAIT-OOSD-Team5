@@ -28,7 +28,7 @@
             </div> <!-- End of body -->
         </div> <!-- End of Container -->
         <div class="email">
-            <div class="col-xs-6 col-md-6 text-right">
+            <div class="col-xs-6 col-md-6 text-right" style="display: block;">
             <h2 style="color: #fff;">Sign up for Exclusive Package Deals</h2><h5 style="color: #fff;">Exclusive access to coupons, special offers and promotions.</h5>
             </div>
             <div class="col-xs-6 col-md-6">
@@ -38,9 +38,6 @@
                 </form>
             </div>
         </div>
-        <div id="footer">
-            <br><p>Copyright &copy; 2014 Travel Experts Inc. All rights reserved.</p>
-        </div>
-        <a href="#top" class="top"><i class="fa fa-arrow-up fa-lg"></i></a>
-    </body>
-</html>
+<?php
+    include("footer.php");
+?>

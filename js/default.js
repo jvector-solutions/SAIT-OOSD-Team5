@@ -1,3 +1,4 @@
+// Written by John
 function dropMenu(id) {
    var e = document.getElementById(id);
    if(e.style.display == 'block') {
@@ -7,6 +8,7 @@ function dropMenu(id) {
    }
 }
 
+// Written by Megha
 function  formvalidation() {
 	var error = 0;
 	if(!validateFname(document.getElementById('fname').value)) {
@@ -27,10 +29,6 @@ function  formvalidation() {
 		document.getElementById('addressError').style.display = "block";
 		error++;
 	}
-	/*if(!validateAddress1(document.getElementById('add2').value)) {
-		document.getElementById('address2Error').style.display = "block";
-		error++;
-	}*/
 	if(!validateCity(document.getElementById('city').value)) {
 		document.getElementById('cityError').style.display = "block";
 		error++;
@@ -43,8 +41,12 @@ function  formvalidation() {
 		document.getElementById('postalError').style.display = "block";
 		error++;
 	}
-	if(!validatePhone(document.getElementById('phone').value)) {
-		document.getElementById('phoneError').style.display = "block";
+	if(!validatePhone(document.getElementById('homephone').value)) {
+		document.getElementById('homephoneError').style.display = "block";
+		error++;
+	}
+    if(!validatePhone(document.getElementById('busphone').value)) {
+		document.getElementById('busphoneError').style.display = "block";
 		error++;
 	}
 	if(error > 0) {
@@ -52,6 +54,7 @@ function  formvalidation() {
 	}
 	
 }
+
 function validateFname(fname) {
 	var re = /[A-Za-z - ']$/;
 	if(re.test(fname)) {
@@ -63,6 +66,7 @@ function validateFname(fname) {
 		return false;
 	}
 }
+
 function validateLname(lname) {
 	var re = /[A-Za-z - ']$/;
 	if(re.test(lname)) {
@@ -86,27 +90,16 @@ function validateEmail(email) {
     }		
 }
 function validateAddress(add1) {
-	var re = /^[0-9 \s a-zA-Z] +$/;
-	if(re.test(add1)) {
+	if(document.register.add1.value != "") {
 		document.getElementById('add1').style.background = '#ccffcc';
 		document.getElementById('addressError').style.display = "none";
 		return true;
 	} else {
 		document.getElementById('add1').style.background = '#e35152'; 
+        document.getElementById('add1').style.background = '#fff'; 
 		return false;
 	}
 }
-/*function validateAddress1(add2) {
-	var re = /^[0-9a-zA-Z] +$/;
-	if(re.test(add2)) {
-		document.getElementById('add2').style.background = '#ccffcc';
-		document.getElementById('address2Error').style.display = "none";
-		return true;
-	} else {
-		document.getElementById('add2').style.background = '#e35152'; 
-		return false;
-	}
-}*/
 function validateCity(city) {
 	var re = /[A-Za-z - ']$/;
 	if(re.test(city)) {
@@ -126,7 +119,6 @@ function validateProv(province)	{
 		return true;
 	} else {
 		document.getElementById('province').style.background = '#e35152';
-		//document.getElementById(x + 'Error').style.display = "block"; 
 		return false;
 	}
 }
@@ -135,69 +127,20 @@ function validatePostal(postal)	{
     if(re.test(postal)) {
         document.getElementById('postal').style.background ='#ccffcc';
         document.getElementById('postalError').style.background = "none";
+        return true;
     } else {
         document.getElementById('postal').style.background = "#e35152";
         return false;
     }
 }	
 function validatePhone(phone) {
-    var re= /^([0-9]{3})[0-9]{3} - \d{4}/;
+    var re=/^[(]{0,1}[0-9]{3}[)]{0,1}[-\s\.]{0,1}[0-9]{3}[-\s\.]{0,1}[0-9]{4}$/;
     if(re.test(phone)) {
         document.getElementById('phone').style.background ='#ccffcc';
         document.getElementById('phoneError').style.background = "none";
+        return true;
     } else {
         document.getElementById('phone').style.background = '#e35152';
         return false;
     }
 }
-/* 	
-function validatePass(register) {
-    var p1 = document.getElementById('password1Error');
-    var p2 = document.getElementById('password2Error');
-
-    var minLength=6;
-    var invalid="";
-
-    var pw1 = register.password1.value;
-    var pw2 = register.password2.value;
-
-    var error=false;
-    p1.innerHtml='';
-    p2.innerHtml='';
-
-
-    if (pw1.length<1) {
-        error='Please enter your password.';
-    } else if (pw1.length < minLength) {
-        error='Your password must be at least ' + minLength + ' characters long. Try again.';
-    } else if (pw1.indexOf(invalid) > -1) {
-        error='Sorry, spaces are not allowed.';
-    } else if (pw2.length == 0) {
-        error='Please retype password.';
-        register.password2.focus();
-        p2.innerHTML=error;
-        return false;
-    }
-    if (error) {
-        register.password.focus();
-        p1.innerHTML=error;
-        return false;
-    }
-    if (pw1 != pw2) {
-        p2.innerHTML=' passwords not matching.Please re-enter your password.';
-        register.password2.focus();
-        return false;
-    }
-    return true;
-}
-*/
-function getdata()
-{}
-
-
-	
-	
-	
-	
-
-

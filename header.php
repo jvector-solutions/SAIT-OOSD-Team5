@@ -1,6 +1,5 @@
 <?php
-    date_default_timezone_set('America/Edmonton');
-
+    include("functions.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -35,9 +34,16 @@
             <div class="nav" id="dropmenu">
                 <ul>
                     <a href="index.php"><li class="home"><i class="fa fa-home fa-lg"></i></li></a>
-                    <a href="packages.php"><li>Packages <i class="fa fa-chevron-circle-right"></i></li></a>
-                    <a href="registration.php"><li>Account <i class="fa fa-chevron-circle-right"></i></li></a>
-                    <a href="contact.php"><li>Contact <i class="fa fa-chevron-circle-right"></i></li></a>
+                    <a href="packages.php"><li><i class="fa fa-plane"></i> &nbsp;Vacations</li></a>
+                    <li><i class="fa fa-chevron-circle-right"></i> &nbsp;Account
+                        <ul>
+                            <li class="account"><i class='fa fa-chevron-circle-down'></i> &nbsp;Account</li>
+                            <a href='customer.php'><li><i class="fa fa-user"></i> &nbsp;Profile</li></a>
+                            <a href="registration.php"><li><i class="fa fa-cog"></i> &nbsp;Register</li></a>
+                            <a href='logout.php'><li class="logout"><i class="fa fa-sign-out"></i> &nbsp;Logout</li></a>
+                        </ul>
+                    </li>
+                    <a href="contact.php"><li><i class="fa fa-envelope"></i> &nbsp;Contact</li></a>
                 </ul>
                 <!-- <span><i class="fa fa-phone"></i> 1-888-123-4567</span> -->
             </div>

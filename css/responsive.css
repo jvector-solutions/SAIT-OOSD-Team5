@@ -23,7 +23,7 @@ Description: A default stylesheet for the Travel Experts website, the first thre
         top: 62px;
         right: 0px;
         height: auto;
-        width: auto;
+        width: 100%;
         margin: 0px;
         padding: 0px;
         background-color: rgba(47, 115, 193, 0.9);
@@ -32,7 +32,7 @@ Description: A default stylesheet for the Travel Experts website, the first thre
         border-bottom-right-radius: 3px;
     }
     .nav li {
-        display: block;
+        display: inline-block;
         padding: 7px 15px;
         margin: 0px;
     }
@@ -44,8 +44,9 @@ Description: A default stylesheet for the Travel Experts website, the first thre
         cursor: pointer;
         opacity: 0.8;
     }
-    .style {
-        margin: 0 10px;
+    .email h2 {
+        font-size: 1.7em;   
+        margin-bottom: 10px;
     }
     .pkg, .agency {
         max-width: 600px;
@@ -55,7 +56,7 @@ Description: A default stylesheet for the Travel Experts website, the first thre
         width: 100%;
         border-right: 0px;
         border-bottom: 3px solid #fff;
-        margin-top: -63px;
+        margin-top: -84px;
     }
     .pkg_image img {
         width: inherit;
@@ -66,16 +67,19 @@ Description: A default stylesheet for the Travel Experts website, the first thre
         margin-left: 0;
         display: inline-block
     }
+    .pkg_desc table {
+        width: 95%;
+    }
     .pkg_price {
         left: 118px;
-        top: 30px;
+        top: 16px;
         padding: 5px;
         background-color: rgba(255, 255, 255, 0.7);
         border-radius: 4px;
         border: 1px solid #ccc;
     }
     .pkg_book {
-        top: 114px;
+        top: 108px;
         right: 12px;
         font-size: 14px;
         font-weight: 600;
@@ -103,21 +107,20 @@ Description: A default stylesheet for the Travel Experts website, the first thre
         border-left: 0px;
     }
     .agency {
-        margin: 20px 0;
+        margin: 0 auto;
     }
     
 }
 
-@media screen and (max-width : 400px) {
-    .agency_map {
-        min-width: 100%;
+@media screen and (max-width : 480px) {
+    .agency_map, .body, .header_wrap, .row, .slider, .email, #footer {
+        width: 480px;
     }
-}
-
-@media screen and (max-width : 320px) {
-    .header_wrap {
-        width: 320px;
+    .nav_mobile {
+        position: fixed;
+        top: 14px;
     }
+    
 }
 
 @media screen and (min-width : 1170px) {

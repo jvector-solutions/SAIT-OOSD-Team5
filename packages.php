@@ -9,48 +9,52 @@
     $password = "";
     $dbname = "travelexperts";
 
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-} 
+    // Create connection
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    } 
 
-$sql = "SELECT PackageId, PkgName, PkgStartDate, PkgEndDate, PkgBasePrice, PkgDesc FROM packages";
-$result = $conn->query($sql);
-		
-echo "<div class='container-fluid'> <!-- Start of Container -->
+    $sql = "SELECT PackageId, PkgName, PkgStartDate, PkgEndDate, PkgBasePrice, PkgDesc FROM packages";
+    $result = $conn->query($sql);
+    echo "<div class='container-fluid'> <!-- Start of Container -->
             <!-- Main body begins here -->
              <div id='body'>
                  <div class='packages'>";
-if ($result->num_rows > 0) {
-	// output data of each row
-    while($row = $result->fetch_assoc()) {
-echo "           <div class='row style pkg'>
-                    <div class='pkg_title'><h2> ".$row["PkgName"]." </h2></div>
-                    <div class='pkg_book'><a href='bookings.php?PackageId=".$row["PackageId"]."'>BOOK NOW</a> &nbsp;<span class='book_arrow'><i class='fa fa-arrow-right'></i></span></div>
-                    <div class='pkg_price'><span><i class='fa fa-usd'></i>".$row["PkgBasePrice"]."</span><br>per person, plus GST</div>
-                    <div class='pkg_image'> <img src = 'img/package0".$row["PackageId"].".jpg'></div>
-                    <div class='pkg_desc'>
-                        <p>".$row["PkgDesc"]."</p>
-                        <div class='pkg_start_date'><p>Start date: ".$row["PkgStartDate"]." </p></div>
-                        <div class='pkg_End_date'><p>End Date: ".$row["PkgEndDate"]." </p></div>
+    if ($result->num_rows > 0) {
+        // output data of each row
+        while($row = $result->fetch_assoc()) {
+            echo "      <div class='row style pkg'>
+                        <div class='pkg_title'><h2> ".$row["PkgName"]." </h2></div>
+                        <div class='pkg_book'><a href='bookings.php?PackageId=".$row["PackageId"]."'>BOOK NOW</a> &nbsp;<span class='book_arrow'><i class='fa fa-arrow-right'></i></span></div>
+                        <div class='pkg_price'><span><i class='fa fa-usd'></i>".sprintf("%d",$row["PkgBasePrice"])."</span><br>per person, plus GST</div>
+                        <div class='pkg_image'> <img src = 'img/package0".$row["PackageId"].".jpg'></div>
+                        <div class='pkg_desc'>
+                            <h4><strong>".$row["PkgDesc"]."</strong></h4>
+                            <table><tr>
+                                <th><strong>START DATE</strong></th>
+                                <th><strong>END DATE</strong></th>
+                                <th><strong>DURATION</strong></th>
+                             </tr>
+                             <tr>
+                                <td><strong>".strtoupper(date('M',strtotime($row['PkgStartDate'])))."</strong><br><span class='pkg_day'>".date('d',strtotime($row['PkgStartDate']))."</span><br><strong>".date('Y',strtotime($row['PkgStartDate']))."</strong></td>
+                                <td><strong>".strtoupper(date('M',strtotime($row['PkgEndDate'])))."</strong><br><span class='pkg_day'>".date('d',strtotime($row['PkgEndDate']))."</span><br><strong>".date('Y',strtotime($row['PkgEndDate']))."</strong></td>
+                                <td>for<br><span class='pkg_day'>".floor((strtotime($row['PkgEndDate'])-strtotime($row['PkgStartDate']))/(60*60*24))."</span><br>DAYS</td>
+                             </tr>
+                             </table>
+                        </div>
                     </div>
+                <hr>";	
+        } 
+    } else {
+        echo "0 results";
+    }
+    $conn->close();
+?>	         
                 </div>
-            <hr>";	
-    } 
-} else {
-    echo "0 results";
-}
-$conn->close();
-
-
-?>	         </div>
             </div> <!--- End of body --->
         </div> <!-- End of Container -->
-        <div id="footer">
-            <br><p>Copyright &copy; 2014 Travel Experts Inc. All rights reserved.</p>
-        </div>
-        <a href="#top" class="top"><i class="fa fa-arrow-up fa-lg"></i></a>
-    </body>
-</html>
+<?php
+    include("footer.php");
+?>

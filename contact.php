@@ -29,9 +29,9 @@ Description: Displaying dynamic information for contact page
 				     while($row = mysqli_fetch_assoc($result))
                      { 
 					   $html .= "<div class='row style agency'>";
-					   $html .= "<div class='agency_map'><img src='https://maps.googleapis.com/maps/api/staticmap?center=" . $row["Longitude"] . "," .$row["Latitude"] . "&zoom=17&size=250x300&maptype=roadmap
+					   $html .= "<div class='agency_map'><img src='https://maps.googleapis.com/maps/api/staticmap?center=" . $row["Longitude"] . "," .$row["Latitude"] . "&zoom=14&size=500x800&maptype=roadmap
                                  &markers=color:red%7Clabel:A%7C" . $row["Longitude"] . "," .$row["Latitude"] . "' style='max-width: 100%;'></div>";
-					   $html .= "<div class='agency_address'><h3>AGENCY" . $agencyN . "</h3><hr class='style-two'>";
+					   $html .= "<div class='agency_address'><h3><i class='fa fa-building-o'></i> &nbsp;AGENCY " . $agencyN . "</h3><hr class='style-two'>";
 					   $agencyN = $agencyN + 1;
 					   $sql1 = "select * from agents where AgencyId=" . $row["AgencyId"];
 					   $result1  = mysqli_query($link,$sql1);
@@ -48,7 +48,7 @@ Description: Displaying dynamic information for contact page
 					   $html .= "<tr><td rowspan='2' style='vertical-align: top;'><i class='fa fa-fax fa-lg'></td>
 					             <td><strong>Fax</strong></td></tr>";
 					   $html .= "<tr><td>&nbsp;" . $row["AgncyFax"] . "</td></tr></table></div>";
-					   $html .= "<div class='agents_list'><h3>AGENTS</h3><hr class='style-two'>";
+					   $html .= "<div class='agents_list'><h3><i class='fa fa-users'></i> &nbsp;AGENTS</h3><hr class='style-two'>";
 					   
 					   
 					   
@@ -67,17 +67,10 @@ Description: Displaying dynamic information for contact page
 				   
 				   print($html);
 				   mysqli_close($link);
-				   ?>
+				 ?>
 				   
-                   
-                
-                
-       
          </div> <!-- End of body -->
         </div> <!-- End of Container -->
-        <div id="footer">
-            <br><p>Copyright &copy; 2014 Travel Experts Inc. All rights reserved.</p>
-        </div>
-        <a href="#top" class="top"><i class="fa fa-arrow-up fa-lg"></i></a>
-    </body>
-</html>
+<?php
+    include("footer.php");
+?>

@@ -6,7 +6,7 @@ Course: OOSD Fall 2014
 Description: A default stylesheet for the Travel Experts website, the first threaded project for the course with a focus on HTML, CSS, JavaScript, PHP & MySQL.
 */
 
-html,body {
+html, body {
     height: 100%;
     margin: 0px;
     padding: 0px;
@@ -18,7 +18,6 @@ html, body, div, p, table, tr, td, th, tbody, tfoot, ul, li, ol, dl, dd, dt, fie
     font-family: 'Open Sans', sans-serif;
 	line-height: 1.429em; <!--- Equal to 20px -->
 	color: #939393;
-	-webkit-font-smoothing: subpixel-antialiased;
 }
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Ek Mukta', sans-serif;
@@ -62,24 +61,70 @@ a, a:hover, a:focus {
     display: inline-block;
     float: right;
     width: auto;
-    padding-top: 32px;
+    padding-top: 26px;
     text-align: right;
     margin-right: 10px;
 }
 .nav ul {
-    display: inline-block;
+    display: inline;
     padding: 0;
     margin: 0;
-}
-.nav li {
     list-style: none;
+}
+.nav ul li {
     display: inline-block;
-    padding: 5px 15px;
+    position: relative;
+    padding: 10px 15px;
     font-size: 1.2em;
     font-weight: 500;
     background-color: rgba(47, 115, 193, 0);
     color: #fff;
     border-radius: 3px;
+}
+.nav ul:nth-child(2):hover {
+   background: rgba(47, 115, 193, 0.9);
+}
+.nav ul li ul li.account:hover {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    cursor: pointer;
+}
+.nav ul li ul {
+    display: none;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 117px;
+    text-align: left;
+    visibility: hidden;
+    opacity: 0;
+}
+.nav ul li ul li {
+    display: block;
+    color: #fff;
+    border-radius: 0;
+    padding: 10px 15px;
+}
+.nav ul li.account {
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+    background: rgba(47, 115, 193, 0.9);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+.nav ul li ul li:hover { 
+    background: rgba(47, 115, 193, 1);
+}
+.nav ul li:hover ul {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    border-radius: 0;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+.nav ul li ul li.logout {
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
 }
 .nav.home {
     padding: 5px;
@@ -203,28 +248,37 @@ a.lang:active {
     display: block;
 }
 .style {
+    display: block;
     border: 1px solid #ccc;
     background-color: rgba(95, 118, 149, 0.1);
     box-shadow: 2px 2px 2px -2px rgba(0,0,0,0.6);
     border-radius: 2px;
-    padding: 10px 10px;
+    padding: 20px 20px;
     margin: 0;
 }
 #footer {
     clear: both;
     display: block;
     text-align: center;
-    height: 110px;
+    height: auto;
     width: 100%;
     color: #f4f4f4;
     background-color: rgb(108, 108, 108);
     border-top: 7px solid rgb(47, 115, 193);
+    padding: 20px 0;
+}
+.socialmedia img {
+    width: 28px;
+    height: 28px;
+    opacity: 0.7;
+}
+.socialmedia img:hover {
+    opacity: 1;
+    cursor: pointer;
 }
 .email {
     width: 100%;
-    height: 76px;
-    clear: both;
-    display: block;
+    display: table;
     background-color: rgba(47, 115, 193,1); 
     padding: 15px 0;
     color: #fff;
@@ -279,8 +333,7 @@ p.label {
 .pkg:hover {
     -moz-box-shadow:    0 0 5px 1px rgba(0, 0, 0, 0.5);
     -webkit-box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.5);
-    box-shadow:         0 0 5px 1px rgba(0, 0, 0, 0.5);
-    
+    box-shadow:         0 0 5px 1px rgba(0, 0, 0, 0.5); 
 }
 .pkg_title {
     width: auto;
@@ -308,31 +361,52 @@ p.label {
     border-right: 3px solid #fff;
 }
 .pkg_image img {
-    width: 250px;
+    width: 300px;
     border-bottom-left-radius: 28px;
 }
 .pkg_desc {
     display: block;
-    padding: 10px 10px 10px 20px;
-    margin-left: 250px;
+    padding: 10px 0 10px 20px;
+    float: middle;
+    margin-left: 300px;
+}
+.pkg_desc table {
+    border: 1px solid #999;
+    text-align: center;
+    width: 330px;
+    margin-top: 14px;
+}
+.pkg_desc table th, .pkg_desc table td {
+    padding: 1px 10px;
+    border: 1px solid #999;
+    height: 30px;
+    text-align: center;
+}
+.pkg_desc table th {
+    background-color: #555;
+    color: #fff;
+}
+.pkg_day {
+    color: rgb(222, 55, 55);
+    font-size: 30px;
+    font-weight: 600;
 }
 .pkg_price {
     position: relative;
     float: right;
-    top: 12px;
-    right: -130px;
+    top: 22px;
+    right: -114px;
     text-align: center;
 }
 .pkg_price span {
-    font-size: 46px;  
+    font-size: 52px;  
     font-weight: 600;
     color: rgb(222, 55, 55);
-
 }
 .pkg_book {
     position: relative;
-    right: 12px;
-    top: 100px;
+    right: 26px;
+    top: 120px;
     width: auto;
     height: auto;
     float: right;
@@ -351,12 +425,79 @@ p.label {
     cursor: pointer;
     background-color: rgba(27, 64, 109, 1);
 }
-span.book_arrow {
+.book_arrow {
     border-left: 1px solid rgba(255, 255, 255, 0.5);   
     padding: 4px 0 4px 10px;
 }
 .packages hr {
     margin: 12px;
+}
+.bookings, .customer, .payment {
+    margin: 8px 0;
+}
+.book_num {
+    margin: 0 10px;   
+}
+.book_print {
+    float: right;
+    margin-right: 20px;
+}
+.book_pkg_info {
+    border-radius: 13px;
+}
+.book_pkg_title {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: auto;
+    background-color: rgba(47, 115, 193, 0.8);
+    padding: 10px;
+}
+.book_pkg_title h2 {
+    color: #fff;
+    margin-left: 10px;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.59);
+}
+.book_img {
+    margin-top: -54px;
+    border: 1px solid #666;
+}
+.book_desc {
+    display: block;
+    width: 100%;
+    height: 60px;
+    position: relative;
+    left: 0;
+    top: -60px;
+    background-color: rgba(255, 255, 255, 0.75);
+    padding: 10px;
+    margin-bottom: -60px;
+    border-left: 1px solid #666;
+    border-right: 1px solid #666;
+}
+.book_dates {
+    display: block;
+    width: 100%;
+    border: 1px solid #666;
+    vertical-align: top;
+    padding: 0;
+}
+.book_dates table {
+    width: 100%;
+    padding: 4px 0;
+    margin: 0;
+    margin: 0 auto;
+}
+.book_dates tr th,.book_dates tr td {
+    text-align: center;
+    padding: 8px 0;
+}
+.book_dates tr th {
+    background-color: #555;
+    color: #fff;  
+}
+.payment {
+    margin: 
 }
 
 /****************** Bookings Page *********************/
@@ -376,6 +517,7 @@ span.agents_title {
     left: 400px;
 }
 .agency {
+    overflow: auto;
     clear: both;
     display: block;
     height: 100%;
@@ -393,7 +535,7 @@ span.agents_title {
 .agency_address {
     display: inline-block;
     height: 100%;
-    max-width: 200px;
+    min-width: 200px;
     vertical-align: top;
     padding: 10px;
     margin: 0px;
