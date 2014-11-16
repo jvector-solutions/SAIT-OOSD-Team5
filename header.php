@@ -24,7 +24,7 @@
         <link rel="stylesheet" type="text/css" href="css/transitions.css">
         
         <!-- Google Font Code -->
-        <link href='http://fonts.googleapis.com/css?family=Open+Sans:700,600,400|Ek+Mukta:400,600,700' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:700,600,400|Ek+Mukta:400,600,700|Sintony:700' rel='stylesheet' type='text/css'>
         
     </head>
     <body>
@@ -43,7 +43,7 @@
                             <a href='logout.php'><li class="logout"><i class="fa fa-sign-out"></i> &nbsp;Logout</li></a>
                         </ul>
                     </li>
-                    <a href="contact.php"><li><i class="fa fa-envelope"></i> &nbsp;Contact</li></a>
+                    <a href="contact.php"><li><i class="fa fa-info-circle"></i> &nbsp;About Us</li></a>
                 </ul>
                 <!-- <span><i class="fa fa-phone"></i> 1-888-123-4567</span> -->
             </div>

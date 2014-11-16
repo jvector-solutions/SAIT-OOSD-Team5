@@ -7,7 +7,7 @@ Description: Displaying dynamic information for contact page
 
 <?php
     $title = "Contact";
-    $display = "Contact Information";
+    $display = "About the Travel Experts";
     $slider = "04";
     include('header.php');
 ?>
@@ -15,8 +15,15 @@ Description: Displaying dynamic information for contact page
             
             <!-- Main body begins here -->
             <div id="body">
-                
+                <h1>About Us</h1>
+                <div class="row style about">
+                    <div class="col-xs-12 col-sm-10 col-md-10">
+                        <img src="img/logo.png"><br>
+                        <p>The <strong>Travel Experts</strong> aim to provide you and your family with the best packaged deals and prices from our exceptional customer service team who are here to help you plan the perfect vacation, satisfaction guaranteed!<br><br>To inquire about our packages, make a booking, or to speak with one of our agents please contact us toll-free at: <h2><i class="fa fa-phone-square"></i> &nbsp;1-800-222-3456</h2></p>
+                    </div>
+                </div>
                 <!-- BEGIN Agency Information Row //-->
+                <h1>Office Locations &amp; Contact</h1>
 				<?php
 				   $link=mysqli_connect("localhost","root","","travelexperts") or 
 	                         die("Connect error:". mysqli_connect_error());
@@ -44,10 +51,10 @@ Description: Displaying dynamic information for contact page
 					   $html .= "<tr><td>&nbsp;</td></tr>";
 					   $html .= "<tr><td rowspan='2' style='vertical-align: top;'><i class='fa fa-phone fa-2x'></i></td>
 					             <td><strong>Telephone</strong></td></tr>";
-					   $html .= "<tr><td>&nbsp;" . $row["AgncyPhone"] . "</td></tr>";
+					   $html .= "<tr><td>&nbsp;(".substr($row["AgncyPhone"], 0, 3).") ".substr($row["AgncyPhone"], 3, 3)."-".substr($row["AgncyPhone"],6)."</td></tr>";
 					   $html .= "<tr><td rowspan='2' style='vertical-align: top;'><i class='fa fa-fax fa-lg'></td>
 					             <td><strong>Fax</strong></td></tr>";
-					   $html .= "<tr><td>&nbsp;" . $row["AgncyFax"] . "</td></tr></table></div>";
+					   $html .= "<tr><td>&nbsp;(".substr($row["AgncyFax"], 0, 3).") ".substr($row["AgncyFax"], 3, 3)."-".substr($row["AgncyFax"],6)."</td></tr></table></div>";
 					   $html .= "<div class='agents_list'><h3><i class='fa fa-users'></i> &nbsp;AGENTS</h3><hr class='style-two'>";
 					   
 					   

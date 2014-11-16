@@ -52,6 +52,9 @@ Description: A default stylesheet for the Travel Experts website, the first thre
         max-width: 600px;
         margin: 0 auto;
     }
+    .pkg {
+        height: auto;
+    }
     .pkg_image {
         width: 100%;
         border-right: 0px;
@@ -65,10 +68,15 @@ Description: A default stylesheet for the Travel Experts website, the first thre
     .pkg_desc {
         width: 100%;
         margin-left: 0;
-        display: inline-block
+        display: inline-block;
+        height: auto;
     }
-    .pkg_desc table {
-        width: 95%;
+    .pkg_table table {
+        width: 100%;
+        border: 0px;
+    }
+    .pkg_table table tr:last-child td:first-child {
+        border-bottom-left-radius: 28px;
     }
     .pkg_price {
         left: 118px;
@@ -95,6 +103,13 @@ Description: A default stylesheet for the Travel Experts website, the first thre
     span.book_arrow {
         border-left: 1px solid rgba(51, 51, 51, 0.9); 
     }
+    .paymentseal {
+        width: 100%;
+        text-align: center;
+    }
+    .paymentseal img {
+        display: inline-block;
+    }
     .agents {
         max-width: 880px;
         margin-left: 15px;
@@ -108,6 +123,14 @@ Description: A default stylesheet for the Travel Experts website, the first thre
     }
     .agency {
         margin: 0 auto;
+    }
+    .main_img_name {
+        font-size: 13px;
+        font-weight: 700;
+        padding: 10px 0 10px 10px;
+    }
+    .main_img_price {
+        font-size: 18px;
     }
     
 }

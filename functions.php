@@ -1,5 +1,20 @@
 <?php
 
+// Written by John
+function bookingNumber($chars,$nums) {
+	$letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";	
+    $numbers = "0123456789";
+    $str = "";
+	for( $i = 0; $i < $chars; $i++ ) {
+		$str .= $letters[ rand( 0, 26 - 1 ) ];
+	}
+    for ($j = 0; $j < $nums; $j++) {
+        $str .= $numbers[ rand( 0, 10 - 1 )];
+    }
+
+	return $str;
+}
+
 // Written by Megha
 function insertCustomer($custData) {
 	//customer data..

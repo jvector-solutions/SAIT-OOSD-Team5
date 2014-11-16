@@ -26,12 +26,13 @@
         // output data of each row
         while($row = $result->fetch_assoc()) {
             echo "      <div class='row style pkg'>
-                        <div class='pkg_title'><h2> ".$row["PkgName"]." </h2></div>
+                        <div class='pkg_title'><h2>".$row["PkgName"]." </h2></div>
                         <div class='pkg_book'><a href='bookings.php?PackageId=".$row["PackageId"]."'>BOOK NOW</a> &nbsp;<span class='book_arrow'><i class='fa fa-arrow-right'></i></span></div>
-                        <div class='pkg_price'><span><i class='fa fa-usd'></i>".sprintf("%d",$row["PkgBasePrice"])."</span><br>per person, plus GST</div>
+                        <div class='pkg_price'><span><i class='fa fa-usd'></i>".sprintf("%d",$row["PkgBasePrice"])."</span><strong>CAD</strong><br>per person, plus GST</div>
                         <div class='pkg_image'> <img src = 'img/package0".$row["PackageId"].".jpg'></div>
                         <div class='pkg_desc'>
-                            <h4><strong>".$row["PkgDesc"]."</strong></h4>
+                            <div class='pkg_desc_box'><h4><strong>".$row["PkgDesc"]."</strong></h4></div>
+                            <div class='pkg_table'>
                             <table><tr>
                                 <th><strong>START DATE</strong></th>
                                 <th><strong>END DATE</strong></th>
@@ -43,6 +44,7 @@
                                 <td>for<br><span class='pkg_day'>".floor((strtotime($row['PkgEndDate'])-strtotime($row['PkgStartDate']))/(60*60*24))."</span><br>DAYS</td>
                              </tr>
                              </table>
+                             </div>
                         </div>
                     </div>
                 <hr>";	
