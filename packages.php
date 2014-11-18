@@ -1,17 +1,27 @@
+<!-- 
+Packages.php page 
+Author Name: Mahmood Qureshi
+Creation Date: November 5th, 2014
+Course: OOSD Fall 2014
+Description: Displaying packages information from database
+-->
+
+
 <?php
-    $title = "Packages";
+    //declaring variables
+	$title = "Packages";
     $display = "Vacation Packages";
     $slider = "03";
-    include('header.php');
+    include('header.php'); // calling external header file
 		
-    $servername = "localhost";
+    $servername = "localhost"; //Declaring variables containing servername, username, PW and DB name.
     $username = "root";
     $password = "";
     $dbname = "travelexperts";
 
-    // Create connection
+    // Create connection with database
     $conn = new mysqli($servername, $username, $password, $dbname);
-    // Check connection
+    // Check connection with database
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     } 
@@ -29,7 +39,7 @@
                         <div class='pkg_title'><h2>".$row["PkgName"]." </h2></div>
                         <div class='pkg_book'><a href='bookings.php?PackageId=".$row["PackageId"]."'>BOOK NOW</a> &nbsp;<span class='book_arrow'><i class='fa fa-arrow-right'></i></span></div>
                         <div class='pkg_price'><span><i class='fa fa-usd'></i>".sprintf("%d",$row["PkgBasePrice"])."</span><strong>CAD</strong><br>per person, plus GST</div>
-                        <div class='pkg_image'> <img src = 'img/package0".$row["PackageId"].".jpg'></div>
+                        <div class='pkg_image'> <img src = 'img/package0".$row["PackageId"].".jpg'></div> 
                         <div class='pkg_desc'>
                             <div class='pkg_desc_box'><h4><strong>".$row["PkgDesc"]."</strong></h4></div>
                             <div class='pkg_table'>
@@ -52,7 +62,7 @@
     } else {
         echo "0 results";
     }
-    $conn->close();
+    $conn->close(); //closing connection with database
 ?>	         
                 </div>
             </div> <!--- End of body --->
