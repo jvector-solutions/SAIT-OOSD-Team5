@@ -235,7 +235,7 @@
                           </div>
                           <div class="form-group">
                             <div class="col-sm-offset-4 col-sm-10">
-                              <button type="submit" class="btn btn-default">SUBMIT</button>
+                              <button type="submit" class="btn btn-primary">SUBMIT</button>
                             </div>
                           </div>
                         </form>

@@ -1,4 +1,4 @@
-// Written by John
+// Function dropMenu() written by John
 function dropMenu(id) {
    var e = document.getElementById(id);
    if(e.style.display == 'block') {
@@ -8,7 +8,7 @@ function dropMenu(id) {
    }
 }
 
-// Written by Megha
+// Function formValidation() written by Megha
 function  formvalidation() {
 	var error = 0;
 	if(!validateFname(document.getElementById('fname').value)) {
@@ -55,6 +55,7 @@ function  formvalidation() {
 	
 }
 
+// Function validateFname() written by Megha
 function validateFname(fname) {
 	var re = /[A-Za-z - ']$/;
 	if(re.test(fname)) {
@@ -67,6 +68,7 @@ function validateFname(fname) {
 	}
 }
 
+// Function validateLname() written by Megha
 function validateLname(lname) {
 	var re = /[A-Za-z - ']$/;
 	if(re.test(lname)) {
@@ -78,6 +80,8 @@ function validateLname(lname) {
 		return false;
 	}
 }
+
+// Function validateEmail() written by Megha
 function validateEmail(email) {
     var re = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,4}$/;
     if(re.test(email)) {
@@ -89,6 +93,8 @@ function validateEmail(email) {
         return false;
     }		
 }
+
+// Function validateAddress() written by Megha
 function validateAddress(add1) {
 	if(document.register.add1.value != "") {
 		document.getElementById('add1').style.background = '#ccffcc';
@@ -100,6 +106,8 @@ function validateAddress(add1) {
 		return false;
 	}
 }
+
+// Function validateCity() written by Megha
 function validateCity(city) {
 	var re = /[A-Za-z - ']$/;
 	if(re.test(city)) {
@@ -111,6 +119,8 @@ function validateCity(city) {
 		return false;
 	}
 }
+
+// Function validateProv() written by Megha
 function validateProv(province)	{
 	var re = /^[?:AB|BC|MB|N[BLTSU]|ON|PE|QC|SK|YT]$/;
 	if(re.test(province)) {
@@ -122,6 +132,8 @@ function validateProv(province)	{
 		return false;
 	}
 }
+
+// Function validatePostal() written by Megha
 function validatePostal(postal)	{
     var re=/^([A-Z][0-9][A-Za-z] [0-9][A-Z][0-9])$/;
     if(re.test(postal)) {
@@ -133,6 +145,8 @@ function validatePostal(postal)	{
         return false;
     }
 }	
+
+// Function validatePhone() written by Megha
 function validatePhone(phone) {
     var re=/^[(]{0,1}[0-9]{3}[)]{0,1}[-\s\.]{0,1}[0-9]{3}[-\s\.]{0,1}[0-9]{4}$/;
     if(re.test(phone)) {

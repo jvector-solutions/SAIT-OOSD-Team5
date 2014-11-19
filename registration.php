@@ -1,9 +1,19 @@
+<!-- registration.php page 
+Author Name: Megha
+Creation Date: November 5th, 2014
+Course: OOSD Fall 2014
+Description: Displaying a static form for the registration page with lots of Javascript and PHP functionality to validate the forms (both client and server-side) and to store form field and login field information in the database.
+//-->
+
+
+
 <?php
+    session_start();
     $title = "Registration";
     $display = "Login or Register";
     $slider = "02";
 
-    // Written by John
+    // Function verifyLogin() written by John
     function verifyLogin($u,$p) {
         $link = mysqli_connect("localhost","root","","travelexperts") or die("Error: " . mysqli_connect_error());
         $sql = "SELECT password FROM users WHERE userid='$u'";
@@ -20,8 +30,7 @@
         mysqli_close($link);
     }
 
-    // Login Functions
-    session_start();
+    // Login Functions written by Brian and John
     if (!isset($_SESSION['loggedin'])) {
         $message="<h4 style='text-align: center;'>Please log in.</h4><br>";
         if (isset($_POST['login_email'])) {
@@ -34,17 +43,27 @@
                 if (isset($_GET['PackageId'])) {
                     header("Location: $pagename?PackageId=$PackageId");
                     //header("Location: registration.php");
+                } else if($_SESSION['pagename']="customer.php") {
+                    $_SESSION['loggedin'] = true;
+                    header("Location: customer.php");
                 } else {
                     $message = "<h4 style='color: green; text-align: center;'><i class='fa fa-exclamation-triangle'></i> You are successfully logged in.</h4><br>";
+                    header("Location: registration.php");
                 }
             } else {
                 // Set Login Error Message
                 $message = "<h4 style='color: red; text-align: center;'><i class='fa fa-exclamation-triangle'></i> Incorrect Email or Password.</h4><br>";
             }
         }
+    } else {
+        header("Location: customer.php");
     }
 include("header.php");
 ?>
+
+
+        <!-- Form HTML and Javascript validation written by Megha //-->
+
         <div class="container-fluid"> <!--- Start of Container --->
             <!--- Main body begins here --->
             <div id="body">
@@ -61,7 +80,7 @@ include("header.php");
                             <div class="form-group">
                                 <label for="login_email" class="col-sm-4 control-label">Email</label>
                                 <div class="col-sm-8">
-                                    <input type="text" name="login_email" class="form-control" id="login_email" required="" placeholder="Enter login email address">
+                                    <input type="text" name="login_email" class="form-control" id="login_email" required="" placeholder="Email Address">
 									<span id="loginemailError" style="display:none">You must enter your Email address.</span>
                                 </div>
                             </div>
@@ -72,8 +91,9 @@ include("header.php");
                                 </div>
                             </div>
                             <div class="form-group">
-                                <div class="col-sm-offset-4 col-sm-8">
-                                    <button type="submit" class="btn btn-default">Sign in</button>
+                                <div class="col-sm-12" style="text-align: center;">
+                                    <button type="submit" class="btn btn-primary">Sign in and Continue</button>
+                                    <p style="margin: 15px 0 -15px 0; color: rgba(47, 115, 193, 1); text-decoration: underline; "><a href="#">Forgot username or password?</a></p>
                                 </div>
                             </div>
                         </form>
@@ -182,7 +202,7 @@ include("header.php");
                         </div>
                         <div class="form-group">
                             <div class="col-sm-offset-1 col-sm-10">
-                                <button type="submit" class="btn btn-default" name="submit">Submit</button>
+                                <button type="submit" class="btn btn-primary" name="submit">Submit</button>
                             </div>
                         </div>
                         </form>

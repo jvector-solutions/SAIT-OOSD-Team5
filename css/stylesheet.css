@@ -1,10 +1,11 @@
-@charset "UTF-8";
-/* CSS Document 
+/* CSS Document stylesheet.css
 Author Name: John Nguyen
 Creation Date: November 4th, 2014
 Course: OOSD Fall 2014
-Description: A default stylesheet for the Travel Experts website, the first threaded project for the course with a focus on HTML, CSS, JavaScript, PHP & MySQL.
+Description: The stylesheet for the entire Travel Experts website including the design and format for each webpage (index.php, registration.php, packages.php, customer.php, contact.php, header.php, and footer.php)
 */
+
+@charset "UTF-8";
 
 html, body {
     height: 100%;
@@ -81,10 +82,7 @@ a, a:hover, a:focus {
     color: #fff;
     border-radius: 3px;
 }
-.nav ul:nth-child(2):hover {
-   background: rgba(47, 115, 193, 0.9);
-}
-.nav ul li ul li.account:hover {
+.nav ul li ul li.active_nav:hover {
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
     cursor: pointer;
@@ -94,7 +92,7 @@ a, a:hover, a:focus {
     position: absolute;
     top: 0px;
     left: 0px;
-    width: 117px;
+    width: auto;
     text-align: left;
     visibility: hidden;
     opacity: 0;
@@ -105,7 +103,7 @@ a, a:hover, a:focus {
     border-radius: 0;
     padding: 10px 15px;
 }
-.nav ul li.account {
+.nav ul li.active_nav {
     border-top-right-radius: 3px;
     border-top-left-radius: 3px;
     background: rgba(47, 115, 193, 0.9);
@@ -121,6 +119,12 @@ a, a:hover, a:focus {
     border-radius: 0;
     border-bottom-left-radius: 3px;
     border-bottom-right-radius: 3px;
+    background: rgba(47, 115, 193, 0.9);
+    -webkit-transition: all 0;
+    -moz-transition: all 0; 
+    -ms-transition: all 0;
+    -o-transition: all 0; 
+    transition: all 0;
 }
 .nav ul li ul li.logout {
     border-bottom-left-radius: 3px;
@@ -283,6 +287,7 @@ a.lang:active {
     background-color: rgba(47, 115, 193,0.9); 
     padding: 15px 0;
     color: #fff;
+    margin-bottom: 0;
 }
 hr.style-one {
     border: 0;
@@ -377,7 +382,7 @@ a.group:hover {
     height: auto;
     max-width: 728px;
     text-align: center;
-    margin: 20px auto;
+    margin: 40px auto;
 }
 .main_img {
     padding-left: 30px;
@@ -639,18 +644,18 @@ p.label {
     margin: 0;
     margin: 0 auto;
 }
-.book_dates tr th,.book_dates tr td {
+.book_dates tr th {
     text-align: center;
     padding: 6px 8px;
     margin: 0;
-}
-.book_dates tr td {
-    padding: 12px 6px;
-    font-size: 12px;
-}
-.book_dates tr th {
     background-color: #555;
     color: #fff;  
+}
+.book_dates tr td {
+    text-align: center;
+    margin: 0;
+    padding: 12px 6px;
+    font-size: 12px;
 }
 .totalprice h4 {
     font-size: 24px;
@@ -663,6 +668,24 @@ p.label {
 .book_prof_add td {
     padding: 1px 3px;
 }
+
+/****************** Contact Page *********************/
+.previous_bookings table {
+    border: 2px solid #ccc;
+    width: 100%;
+}
+.previous_bookings tr th {
+    padding: 6px 2px 6px 10px;
+    margin: 0;
+    background-color: #555;
+    color: #fff;  
+}
+.previous_bookings tr td {
+    margin: 0;
+    padding: 12px 2px 12px 10px;
+    font-size: 14px;
+}
+
 
 
 /****************** Contact Page *********************/

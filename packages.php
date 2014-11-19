@@ -1,4 +1,12 @@
+<!-- packages.php page 
+Author Name: Mahmood 
+Creation Date: November 5th, 2014
+Course: OOSD Fall 2014
+Description: Displaying dynamic information for the packages page
+//-->
+
 <?php
+    session_start();
     $title = "Packages";
     $display = "Vacation Packages";
     $slider = "03";

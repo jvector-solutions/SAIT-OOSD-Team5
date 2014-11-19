@@ -1,3 +1,10 @@
+<!-- header.php page 
+Author Name: John Nguyen
+Creation Date: November 7th, 2014
+Course: OOSD Fall 2014
+Description: Displaying dynamic navigation menu depending on the PHP Sessions
+//-->
+
 <?php
     include("functions.php");
 ?>
@@ -19,9 +26,9 @@
         <!-- Stylesheets -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="css/font-awesome-4.2.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="css/transitions.css">
         <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
         <link rel="stylesheet" type="text/css" href="css/responsive.css">
-        <link rel="stylesheet" type="text/css" href="css/transitions.css">
         
         <!-- Google Font Code -->
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:700,600,400|Ek+Mukta:400,600,700|Sintony:700' rel='stylesheet' type='text/css'>
@@ -34,16 +41,26 @@
             <div class="nav" id="dropmenu">
                 <ul>
                     <a href="index.php"><li class="home"><i class="fa fa-home fa-lg"></i></li></a>
-                    <a href="packages.php"><li><i class="fa fa-plane"></i> &nbsp;Vacations</li></a>
-                    <li><i class="fa fa-chevron-circle-right"></i> &nbsp;Account
-                        <ul>
-                            <li class="account"><i class='fa fa-chevron-circle-down'></i> &nbsp;Account</li>
-                            <a href='customer.php'><li><i class="fa fa-user"></i> &nbsp;Profile</li></a>
-                            <a href="registration.php"><li><i class="fa fa-cog"></i> &nbsp;Register</li></a>
-                            <a href='logout.php'><li class="logout"><i class="fa fa-sign-out"></i> &nbsp;Logout</li></a>
-                        </ul>
-                    </li>
-                    <a href="contact.php"><li><i class="fa fa-info-circle"></i> &nbsp;About Us</li></a>
+                    <a href="packages.php"><li>&nbsp;<i class="fa fa-plane"></i> &nbsp;Vacations&nbsp;</li></a>
+                    <?php
+                        if (!isset($_SESSION['loggedin'])) {
+                          echo"  <li>&nbsp;<i class='fa fa-sign-in'></i> &nbsp;Login&nbsp;&nbsp;&nbsp;
+                                    <ul>
+                                        <a href='registration.php'><li class='active_nav'>&nbsp;<i class='fa fa-sign-in'></i> &nbsp;Login&nbsp;&nbsp;&nbsp;</li></a>
+                                        <a href='logout.php'><li class='logout'>&nbsp;<i class='fa fa-sign-out'></i> &nbsp;Logout</li></a>
+                                    </ul>
+                                </li>";
+                        } else {
+                          echo"  <li>&nbsp;<i class='fa fa-user'></i> &nbsp;Profile&nbsp;&nbsp;&nbsp;
+                                    <ul>
+                                        <a href='customer.php'><li class='active_nav'>&nbsp;<i class='fa fa-user'></i> &nbsp;Profile&nbsp;&nbsp;&nbsp;</li></a>
+                                        <a href='logout.php'><li class='logout'>&nbsp;<i class='fa fa-sign-out'></i> &nbsp;Logout</li></a>
+                                    </ul>
+                                </li>";  
+                            
+                        }
+                    ?>
+                    <a href="contact.php"><li>&nbsp;<i class="fa fa-info-circle"></i> &nbsp;About Us&nbsp;</li></a>
                 </ul>
                 <!-- <span><i class="fa fa-phone"></i> 1-888-123-4567</span> -->
             </div>

@@ -6,6 +6,7 @@ Description: Displaying dynamic information for contact page
 //-->
 
 <?php
+    session_start();
     $title = "Contact";
     $display = "About the Travel Experts";
     $slider = "04";

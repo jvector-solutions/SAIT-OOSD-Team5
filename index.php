@@ -1,4 +1,12 @@
+<!-- index.php page 
+Author Name: John Nguyen
+Creation Date: November 5th, 2014
+Course: OOSD Fall 2014
+Description: Displaying static information and features for the index page.
+//-->
+
 <?php
+    session_start();
     $title = "Home";
     $display = "";
     $slider = "01";
