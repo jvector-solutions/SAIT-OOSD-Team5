@@ -4,6 +4,9 @@ Creation Date: November 7th, 2014
 Course: OOSD Fall 2014
 Description: Displaying dynamic navigation menu depending on the PHP Sessions
 //-->
+<?php
+    date_default_timezone_set("america/edmonton"); //setting default time zone for Calgary
+?>
 
 <!DOCTYPE html>
 <html lang="en">

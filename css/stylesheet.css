@@ -160,7 +160,7 @@ a, a:hover, a:focus {
 }
 .welcome h1 {
     position: relative;
-    top: 240px;
+    top: 225px;
     padding: 4px 22px;
     width: auto;
     color: rgb(255, 255, 255);
@@ -376,6 +376,13 @@ a.group:hover {
 .main_right {
     padding: 20px 10px;
 }
+.sidebar {
+    display: block;
+    height: auto;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 3px;
+}
 .advertisement {
     display: block;
     height: auto;
@@ -499,7 +506,7 @@ p.label {
     display: block;
     width: 100%;
     height: 80px;
-    padding: 5px 10px;
+    padding: 5px 0 5px 10px;
 }
 .pkg_table {
     display: block;
@@ -513,7 +520,7 @@ p.label {
 }
 .pkg_table table th, .pkg_desc table td {
     padding: 1px 10px;
-    border: 1px solid #eee;
+    border: 1px solid #ccc;
     height: 27px;
     text-align: center;
 }
@@ -576,8 +583,11 @@ p.label {
 .bookings .style {
     margin: 0 15px;
 }
-.bookings, .customer, .payment {
+.bookings, .payment {
     margin: 8px 0;
+}
+.customer {
+    margin: 8px 0 30px 0;
 }
 .paymentseal img {
     display: block;
@@ -605,7 +615,7 @@ p.label {
     width: 100%;
     height: auto;
     background-color: rgba(47, 115, 193, 0.8);
-    padding: 10px;
+    padding: 5px 10px;
 }
 .book_pkg_title h2 {
     color: #fff;
@@ -613,19 +623,19 @@ p.label {
     text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
 .book_img {
-    margin-top: -54px;
+    margin-top: -44px;
     border: 1px solid #666;
 }
 .book_desc {
     display: block;
     width: 100%;
-    height: 60px;
+    height: 80px;
     position: relative;
     left: 0;
-    top: -60px;
+    top: -80px;
     background-color: rgba(255, 255, 255, 0.9);
     padding: 10px;
-    margin-bottom: -60px;
+    margin-bottom: -80px;
     border-left: 1px solid #666;
     border-right: 1px solid #666;
 }
@@ -655,9 +665,7 @@ p.label {
     padding: 12px 6px;
     font-size: 12px;
 }
-.totalprice h4 {
-    font-size: 20px;
-}
+
 .book_prof_add, .book_prof_num {
     border: 0;
     width: 90%; 
@@ -682,12 +690,12 @@ p.label {
     background-color: #555;
     color: #fff;  
 }
-.previous_bookings tr td {
+.current_bookings tr td, .previous_bookings tr td {
     margin: 0;
-    padding: 10px 2px 12px 10px;
+    padding: 10px 10px 12px 10px;
     font-size: 14px;
 }
-.previous_bookings tr:nth-child(odd) {
+.current_bookings tr:nth-child(odd), .previous_bookings tr:nth-child(odd) {
     background-color: #ddd;
 }
 

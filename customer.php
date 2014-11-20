@@ -1,20 +1,27 @@
+<!-- customer.php page 
+Author Name: John Nguyen
+Creation Date: November 13th, 2014
+Course: OOSD Fall 2014
+Description: Displaying dynamic information for the customer that lists current bookings, previous bookings, and contact information from the Database
+//-->
+
 <?php
     session_start();
-    
     $cust_email = $_SESSION['cust_email'];
     $link = mysqli_connect("localhost","root","","travelexperts") or die("Connection Error: " . mysqli_error());
-
-	$sql = "select * from customers where CustEmail = '$cust_email'";
-	$result = mysqli_query($link,$sql);
-	while ($row1 = mysqli_fetch_array($result)) {
+	$sql1 = "select * from customers where CustEmail = '$cust_email'";
+	$result1 = mysqli_query($link,$sql1);
+	while ($row1 = mysqli_fetch_array($result1)) {
         extract($row1);          // extract() will assign each row as a variable
     }
     $sql2 ="SELECT BookingDate, BookingNo, BookingId FROM bookings WHERE CustomerId='$CustomerId' ORDER BY BookingDate";
     $result2 = mysqli_query($link,$sql2);
 
 	$title = "Customer";
-    $display = "Profile <i class='fa fa-angle-double-right'></i> $CustFirstName";
-	$slider = "05";
+    $display = "Profile <i class='fa fa-angle-double-right'></i> $CustFirstName $CustLastName";
+	$slider = "06";
+    $date = date("Y-m-d");
+
     include('header.php');
     echo "
 <div class='container-fluid'> <!-- Start of Container -->
@@ -29,7 +36,14 @@
                                     <th><strong>Package</strong></th>
                                     <th><strong>Start Date</strong></th>
                                     <th><strong>End Date</strong></th>
-                                    <th><strong>Total Price</strong></th>
+                                    <th><strong>Details</strong></th>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
                                 </tr>
                             </table>
                         </div>    
@@ -45,8 +59,8 @@
                                     <th><strong>Total Price</strong></th>
                                 </tr>";
                                 while ($row2 = mysqli_fetch_array($result2)) {
-                                    extract($row2); 
                                     if ($row2['BookingId']>0) {
+                                        extract($row2);
                                         $sql3 ="SELECT TripEnd, Destination, BasePrice, BookingId FROM bookingdetails WHERE BookingId='$BookingId'";
                                         $result3 = mysqli_query($link,$sql3);
                                         $result3 = mysqli_query($link,$sql3);

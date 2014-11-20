@@ -19,7 +19,7 @@ Description: Displaying dynamic information for contact page
                 <h1>About Us</h1>
                 <div class="row style about">
                     <div class="col-xs-12 col-sm-10 col-md-10">
-                        <img src="img/logo.png"><br>
+                        <img src="img/logo2.png"><br>
                         <p>The <strong>Travel Experts</strong> aim to provide you and your family with the best packaged deals and prices from our exceptional customer service team who are here to help you plan the perfect vacation, satisfaction guaranteed!<br><br>To inquire about our packages, make a booking, or to speak with one of our agents please contact us toll-free at: <h2><i class="fa fa-phone-square"></i> &nbsp;1-800-222-3456</h2></p>
                     </div>
                 </div>

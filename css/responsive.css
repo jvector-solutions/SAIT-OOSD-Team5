@@ -132,7 +132,6 @@ Description: A responsive stylesheet for the entire Travel Experts website
     .main_img_price {
         font-size: 18px;
     }
-    
 }
 
 @media screen and (max-width : 480px) {

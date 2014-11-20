@@ -120,11 +120,8 @@ Description: Displaying static information and features for the index page.
                             </div>
                             <div class="col-xs-12 col-md-5">
                                 <div class="main_right">
-                                    <div class="col-xs-12 col-sm-12">
-                                        <h3><strong>Save up to 50% on your next vacation!</strong></h3><br>
-                                    </div>
-                                    <div class="col-xs-12 col-sm-12">
-                                        <h4>Call us at 1-800-222-3456</h4>
+                                    <div class="col-xs-12 col-sm-12 sidebar">
+                                        <img src="img/sidebar.png" class="img-responsive">
                                     </div>
                                 </div>
                             </div>
@@ -143,37 +140,48 @@ Description: Displaying static information and features for the index page.
                         <div style="text-align: center;"><i class="fa fa-star-o fa-3x" style="color: #edc800;"></i> <i class="fa fa-star-o fa-3x" style="color: #edc800;"></i> <i class="fa fa-star-o fa-3x" style="color: #edc800;"></i> <i class="fa fa-star-o fa-3x" style="color: #edc800;"></i> <i class="fa fa-star-o fa-3x" style="color: #edc800;"></i><br>
                         <h2 style="font-weight: 600; font-family: 'Sintony', sans-serif;"><strong>Five-Star Service</strong></h2></div><br>
                         <strong><i class="fa fa-star"></i> TRIP PLANNING</strong><br>
-                        <p>We blah blah blah..</p>
+                        <p>Our experienced agents will provide you with all the trip planning services you require.</p>
                         <strong><i class="fa fa-star"></i> PACKAGE BOOKING</strong><br>
-                        <p>Package booking blah blah blah..</p>
+                        <p>Package booking is simple and intuitive with our booking and payment system.</p>
                         <strong><i class="fa fa-star"></i> CHEAP FLIGHTS</strong><br>
-                        <p>Cheap flights blah blah blah..</p>
+                        <p>Prices you won't find anywhere else. If you find a competitor with the same price, we'll price match!</p>
                         <strong><i class="fa fa-star"></i> CARS &amp; HOTELS</strong><br>
-                        <p>Car and hotel booking blah blah blah..</p>
+                        <p>Car and hotel bookings are included on some packages to give you ease and peace of mind.</p>
                         <strong><i class="fa fa-star"></i> POPULAR DESTINATIONS</strong><br>
-                        <p>Popular destinations blah blah blah..</p><br>
+                        <p>Popular destinations are added daily so be sure to check back often.</p><br>
                         <p>The Travel Experts aims to be your discount travel package and booking company. Email us at <a href="#"><u>info@travelexperts.com</u></a> for more information.</p>
                     </div>
                     <div class="col-xs-12 col-md-8 main_img">
                         <h3><strong>FEATURED PACKAGES</strong></h3>
                         <div class="row">
+                            <?php 
+                            $link = mysqli_connect("localhost","root","","travelexperts") or die("Connection Error: " . mysqli_error());
+                            $cust_email = $_SESSION['cust_email'];
+                            $sql = "select * from customers where CustEmail = '$cust_email'";
+                            $result = mysqli_query($link,$sql);
+                            while ($row1 = mysqli_fetch_array($result)) {
+                                extract($row1);          // extract() will assign each row as a variable
+                            }
+
+
+                            ?>
                             <div class="col-xs-6 col-md-6 main_img_div">
-                                <img src="img/package01.jpg" class="img-responsive">
-                                <span class="main_img_name">Carribean New Year</span><span class="main_img_price"><strong>$4800</strong></span><br><a href="packages.php"><span class="main_img_click">Click for more details &nbsp;<i class="fa fa-arrow-circle-right"></i></span></a>
+                                <img src="img/package5.jpg" class="img-responsive">
+                                <span class="main_img_name">Temples of Myanmar</span><span class="main_img_price"><strong>$3400</strong></span><br><a href="packages.php"><span class="main_img_click">Click for more details &nbsp;<i class="fa fa-arrow-circle-right"></i></span></a>
                             </div>
                             <div class="col-xs-6 col-md-6  main_img_div">
-                                <img src="img/package02.jpg" class="img-responsive">
-                                <span class="main_img_name">Polynesian Paradise</span><span class="main_img_price"><strong>$3000</strong></span><br><a href="packages.php"><span class="main_img_click">Click for more details &nbsp;<i class="fa fa-arrow-circle-right"></i></span></a>
+                                <img src="img/package6.jpg" class="img-responsive">
+                                <span class="main_img_name">Japanese Culture Tour</span><span class="main_img_price"><strong>$5600</strong></span><br><a href="packages.php"><span class="main_img_click">Click for more details &nbsp;<i class="fa fa-arrow-circle-right"></i></span></a>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-xs-6 col-md-6  main_img_div">
-                                <img src="img/package03.jpg" class="img-responsive">
-                                <span class="main_img_name">Asian Expedition</span><span class="main_img_price"><strong>$2800</strong></span><br><a href="packages.php"><span class="main_img_click">Click for more details &nbsp;<i class="fa fa-arrow-circle-right"></i></span></a>
+                                <img src="img/package7.jpg" class="img-responsive">
+                                <span class="main_img_name">New York Broadway</span><span class="main_img_price"><strong>$550</strong></span><br><a href="packages.php"><span class="main_img_click">Click for more details &nbsp;<i class="fa fa-arrow-circle-right"></i></span></a>
                             </div>
                             <div class="col-xs-6 col-md-6  main_img_div">
-                                <img src="img/package04.jpg" class="img-responsive">
-                                <span class="main_img_name">European Vacation</span><span class="main_img_price"><strong>$3000</strong></span><br><a href="packages.php"><span class="main_img_click">Click for more details &nbsp;<i class="fa fa-arrow-circle-right"></i></span></a>
+                                <img src="img/package10.jpg" class="img-responsive">
+                                <span class="main_img_name">Castles of Scotland</span><span class="main_img_price"><strong>$3750</strong></span><br><a href="packages.php"><span class="main_img_click">Click for more details &nbsp;<i class="fa fa-arrow-circle-right"></i></span></a>
                             </div>
                         </div>
                     </div>
@@ -194,3 +202,8 @@ Description: Displaying static information and features for the index page.
 <?php
     include("footer.php");
 ?>
+
+
+
+
+

@@ -1,7 +1,15 @@
+<!-- bookings.php page 
+Author Name: John Nguyen & Brian Peng
+Creation Date: November 13th, 2014
+Course: OOSD Fall 2014
+Description: Displaying dynamic information for the booking that uses the GET parameter from the packages page, displays the user contact information, and includes a payment form.
+//-->
+
 <?php
     include("functions.php");
     session_start();
 	$pkg = $_GET['PackageId'];
+    $newBookingNo = bookingNumber(3,3);
     if (!isset($_SESSION['loggedin']))
 	{
 	    $_SESSION['pagename']="bookings.php";
@@ -39,16 +47,16 @@
     function calcPrice() {
         var guests = document.getElementById('packageCost').value;
         var subTotal = price*guests;
-        document.getElementById('getSubtotal').innerHTML = subTotal;
-        document.getElementById('getGST').innerHTML = (subTotal*0.05);
-        document.getElementById('getTotal').innerHTML = (subTotal*1.05);
+        document.getElementById('getSubtotal').innerHTML = subTotal.toFixed(2);
+        document.getElementById('getGST').innerHTML = (subTotal*0.05).toFixed(2);
+        document.getElementById('getTotal').innerHTML = (subTotal*1.05).toFixed(2);
     }
     </script>
 <div class='container-fluid'> <!-- Start of Container -->
             <!-- Main body begins here -->
             <div id='body'>
                 <div class='row' style='width: 100;'>
-                    <span class='book_num'><i class='fa fa-tag'></i> &nbsp;<strong>BOOKING NO:</strong> <span class='book_booking'>".$BookingId=bookingNumber(3,3)."</span></span><span class='book_print'><a href='#print'><i class='fa fa-print'></i> &nbsp; <strong>Print Page</strong></a></span>
+                    <span class='book_num'><i class='fa fa-tag'></i> &nbsp;<strong>BOOKING NO:</strong> <span class='book_booking'>$newBookingNo</span></span><span class='book_print'><a href='#print'><i class='fa fa-print'></i> &nbsp; <strong>Print Page</strong></a></span>
                 </div>
                 <div class='row'>
                     <div class='col-xs-12 col-sm-7 bookings style' style='margin-right: 20px;'>
@@ -56,7 +64,7 @@
                         <hr class='style-one'>
                         <div class='book_pkg_info'>
                             <div class='book_pkg_title'><h2>$PkgName</h2></div>
-                            <div class='book_img'><img src='img/package0$pkg.jpg' class='img-responsive'></div>
+                            <div class='book_img'><img src='img/package$pkg.jpg' class='img-responsive'></div>
                             <div class='book_desc'>$PkgDesc</div>
                             <div class='book_dates'>
                                 <table class='details'><tr>
@@ -67,7 +75,7 @@
                                 <tr>
                                     <td><h4><strong>".date('M d, Y',strtotime($PkgStartDate))."</strong></h4></td>
                                     <td><h4><strong>".date('M d, Y',strtotime($PkgEndDate))."</strong></h4></td>
-                                    <td><h4><strong>".floor((strtotime($PkgEndDate)-strtotime($PkgStartDate))/(60*60*24))." Days</strong></h4></td>
+                                    <td><h4><strong>".floor((strtotime($PkgEndDate)-strtotime($PkgStartDate))/(60*60*24))." Nights</strong></h4></td>
                                 </tr></table>
                                 <table class='price'><tr>
                                     <th><strong>PACKAGE PRICE</strong><br>(CAD $ / person)</th>
@@ -85,12 +93,15 @@
                                             <option value='3'>3</option>
                                             <option value='4'>4</option>  
                                             <option value='5'>5</option> 
-                                            <option value='6'>6</option> 
+                                            <option value='6'>6</option>
+                                            <option value='7'>7</option> 
+                                            <option value='8'>8</option> 
+                                            <option value='9'>9</option> 
                                         </select>
                                     </td>
-                                    <td><h4><strong>$<span id='getSubtotal'>".sprintf('%d',$PkgBasePrice)."</span></strong></h4></td>
-                                    <td><h4><strong>$<span id='getGST'>".sprintf('%d',$PkgBasePrice*0.075)."</span></strong></h4></td>
-                                    <td class='totalprice'><h4><strong>$<span id='getTotal'>".sprintf('%d',$PkgBasePrice*1.075)."</span></strong></h4></td>
+                                    <td><h4><strong>$<span id='getSubtotal'>".sprintf('%.2f',$PkgBasePrice)."</span></strong></h4></td>
+                                    <td><h4><strong>$<span id='getGST'>".sprintf('%.2f',$PkgBasePrice*0.075)."</span></strong></h4></td>
+                                    <td class='totalprice'><h4><strong>$<span id='getTotal'>".sprintf('%.2f',$PkgBasePrice*1.075)."</span></strong></h4></td>
                                 </tr>
                                 </table>
                             </div>
@@ -129,14 +140,14 @@
                             </tr>
                         </table>
                     </div>
-                </div>"; ?>
+                </div>
                 <div class='row'>
                     <div class='col-xs-12 col-sm-7 payment style'>
                         <h3><i class='fa fa-credit-card'></i> &nbsp;<strong>Billing Information</strong></h3> 
                         <hr class='style-one'>
                         <p>Please enter your payment details below.</p><br>
-                        <form class='form-horizontal' role='form' method="post">
-                          <div class='form-group'>
+                        <form class='form-horizontal' role='form' method='post' action='customer.php?PackageId=$pkg'>
+                          <div class='form-group'>"; ?>
                             <label class='col-sm-4 control-label'>Credit Card Type</label>
                             <div class='col-sm-8'>
                               <div class='col-sm-12'>
