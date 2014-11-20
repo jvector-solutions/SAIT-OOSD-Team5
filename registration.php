@@ -8,41 +8,11 @@ Description: Displaying a static form for the registration page with lots of Jav
 
 
 <?php
-    // Written by Megha
-    function insertCustomer($custData) {
-        //customer data..
-        $sql = "INSERT INTO customers VALUES (NULL,'$custData[CustFirstName]','$custData[CustLastName]','$custData[CustAddress]','$custData[CustCity]','$custData[CustProv]','$custData[CustPostal]','$custData[CustCountry]','$custData[CustHomePhone]','$custData[CustBusPhone]','$custData[CustEmail]',NULL);";
-        $sql2 = "INSERT INTO users VALUES ('$custData[CustEmail]','$custData[password2]');";
-        //create connection
-        $link = mysqli_connect("localhost","root","","travelexperts") or die("Error: " . mysqli_connect_error());
-        //check connection
-        $result = mysqli_query($link,$sql) or die("query Error:" . mysqli_error($link));
-        $result2 = mysqli_query($link,$sql2) or die("query Error:" . mysqli_error($link));
-        mysqli_close($link);
-        return $result;	
-    }
-
+    include("functions.php");
     session_start();
     $title = "Registration";
     $display = "Login or Register";
     $slider = "02";
-
-    // Function verifyLogin() written by John
-    function verifyLogin($u,$p) {
-        $link = mysqli_connect("localhost","root","","travelexperts") or die("Error: " . mysqli_connect_error());
-        $sql = "SELECT password FROM users WHERE userid='$u'";
-        $result = mysqli_query($link, $sql) or die("SQL Error:" . mysqli_error());
-        if ($pwd = mysqli_fetch_row($result)) {
-            if ($pwd[0] == $p) {
-                return true;
-            } else {
-                return false;
-            }
-        } else {
-            return false;
-        }
-        mysqli_close($link);
-    }
         
     // Login Functions written by Brian and John
     if (!isset($_SESSION['loggedin'])) {
@@ -66,10 +36,7 @@ Description: Displaying a static form for the registration page with lots of Jav
                 $message = "<h4 style='color: red; text-align: center;'><i class='fa fa-exclamation-triangle'></i> Incorrect Email or Password.</h4><br>";
             }
         } else if (isset($_POST['CustEmail'])) {
-            insertCustomer($_POST);
-            $_SESSION['loggedin'] = true;
-            $_SESSION['cust_email'] = trim($_POST['CustEmail']);
-            header("Location: customer.php");
+            $_SESSION['cust_email'] = trim($_POST['login_email']);
         }
     }
     include("header.php");
@@ -119,7 +86,7 @@ Description: Displaying a static form for the registration page with lots of Jav
                         <hr class="style-one">
                         <h4>Please enter your personal information.*</h4><br>
                         <!-- BEGIN Registration Form //-->
-                        <form name="register" method="post" action="customer.php" class="form-horizontal" role="form" onsubmit="return formvalidation()">
+                        <form name="register" method="post" action="addcustomer.php" class="form-horizontal" role="form" onsubmit="return formvalidation()">
                         <div class="form-group">
 	                       <label for="fname" class="col-sm-4 control-label">First Name</label>
 	                       <div class="col-sm-8">

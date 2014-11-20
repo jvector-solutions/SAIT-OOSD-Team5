@@ -1,15 +1,15 @@
 <?php
     session_start();
+    
+    $cust_email = $_SESSION['cust_email'];
     $link = mysqli_connect("localhost","root","","travelexperts") or die("Connection Error: " . mysqli_error());
-    if (isset($_SESSION['cust_email'])) {
-	   $cust_email = $_SESSION['cust_email'];
-    }
+
 	$sql = "select * from customers where CustEmail = '$cust_email'";
 	$result = mysqli_query($link,$sql);
 	while ($row1 = mysqli_fetch_array($result)) {
         extract($row1);          // extract() will assign each row as a variable
     }
-    $sql2 ="SELECT BookingDate, BookingNo, BookingId FROM bookings WHERE CustomerId='$CustomerId'";
+    $sql2 ="SELECT BookingDate, BookingNo, BookingId FROM bookings WHERE CustomerId='$CustomerId' ORDER BY BookingDate";
     $result2 = mysqli_query($link,$sql2);
 
 	$title = "Customer";

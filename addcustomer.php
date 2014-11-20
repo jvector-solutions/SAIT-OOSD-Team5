@@ -1,6 +1,7 @@
 <!-- Written by Megha //-->
  
 <?php
+    session_start();
 	include("functions.php");
 	if(isset($_POST['CustFirstName'])) {
 		$message = "";
@@ -60,12 +61,14 @@
         
 		if(!empty($message)) {
             print("There was a problem.<br>$message");
-			// header("Location: customer.php");
+			header("Location: registration.php");
 		} else {
 			$result = insertCustomer($_POST);
+            $_SESSION['loggedin'] = true;
+            $_SESSION['cust_email'] = trim($_POST['CustEmail']);
 			if($result) {
 				print("Thank you for registering!");
-                print($result);
+                header("Location: customer.php");
 			}
 		}
 	}

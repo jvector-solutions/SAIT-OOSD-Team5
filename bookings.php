@@ -1,4 +1,5 @@
 <?php
+    include("functions.php");
     session_start();
 	$pkg = $_GET['PackageId'];
     if (!isset($_SESSION['loggedin']))
@@ -56,7 +57,7 @@
                         <div class='book_pkg_info'>
                             <div class='book_pkg_title'><h2>$PkgName</h2></div>
                             <div class='book_img'><img src='img/package0$pkg.jpg' class='img-responsive'></div>
-                            <div class='book_desc'><strong>$PkgDesc</strong></div>
+                            <div class='book_desc'>$PkgDesc</div>
                             <div class='book_dates'>
                                 <table class='details'><tr>
                                     <th><strong>START DATE</strong></th>

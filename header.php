@@ -5,9 +5,6 @@ Course: OOSD Fall 2014
 Description: Displaying dynamic navigation menu depending on the PHP Sessions
 //-->
 
-<?php
-    include("functions.php");
-?>
 <!DOCTYPE html>
 <html lang="en">
     <head>

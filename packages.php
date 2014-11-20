@@ -25,7 +25,7 @@ Description: Displaying dynamic information for the packages page
         die("Connection failed: " . $conn->connect_error);
     } 
 
-    $sql = "SELECT PackageId, PkgName, PkgStartDate, PkgEndDate, PkgBasePrice, PkgDesc FROM packages";
+    $sql = "SELECT PackageId, PkgName, PkgStartDate, PkgEndDate, PkgBasePrice, PkgDesc FROM packages ORDER BY PkgStartDate";
     $result = $conn->query($sql);
     echo "<div class='container-fluid'> <!-- Start of Container -->
             <!-- Main body begins here -->
@@ -38,9 +38,9 @@ Description: Displaying dynamic information for the packages page
                         <div class='pkg_title'><h2>".$row["PkgName"]." </h2></div>
                         <div class='pkg_book'><a href='bookings.php?PackageId=".$row["PackageId"]."'>BOOK NOW</a> &nbsp;<span class='book_arrow'><i class='fa fa-arrow-right'></i></span></div>
                         <div class='pkg_price'><span><i class='fa fa-usd'></i>".sprintf("%d",$row["PkgBasePrice"])."</span><strong>CAD</strong><br>per person, plus GST</div>
-                        <div class='pkg_image'> <img src = 'img/package0".$row["PackageId"].".jpg'></div> 
+                        <div class='pkg_image'> <img src = 'img/package".$row["PackageId"].".jpg'></div> 
                         <div class='pkg_desc'>
-                            <div class='pkg_desc_box'><h4><strong>".$row["PkgDesc"]."</strong></h4></div>
+                            <div class='pkg_desc_box'>".$row["PkgDesc"]."</div>
                             <div class='pkg_table'>
                             <table><tr>
                                 <th><strong>START DATE</strong></th>

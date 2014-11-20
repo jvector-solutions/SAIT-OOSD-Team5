@@ -623,7 +623,7 @@ p.label {
     position: relative;
     left: 0;
     top: -60px;
-    background-color: rgba(255, 255, 255, 0.75);
+    background-color: rgba(255, 255, 255, 0.9);
     padding: 10px;
     margin-bottom: -60px;
     border-left: 1px solid #666;
@@ -656,7 +656,7 @@ p.label {
     font-size: 12px;
 }
 .totalprice h4 {
-    font-size: 24px;
+    font-size: 20px;
 }
 .book_prof_add, .book_prof_num {
     border: 0;
