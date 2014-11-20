@@ -13,20 +13,6 @@ function bookingNumber($chars,$nums) {
     }
 
 	return $str;
-}
-
-// Written by Megha
-function insertCustomer($custData) {
-	//customer data..
-	$sql = "INSERT INTO customers VALUES (NULL,'$custData[CustFirstName]','$custData[CustLastName]','$custData[CustAddress]','$custData[CustCity]','$custData[CustProv]','$custData[CustPostal]','$custData[CustCountry]','$custData[CustHomePhone]','$custData[CustBusPhone]','$custData[CustEmail]',NULL);";
-    $sql2 = "INSERT INTO users VALUES ('$custData[CustEmail]','$custData[password2]');";
-	//create connection
-	$link = mysqli_connect("localhost","root","","travelexperts") or die("Error: " . mysqli_connect_error());
-	//check connection
-	$result = mysqli_query($link,$sql) or die("query Error:" . mysqli_error($link));
-    $result2 = mysqli_query($link,$sql2) or die("query Error:" . mysqli_error($link));
-	mysqli_close($link);
-	return $result;	
 }	
 
 // Written by Mahmood

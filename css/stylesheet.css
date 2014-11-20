@@ -150,7 +150,7 @@ a, a:hover, a:focus {
 }
 .slider {
     width: 100%;
-    height: 280px;
+    height: 300px;
     background-repeat: no-repeat;
     background-position: center;
     background-size:cover;
@@ -160,7 +160,7 @@ a, a:hover, a:focus {
 }
 .welcome h1 {
     position: relative;
-    top: 220px;
+    top: 240px;
     padding: 4px 22px;
     width: auto;
     color: rgb(255, 255, 255);
@@ -171,7 +171,7 @@ a, a:hover, a:focus {
 .help {
     position: absolute;
     right: 86px;
-    top: 252px;
+    top: 272px;
     width: 36px;
     height: 28px;
     background-color: #fff;
@@ -192,7 +192,7 @@ a.help:active {
 .lang {
     position: absolute;
     right: 20px;
-    top: 252px;
+    top: 272px;
     width: 58px;
     height: 28px;
     background-color: #fff;
@@ -213,7 +213,6 @@ a.help:active {
     background-color: rgba(255, 255, 255, 0.9);
     border: 1px solid rgba(153, 153, 153, 0.9);
     border-top: 0px;
-
     z-index: 1;
     margin-left: 4px;
     border-bottom-left-radius: 5px;
@@ -418,7 +417,6 @@ a.group:hover {
     font-family: 'Sintony', sans-serif;
     color: #fff;
     background-color: rgba(47, 115, 193, 0.9);
-    border-bottom-left-radius: 13px;
 }
 .main_img_price {
     display: inline-block;
@@ -515,7 +513,7 @@ p.label {
 }
 .pkg_table table th, .pkg_desc table td {
     padding: 1px 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #eee;
     height: 27px;
     text-align: center;
 }
@@ -670,11 +668,15 @@ p.label {
 }
 
 /****************** Contact Page *********************/
-.previous_bookings table {
-    border: 2px solid #ccc;
-    width: 100%;
+.current_bookings {
+    margin-bottom: 40px;
 }
-.previous_bookings tr th {
+.current_bookings table, .previous_bookings table {
+    border: 1px solid #ccc;
+    width: 100%;
+    margin-top: 10px;
+}
+.current_bookings tr th, .previous_bookings tr th {
     padding: 6px 2px 6px 10px;
     margin: 0;
     background-color: #555;
@@ -682,8 +684,11 @@ p.label {
 }
 .previous_bookings tr td {
     margin: 0;
-    padding: 12px 2px 12px 10px;
+    padding: 10px 2px 12px 10px;
     font-size: 14px;
+}
+.previous_bookings tr:nth-child(odd) {
+    background-color: #ddd;
 }
 
 

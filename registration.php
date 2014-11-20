@@ -8,6 +8,20 @@ Description: Displaying a static form for the registration page with lots of Jav
 
 
 <?php
+    // Written by Megha
+    function insertCustomer($custData) {
+        //customer data..
+        $sql = "INSERT INTO customers VALUES (NULL,'$custData[CustFirstName]','$custData[CustLastName]','$custData[CustAddress]','$custData[CustCity]','$custData[CustProv]','$custData[CustPostal]','$custData[CustCountry]','$custData[CustHomePhone]','$custData[CustBusPhone]','$custData[CustEmail]',NULL);";
+        $sql2 = "INSERT INTO users VALUES ('$custData[CustEmail]','$custData[password2]');";
+        //create connection
+        $link = mysqli_connect("localhost","root","","travelexperts") or die("Error: " . mysqli_connect_error());
+        //check connection
+        $result = mysqli_query($link,$sql) or die("query Error:" . mysqli_error($link));
+        $result2 = mysqli_query($link,$sql2) or die("query Error:" . mysqli_error($link));
+        mysqli_close($link);
+        return $result;	
+    }
+
     session_start();
     $title = "Registration";
     $display = "Login or Register";
@@ -29,7 +43,7 @@ Description: Displaying a static form for the registration page with lots of Jav
         }
         mysqli_close($link);
     }
-
+        
     // Login Functions written by Brian and John
     if (!isset($_SESSION['loggedin'])) {
         $message="<h4 style='text-align: center;'>Please log in.</h4><br>";
@@ -43,22 +57,22 @@ Description: Displaying a static form for the registration page with lots of Jav
                 if (isset($_GET['PackageId'])) {
                     header("Location: $pagename?PackageId=$PackageId");
                     //header("Location: registration.php");
-                } else if($_SESSION['pagename']="customer.php") {
-                    $_SESSION['loggedin'] = true;
-                    header("Location: customer.php");
                 } else {
                     $message = "<h4 style='color: green; text-align: center;'><i class='fa fa-exclamation-triangle'></i> You are successfully logged in.</h4><br>";
-                    header("Location: registration.php");
+                    header("Location: customer.php");
                 }
             } else {
                 // Set Login Error Message
                 $message = "<h4 style='color: red; text-align: center;'><i class='fa fa-exclamation-triangle'></i> Incorrect Email or Password.</h4><br>";
             }
+        } else if (isset($_POST['CustEmail'])) {
+            insertCustomer($_POST);
+            $_SESSION['loggedin'] = true;
+            $_SESSION['cust_email'] = trim($_POST['CustEmail']);
+            header("Location: customer.php");
         }
-    } else {
-        header("Location: customer.php");
     }
-include("header.php");
+    include("header.php");
 ?>
 
 

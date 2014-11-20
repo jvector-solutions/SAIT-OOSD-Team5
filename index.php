@@ -162,17 +162,17 @@ Description: Displaying static information and features for the index page.
                                 <span class="main_img_name">Carribean New Year</span><span class="main_img_price"><strong>$4800</strong></span><br><a href="packages.php"><span class="main_img_click">Click for more details &nbsp;<i class="fa fa-arrow-circle-right"></i></span></a>
                             </div>
                             <div class="col-xs-6 col-md-6  main_img_div">
-                                <a href="packages.php"><img src="img/package02.jpg" class="img-responsive"></a>
+                                <img src="img/package02.jpg" class="img-responsive">
                                 <span class="main_img_name">Polynesian Paradise</span><span class="main_img_price"><strong>$3000</strong></span><br><a href="packages.php"><span class="main_img_click">Click for more details &nbsp;<i class="fa fa-arrow-circle-right"></i></span></a>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-xs-6 col-md-6  main_img_div">
-                                <a href="packages.php"><img src="img/package03.jpg" class="img-responsive"></a>
+                                <img src="img/package03.jpg" class="img-responsive">
                                 <span class="main_img_name">Asian Expedition</span><span class="main_img_price"><strong>$2800</strong></span><br><a href="packages.php"><span class="main_img_click">Click for more details &nbsp;<i class="fa fa-arrow-circle-right"></i></span></a>
                             </div>
                             <div class="col-xs-6 col-md-6  main_img_div">
-                                <a href="packages.php"><img src="img/package04.jpg" class="img-responsive"></a>
+                                <img src="img/package04.jpg" class="img-responsive">
                                 <span class="main_img_name">European Vacation</span><span class="main_img_price"><strong>$3000</strong></span><br><a href="packages.php"><span class="main_img_click">Click for more details &nbsp;<i class="fa fa-arrow-circle-right"></i></span></a>
                             </div>
                         </div>

@@ -47,7 +47,7 @@
             <!-- Main body begins here -->
             <div id='body'>
                 <div class='row' style='width: 100;'>
-                    <span class='book_num'><i class='fa fa-tag'></i> &nbsp;<strong>BOOKING NO:</strong> <span class='book_booking'>".$BookingId=bookingNumber(3,3)."</span></span><span class='book_print'><a href='#'><i class='fa fa-print'></i> &nbsp; <strong>Print Page</strong></a></span>
+                    <span class='book_num'><i class='fa fa-tag'></i> &nbsp;<strong>BOOKING NO:</strong> <span class='book_booking'>".$BookingId=bookingNumber(3,3)."</span></span><span class='book_print'><a href='#print'><i class='fa fa-print'></i> &nbsp; <strong>Print Page</strong></a></span>
                 </div>
                 <div class='row'>
                     <div class='col-xs-12 col-sm-7 bookings style' style='margin-right: 20px;'>

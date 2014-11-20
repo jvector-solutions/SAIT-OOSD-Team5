@@ -44,17 +44,17 @@ Description: Displaying dynamic navigation menu depending on the PHP Sessions
                     <a href="packages.php"><li>&nbsp;<i class="fa fa-plane"></i> &nbsp;Vacations&nbsp;</li></a>
                     <?php
                         if (!isset($_SESSION['loggedin'])) {
-                          echo"  <li>&nbsp;<i class='fa fa-sign-in'></i> &nbsp;Login&nbsp;&nbsp;&nbsp;
+                          echo"  <li><i class='fa fa-sign-in'></i> &nbsp;Login&nbsp;&nbsp;&nbsp;
                                     <ul>
-                                        <a href='registration.php'><li class='active_nav'>&nbsp;<i class='fa fa-sign-in'></i> &nbsp;Login&nbsp;&nbsp;&nbsp;</li></a>
-                                        <a href='logout.php'><li class='logout'>&nbsp;<i class='fa fa-sign-out'></i> &nbsp;Logout</li></a>
+                                        <a href='registration.php'><li class='active_nav'><i class='fa fa-sign-in'></i> &nbsp;Login&nbsp;&nbsp;&nbsp;</li></a>
+                                        <a href='logout.php'><li class='logout'><i class='fa fa-sign-out'></i> &nbsp;Logout</li></a>
                                     </ul>
                                 </li>";
                         } else {
-                          echo"  <li>&nbsp;<i class='fa fa-user'></i> &nbsp;Profile&nbsp;&nbsp;&nbsp;
+                          echo"  <li><i class='fa fa-user'></i> &nbsp;Account
                                     <ul>
-                                        <a href='customer.php'><li class='active_nav'>&nbsp;<i class='fa fa-user'></i> &nbsp;Profile&nbsp;&nbsp;&nbsp;</li></a>
-                                        <a href='logout.php'><li class='logout'>&nbsp;<i class='fa fa-sign-out'></i> &nbsp;Logout</li></a>
+                                        <a href='customer.php'><li class='active_nav'><i class='fa fa-user'></i> &nbsp;Account</li></a>
+                                        <a href='logout.php'><li class='logout'><i class='fa fa-sign-out'></i> &nbsp;Logout</li></a>
                                     </ul>
                                 </li>";  
                             
@@ -62,7 +62,6 @@ Description: Displaying dynamic navigation menu depending on the PHP Sessions
                     ?>
                     <a href="contact.php"><li>&nbsp;<i class="fa fa-info-circle"></i> &nbsp;About Us&nbsp;</li></a>
                 </ul>
-                <!-- <span><i class="fa fa-phone"></i> 1-888-123-4567</span> -->
             </div>
             <div class="nav_mobile" onclick="dropMenu('dropmenu');">
                <i class="fa fa-bars fa-2x"></i>
@@ -75,10 +74,10 @@ Description: Displaying dynamic navigation menu depending on the PHP Sessions
             </div>      
         </div>
         <div>
-            <a href="#" class="help"><i class="fa fa-question-circle fa-lg"></i></a>
+            <a href="#help" class="help"><i class="fa fa-question-circle fa-lg"></i></a>
         </div>
         <div>
-            <a href="#" class="lang" onclick="dropMenu('flags');"><img src="img/flags/Canada.png" style="margin-right: 10px;"><i class="fa fa-caret-down"></i></a>
+            <a href="#lang" class="lang" onclick="dropMenu('flags');"><img src="img/flags/Canada.png" style="margin-right: 10px;"><i class="fa fa-caret-down"></i></a>
         </div>
         <div class="lang_menu" id="flags" onClick="document.getElementById('flags').style.display='none';">
             <ul>
