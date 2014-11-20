@@ -1,5 +1,5 @@
 <!-- packages.php page 
-Author Name: Mahmood 
+Author Name: Mahmood Qureshi
 Creation Date: November 5th, 2014
 Course: OOSD Fall 2014
 Description: Displaying dynamic information for the packages page
