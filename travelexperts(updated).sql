@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 21, 2014 at 04:07 PM
+-- Generation Time: Nov 21, 2014 at 04:11 PM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -16,37 +16,6 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8 */;
 
---
--- Database: `sales`
---
-
--- --------------------------------------------------------
-
---
--- Table structure for table `customer`
---
-
-CREATE TABLE IF NOT EXISTS `customer` (
-  `custid` int(11) NOT NULL AUTO_INCREMENT,
-  `firstname` varchar(50) DEFAULT NULL,
-  `lastname` varchar(50) NOT NULL,
-  `address` text,
-  `city` varchar(60) NOT NULL,
-  `prov` varchar(2) NOT NULL,
-  `country` varchar(2) NOT NULL,
-  `phone` varchar(20) NOT NULL,
-  PRIMARY KEY (`custid`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
-
---
--- Dumping data for table `customer`
---
-
-INSERT INTO `customer` (`custid`, `firstname`, `lastname`, `address`, `city`, `prov`, `country`, `phone`) VALUES
-(2, 'John', 'Doe', '415 Meadowlark Drive SW', 'Calgary', 'AB', 'CA', '403-123-4567');
---
--- Database: `test`
---
 --
 -- Database: `travelexperts`
 --
