@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 21, 2014 at 04:11 PM
+-- Generation Time: Nov 21, 2014 at 04:19 PM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -26,6 +26,7 @@ SET time_zone = "+00:00";
 -- Table structure for table `affiliations`
 --
 
+DROP TABLE IF EXISTS `affiliations`;
 CREATE TABLE IF NOT EXISTS `affiliations` (
   `AffilitationId` varchar(10) NOT NULL,
   `AffName` varchar(50) DEFAULT NULL,
@@ -52,6 +53,7 @@ INSERT INTO `affiliations` (`AffilitationId`, `AffName`, `AffDesc`) VALUES
 -- Table structure for table `agencies`
 --
 
+DROP TABLE IF EXISTS `agencies`;
 CREATE TABLE IF NOT EXISTS `agencies` (
   `AgencyId` int(11) NOT NULL AUTO_INCREMENT,
   `AgncyAddress` varchar(50) DEFAULT NULL,
@@ -80,6 +82,7 @@ INSERT INTO `agencies` (`AgencyId`, `AgncyAddress`, `AgncyCity`, `AgncyProv`, `A
 -- Table structure for table `agents`
 --
 
+DROP TABLE IF EXISTS `agents`;
 CREATE TABLE IF NOT EXISTS `agents` (
   `AgentId` int(11) NOT NULL AUTO_INCREMENT,
   `AgtFirstName` varchar(20) DEFAULT NULL,
@@ -119,6 +122,7 @@ INSERT INTO `agents` (`AgentId`, `AgtFirstName`, `AgtMiddleInitial`, `AgtLastNam
 -- Table structure for table `bookingdetails`
 --
 
+DROP TABLE IF EXISTS `bookingdetails`;
 CREATE TABLE IF NOT EXISTS `bookingdetails` (
   `BookingDetailId` int(11) NOT NULL AUTO_INCREMENT,
   `ItineraryNo` double DEFAULT NULL,
@@ -301,6 +305,7 @@ INSERT INTO `bookingdetails` (`BookingDetailId`, `ItineraryNo`, `TripStart`, `Tr
 -- Table structure for table `bookings`
 --
 
+DROP TABLE IF EXISTS `bookings`;
 CREATE TABLE IF NOT EXISTS `bookings` (
   `BookingId` int(11) NOT NULL AUTO_INCREMENT,
   `BookingDate` datetime DEFAULT NULL,
@@ -464,6 +469,7 @@ INSERT INTO `bookings` (`BookingId`, `BookingDate`, `BookingNo`, `TravelerCount`
 -- Table structure for table `classes`
 --
 
+DROP TABLE IF EXISTS `classes`;
 CREATE TABLE IF NOT EXISTS `classes` (
   `ClassId` varchar(5) NOT NULL,
   `ClassName` varchar(20) NOT NULL,
@@ -492,6 +498,7 @@ INSERT INTO `classes` (`ClassId`, `ClassName`, `ClassDesc`) VALUES
 -- Table structure for table `creditcards`
 --
 
+DROP TABLE IF EXISTS `creditcards`;
 CREATE TABLE IF NOT EXISTS `creditcards` (
   `CreditCardId` int(11) NOT NULL AUTO_INCREMENT,
   `CCName` varchar(10) NOT NULL,
@@ -537,6 +544,7 @@ INSERT INTO `creditcards` (`CreditCardId`, `CCName`, `CCNumber`, `CCExpiry`, `Cu
 -- Table structure for table `customers`
 --
 
+DROP TABLE IF EXISTS `customers`;
 CREATE TABLE IF NOT EXISTS `customers` (
   `CustomerId` int(11) NOT NULL AUTO_INCREMENT,
   `CustFirstName` varchar(25) NOT NULL,
@@ -593,6 +601,7 @@ INSERT INTO `customers` (`CustomerId`, `CustFirstName`, `CustLastName`, `CustAdd
 -- Table structure for table `customers_rewards`
 --
 
+DROP TABLE IF EXISTS `customers_rewards`;
 CREATE TABLE IF NOT EXISTS `customers_rewards` (
   `CustomerId` int(11) NOT NULL,
   `RewardId` int(11) NOT NULL,
@@ -634,6 +643,7 @@ INSERT INTO `customers_rewards` (`CustomerId`, `RewardId`, `RwdNumber`) VALUES
 -- Table structure for table `employees`
 --
 
+DROP TABLE IF EXISTS `employees`;
 CREATE TABLE IF NOT EXISTS `employees` (
   `EmpFirstName` varchar(20) NOT NULL,
   `EmpMiddleInitial` varchar(5) DEFAULT NULL,
@@ -664,6 +674,7 @@ INSERT INTO `employees` (`EmpFirstName`, `EmpMiddleInitial`, `EmpLastName`, `Emp
 -- Table structure for table `fees`
 --
 
+DROP TABLE IF EXISTS `fees`;
 CREATE TABLE IF NOT EXISTS `fees` (
   `FeeId` varchar(10) NOT NULL,
   `FeeName` varchar(50) NOT NULL,
@@ -691,6 +702,7 @@ INSERT INTO `fees` (`FeeId`, `FeeName`, `FeeAmt`, `FeeDesc`) VALUES
 -- Table structure for table `packages`
 --
 
+DROP TABLE IF EXISTS `packages`;
 CREATE TABLE IF NOT EXISTS `packages` (
   `PackageId` int(11) NOT NULL AUTO_INCREMENT,
   `PkgName` varchar(50) NOT NULL,
@@ -729,6 +741,7 @@ INSERT INTO `packages` (`PackageId`, `PkgName`, `PkgStartDate`, `PkgEndDate`, `P
 -- Table structure for table `packages_products_suppliers`
 --
 
+DROP TABLE IF EXISTS `packages_products_suppliers`;
 CREATE TABLE IF NOT EXISTS `packages_products_suppliers` (
   `PackageId` int(11) NOT NULL,
   `ProductSupplierId` int(11) NOT NULL,
@@ -761,6 +774,7 @@ INSERT INTO `packages_products_suppliers` (`PackageId`, `ProductSupplierId`) VAL
 -- Table structure for table `products`
 --
 
+DROP TABLE IF EXISTS `products`;
 CREATE TABLE IF NOT EXISTS `products` (
   `ProductId` int(11) NOT NULL AUTO_INCREMENT,
   `ProdName` varchar(50) NOT NULL,
@@ -790,6 +804,7 @@ INSERT INTO `products` (`ProductId`, `ProdName`) VALUES
 -- Table structure for table `products_suppliers`
 --
 
+DROP TABLE IF EXISTS `products_suppliers`;
 CREATE TABLE IF NOT EXISTS `products_suppliers` (
   `ProductSupplierId` int(11) NOT NULL AUTO_INCREMENT,
   `ProductId` int(11) DEFAULT NULL,
@@ -892,6 +907,7 @@ INSERT INTO `products_suppliers` (`ProductSupplierId`, `ProductId`, `SupplierId`
 -- Table structure for table `regions`
 --
 
+DROP TABLE IF EXISTS `regions`;
 CREATE TABLE IF NOT EXISTS `regions` (
   `RegionId` varchar(5) NOT NULL,
   `RegionName` varchar(25) DEFAULT NULL,
@@ -920,6 +936,7 @@ INSERT INTO `regions` (`RegionId`, `RegionName`) VALUES
 -- Table structure for table `rewards`
 --
 
+DROP TABLE IF EXISTS `rewards`;
 CREATE TABLE IF NOT EXISTS `rewards` (
   `RewardId` int(11) NOT NULL,
   `RwdName` varchar(50) DEFAULT NULL,
@@ -944,6 +961,7 @@ INSERT INTO `rewards` (`RewardId`, `RwdName`, `RwdDesc`) VALUES
 -- Table structure for table `suppliercontacts`
 --
 
+DROP TABLE IF EXISTS `suppliercontacts`;
 CREATE TABLE IF NOT EXISTS `suppliercontacts` (
   `SupplierContactId` int(11) NOT NULL,
   `SupConFirstName` varchar(50) DEFAULT NULL,
@@ -1319,6 +1337,7 @@ INSERT INTO `suppliercontacts` (`SupplierContactId`, `SupConFirstName`, `SupConL
 -- Table structure for table `suppliers`
 --
 
+DROP TABLE IF EXISTS `suppliers`;
 CREATE TABLE IF NOT EXISTS `suppliers` (
   `SupplierId` int(11) NOT NULL,
   `SupName` text,
@@ -1412,6 +1431,7 @@ INSERT INTO `suppliers` (`SupplierId`, `SupName`) VALUES
 -- Table structure for table `triptypes`
 --
 
+DROP TABLE IF EXISTS `triptypes`;
 CREATE TABLE IF NOT EXISTS `triptypes` (
   `TripTypeId` varchar(1) NOT NULL,
   `TTName` varchar(25) DEFAULT NULL,
@@ -1433,6 +1453,7 @@ INSERT INTO `triptypes` (`TripTypeId`, `TTName`) VALUES
 -- Table structure for table `users`
 --
 
+DROP TABLE IF EXISTS `users`;
 CREATE TABLE IF NOT EXISTS `users` (
   `userid` varchar(30) NOT NULL,
   `password` varchar(30) NOT NULL,
