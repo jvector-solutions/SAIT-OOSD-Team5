@@ -1,0 +1,15 @@
+/* CSS Document 
+Author Name: John Nguyen
+Creation Date: November 4th, 2014
+Course: OOSD Fall 2014
+Description: A default stylesheet for the Travel Experts website, the first threaded project for the course with a focus on HTML, CSS, JavaScript, PHP & MySQL.
+*/
+
+@charset "UTF-8";
+
+a, :hover {
+    -webkit-transition: all 0.1s ease-in-out; 
+    -moz-transition: all 0.1s ease-in-out; 
+    -ms-transition: all 0.1s ease-in-out; 
+    -o-transition: all 0.1s ease-in-out; 
+    transition: all 0.1s ease-in-out;}

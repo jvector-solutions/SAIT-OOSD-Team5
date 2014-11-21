@@ -1,0 +1,154 @@
+/* CSS Document 
+Author Name: John Nguyen
+Creation Date: November 4th, 2014
+Course: OOSD Fall 2014
+Description: A responsive stylesheet for the entire Travel Experts website
+*/
+
+@charset "UTF-8";
+
+@media screen and (max-width : 880px) {
+    html, body, div, p, table, tr, td, th, tbody, tfoot, ul, li, ol, dl, dd, dt, fieldset, blockquote, cite, input, select, textarea, button, a, section, article, aside, header, footer, nav {
+	   font-size: 14px;
+    }
+    .welcome h1 {
+        font-size: 32px;
+    }
+    .logo {
+        width: 280px;
+        padding-left: 4px;
+    }
+    .nav {
+        display: none;
+        position: absolute;
+        top: 62px;
+        right: 0px;
+        height: auto;
+        width: 100%;
+        margin: 0px;
+        padding: 0px;
+        background-color: rgba(47, 115, 193, 0.9);
+        z-index: 1;
+        border-bottom-left-radius: 3px;
+        border-bottom-right-radius: 3px;
+    }
+    .nav li {
+        display: inline-block;
+        padding: 7px 15px;
+        margin: 0px;
+    }
+    .nav_mobile {
+        display: block;
+        right: 6px;
+    }
+    .nav_mobile:hover {
+        cursor: pointer;
+        opacity: 0.8;
+    }
+    .email h2 {
+        font-size: 1.7em;   
+        margin-bottom: 10px;
+    }
+    .pkg, .agency {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    .pkg {
+        height: auto;
+    }
+    .pkg_image {
+        width: 100%;
+        border-right: 0px;
+        border-bottom: 3px solid #fff;
+        margin-top: -84px;
+    }
+    .pkg_image img {
+        width: inherit;
+        border-bottom-left-radius: 0px
+    }
+    .pkg_desc {
+        width: 100%;
+        margin-left: 0;
+        display: inline-block;
+        height: auto;
+    }
+    .pkg_table table {
+        width: 100%;
+        border: 0px;
+    }
+    .pkg_table table tr:last-child td:first-child {
+        border-bottom-left-radius: 28px;
+    }
+    .pkg_price {
+        left: 118px;
+        top: 16px;
+        padding: 5px;
+        background-color: rgba(255, 255, 255, 0.7);
+        border-radius: 4px;
+        border: 1px solid #ccc;
+    }
+    .pkg_book {
+        top: 108px;
+        right: 12px;
+        font-size: 14px;
+        font-weight: 600;
+        background-color: rgba(255, 255, 255, 0.85);
+        color: #333;
+    }
+    .pkg_book:hover {
+        color: #fff;
+        -moz-box-shadow:    0 0 5px 1px rgba(255, 255, 255, 0.5);
+        -webkit-box-shadow: 0 0 5px 1px rgba(255, 255, 255, 0.5);
+        box-shadow:         0 0 5px 1px rgba(255, 255, 255, 0.5);
+    }
+    span.book_arrow {
+        border-left: 1px solid rgba(51, 51, 51, 0.9); 
+    }
+    .paymentseal {
+        width: 100%;
+        text-align: center;
+    }
+    .paymentseal img {
+        display: inline-block;
+    }
+    .agents {
+        max-width: 880px;
+        margin-left: 15px;
+    }
+    .agency_map {
+        max-width: 180px;
+    }
+    .agents_list {
+        min-width: 100%;
+        border-left: 0px;
+    }
+    .agency {
+        margin: 0 auto;
+    }
+    .main_img_name {
+        font-size: 13px;
+        font-weight: 700;
+        padding: 10px 0 10px 10px;
+    }
+    .main_img_price {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width : 480px) {
+    .agency_map, .body, .header_wrap, .row, .slider, .email, #footer {
+        width: 480px;
+    }
+    .nav_mobile {
+        position: fixed;
+        top: 14px;
+    }
+    
+}
+
+@media screen and (min-width : 1170px) {
+    .header, .welcome, .container-fluid {
+        width: 1170px;
+        margin: 0 auto;
+    }
+}
