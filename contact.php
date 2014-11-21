@@ -6,7 +6,7 @@ Description: Displaying dynamic information for contact page
 //-->
 
 <?php
-    session_start();
+    session_start();//start a session
     $title = "Contact";
     $display = "About the Travel Experts";
     $slider = "04";
@@ -27,22 +27,24 @@ Description: Displaying dynamic information for contact page
                 <h1>Office Locations &amp; Contact</h1>
 				<?php
 				   $link=mysqli_connect("localhost","root","","travelexperts") or 
-	                         die("Connect error:". mysqli_connect_error());
-				   $html = "";
+	                         die("Connect error:". mysqli_connect_error());  //link to the database
+				   $html = "";  //use to construct html sentences
 				   $sql = "select * from agencies";
-				   $result = mysqli_query($link,$sql);
-				   $agencyN = 1;
+				   $result = mysqli_query($link,$sql); //get the result of agencies from the database
+				   $agencyN = 1;          
 				   if(mysqli_num_rows($result)>0)
 				   {
-				     while($row = mysqli_fetch_assoc($result))
+				     while($row = mysqli_fetch_assoc($result))  //get the rows from the result
                      { 
+					   //construct the html sentence to show the agencies information from the database
 					   $html .= "<div class='row style agency'>";
+					   //use Google map to show the locations of the agencies according to their longitudes and latitudes
 					   $html .= "<div class='agency_map'><img src='https://maps.googleapis.com/maps/api/staticmap?center=" . $row["Longitude"] . "," .$row["Latitude"] . "&zoom=14&size=500x800&maptype=roadmap
                                  &markers=color:red%7Clabel:A%7C" . $row["Longitude"] . "," .$row["Latitude"] . "' style='max-width: 100%;'></div>";
 					   $html .= "<div class='agency_address'><h3><i class='fa fa-building-o'></i> &nbsp;AGENCY " . $agencyN . "</h3><hr class='style-two'>";
 					   $agencyN = $agencyN + 1;
 					   $sql1 = "select * from agents where AgencyId=" . $row["AgencyId"];
-					   $result1  = mysqli_query($link,$sql1);
+					   $result1  = mysqli_query($link,$sql1);//get result of agents information from the database 
 					   $html .= "<table><tr><td rowspan='5' style='vertical-align: top;'><i class='fa fa-map-marker fa-2x'></i></td>";
 					   $html .= "<td><strong>Address</strong></td></tr>";
 					   $html .= "<tr><td>" . $row["AgncyAddress"] . "</td></tr>";
@@ -60,8 +62,9 @@ Description: Displaying dynamic information for contact page
 					   
 					   
 					   
-					   while($row1 = mysqli_fetch_assoc($result1))
+					   while($row1 = mysqli_fetch_assoc($result1))//get the rows from the result
 					   {
+					      //construct the html sentence to show the agents information from the database
 					      $html .= "<div class='agent'>";
                           $html .= "<h3>". $row1["AgtFirstName"] . " " . $row1["AgtMiddleInitial"] . " " . $row1["AgtLastName"] . "</h3>, <em>" . $row1["AgtPosition"] . " Agent</em><br>";
 						  $html .= "<table><tr><td>&nbsp;</td><td><i class='fa fa-phone'></td><td>" . $row1["AgtBusPhone"] . "</td></tr>";
@@ -73,8 +76,8 @@ Description: Displaying dynamic information for contact page
 					 } 
 				   }
 				   
-				   print($html);
-				   mysqli_close($link);
+				   print($html);//show the html page
+				   mysqli_close($link);//close the database
 				 ?>
 				   
          </div> <!-- End of body -->

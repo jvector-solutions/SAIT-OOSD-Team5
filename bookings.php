@@ -7,19 +7,20 @@ Description: Displaying dynamic information for the booking that uses the GET pa
 
 <?php
     include("functions.php");
-    session_start();
+    session_start();//start a session
 	$pkg = $_GET['PackageId'];
     $newBookingNo = bookingNumber(3,3);
-    if (!isset($_SESSION['loggedin']))
+    if (!isset($_SESSION['loggedin'])) //if the customer do not login by now, then he will be needed to register first
 	{
 	    $_SESSION['pagename']="bookings.php";
         $message = "<h4 style='text-align: center;'>Please log in.</h4><br>";
 	    header("Location: registration.php?PackageId=$pkg");
 	}
-	$link = mysqli_connect("localhost","root","","travelexperts") or die("Connection Error: " . mysqli_error());
-	$cust_email = $_SESSION['cust_email'];
+	//the customer has login
+	$link = mysqli_connect("localhost","root","","travelexperts") or die("Connection Error: " . mysqli_error());//connect the database
+	$cust_email = $_SESSION['cust_email'];//get customer's email from the Session
 	$sql = "select * from customers where CustEmail = '$cust_email'";
-	$result = mysqli_query($link,$sql);
+	$result = mysqli_query($link,$sql); //search customer's information according to his/her email
 	while ($row1 = mysqli_fetch_array($result)) {
         extract($row1);          // extract() will assign each row as a variable
     }
