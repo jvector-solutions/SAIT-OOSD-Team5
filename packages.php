@@ -6,7 +6,7 @@ Description: Displaying dynamic information for the packages page
 //-->
 
 <?php
-    session_start();
+    session_start(); //it keeps track of the login session
 
     $title = "Packages";
 	$title = "Packages";
@@ -18,7 +18,7 @@ Description: Displaying dynamic information for the packages page
     $username = "root";
     $password = "";
     $dbname = "travelexperts";
-    $date = date("Y-m-d");
+    $date = date("Y-m-d"); //getting current date matching the format in the database
 
     // Create connection with database
     $conn = new mysqli($servername, $username, $password, $dbname);

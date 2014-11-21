@@ -54,17 +54,17 @@ function dcr() {
     $username = "root";
     $password = "";
     $dbname = "travelexperts";
-	$date = date("Y-m-d");
+	$date = date("Y-m-d"); //getting current date in the format matching in the travel experts database.
 
     // Create connection
     $conn = new mysqli($servername, $username, $password, $dbname);
     // Check connection
     if ($conn->connect_error) {
-     //   die("Connection failed: " . $conn->connect_error);
+        die("Connection failed: " . $conn->connect_error); //display error if there is no connection to DB
     } 
 
     $sql = "SELECT PkgStartDate, PkgEndDate FROM packages";
-    $result = $conn->query($sql);
+    $result = $conn->query($sql); //passing the sql query results to result variable
 
     if ($result->num_rows > 0) {
         // output data of each row
@@ -79,6 +79,6 @@ function dcr() {
     else {
         echo "0 results";
     }
-    $conn->close();
+    $conn->close(); //closing connection to database
 }
 ?>
