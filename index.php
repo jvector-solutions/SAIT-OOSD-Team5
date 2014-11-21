@@ -154,17 +154,6 @@ Description: Displaying static information and features for the index page.
                     <div class="col-xs-12 col-md-8 main_img">
                         <h3><strong>FEATURED PACKAGES</strong></h3>
                         <div class="row">
-                            <?php 
-                            $link = mysqli_connect("localhost","root","","travelexperts") or die("Connection Error: " . mysqli_error());
-                            $cust_email = $_SESSION['cust_email'];
-                            $sql = "select * from customers where CustEmail = '$cust_email'";
-                            $result = mysqli_query($link,$sql);
-                            while ($row1 = mysqli_fetch_array($result)) {
-                                extract($row1);          // extract() will assign each row as a variable
-                            }
-
-
-                            ?>
                             <div class="col-xs-6 col-md-6 main_img_div">
                                 <img src="img/package5.jpg" class="img-responsive">
                                 <span class="main_img_name">Temples of Myanmar</span><span class="main_img_price"><strong>$3400</strong></span><br><a href="packages.php"><span class="main_img_click">Click for more details &nbsp;<i class="fa fa-arrow-circle-right"></i></span></a>
