@@ -1,8 +1,8 @@
 <!-- registration.php page 
-Author Name: Megha
+Author Name: Megha Patel
 Creation Date: November 5th, 2014
 Course: OOSD Fall 2014
-Description: Displaying a static form for the registration page with lots of Javascript and PHP functionality to validate the forms (both client and server-side) and to store form field and login field information in the database.
+Description: Displaying a static form for the registration page with lots of JavaScript and PHP functionality to validate the forms (both client and server-side) and to store form field and login field information in the database.
 //-->
 
 
@@ -14,7 +14,7 @@ Description: Displaying a static form for the registration page with lots of Jav
     $display = "Login or Register";
     $slider = "02";
         
-    // Login Functions written by Brian and John
+    // Login Functions written by Megha,Brian and John 
     if (!isset($_SESSION['loggedin'])) {
         $message="<h4 style='text-align: center;'>Please log in.</h4><br>";
         if (isset($_POST['login_email'])) {
@@ -43,7 +43,7 @@ Description: Displaying a static form for the registration page with lots of Jav
 ?>
 
 
-        <!-- Form HTML and Javascript validation written by Megha //-->
+        <!-- Form HTML and JavaScript validation written by Megha //-->
 
         <div class="container-fluid"> <!--- Start of Container --->
             <!--- Main body begins here --->
@@ -54,9 +54,10 @@ Description: Displaying a static form for the registration page with lots of Jav
                         <h1><i class="fa fa-sign-in"></i> Login</h1><hr class="style-one">
                         <?php
                             if (isset($message)) {
-                                print("$message");
+                                print("$message");				// it display message when user not put proper information
                             }
                         ?>
+						<!-- this from access from user table -->
                         <form name="login" method="post" class="form-horizontal" role="form" >
                             <div class="form-group">
                                 <label for="login_email" class="col-sm-4 control-label">Email</label>
@@ -100,10 +101,10 @@ Description: Displaying a static form for the registration page with lots of Jav
                                 <input id="lname" name="CustLastName" type="text" placeholder="Last Name" tabindex="2" size="30" maxlength="30" class="form-control" onblur="validateLname(value)">
 								<span id="lnameError" style="display: none;">You can only use alphabetic characters.</span>
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="email" class="col-sm-4 control-label">Email or Username</label>
-                            <div class="col-sm-8">
+                        </div> <!-- login information inside registration form -->
+                        <div class="form-group"> <!-- this data stored in user information database -->
+                            <label for="email" class="col-sm-4 control-label">Email or Username</label> 
+                            <div class="col-sm-8"> 
                                 <input id="email" name="CustEmail" type="email" placeholder="example: ab@yahoo.com" tabindex="3" size="30" maxlength="30" class="form-control" onblur="validateEmail(value)">
 								<span id="emailError" style="display: none;">You must enter valid Email address</span>
                             </div>
@@ -123,7 +124,7 @@ Description: Displaying a static form for the registration page with lots of Jav
                                 <span style="font-size: 0.8em;">Your password must be at least six characters and contain at least one number, one lowercase, one uppercase letter.</span>
                             </div>
                         </div>
-                        <hr class="style-one">
+                        <hr class="style-one">  <!--this information stored in customer table -->
                         <h4>Please enter your contact information.</h4><br>
                         <div class="form-group">
                             <label for="add1" class="col-sm-4 control-label">Address</label>

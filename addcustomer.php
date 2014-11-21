@@ -1,11 +1,18 @@
-<!-- Written by Megha //-->
+<!-- addcustomer.php page 
+Author Name: Megha Patel
+Creation Date: November 5th, 2014
+Course: OOSD Fall 2014
+Description: Displaying a static form for the registration page with PHP functionality to validate the forms (both client and server-side) and to store form field and login field information in the database.
+//-->
+
  
 <?php
+//  customer information with php validation function
     session_start();
-	include("functions.php");
+	include("functions.php"); // it get value of customer information from customer table
 	if(isset($_POST['CustFirstName'])) {
 		$message = "";
-		if(empty($_POST['CustFirstName'])) {
+		if(empty($_POST['CustFirstName'])) {   
 			$message .="First Name must have a value.<br>";
 		} else if(!preg_match("/^[a-z]+$/i",$_POST['CustFirstName'])) {
             $message .="Invalid Character in First Name";
@@ -58,10 +65,11 @@
 		} else if(!preg_match("/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,4}$/",$_POST['CustEmail'])) {
             $message .="Invalid Email Address..";
 		}
-        
+ 
+		// this function call when something wrong information put inside form 
 		if(!empty($message)) {
             print("There was a problem.<br>$message");
-			header("Location: registration.php");
+			header("Location: registration.php"); 
 		} else {
 			$result = insertCustomer($_POST);
             $_SESSION['loggedin'] = true;
