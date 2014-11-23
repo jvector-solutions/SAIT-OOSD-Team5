@@ -16,7 +16,6 @@ Description: Displaying dynamic information for contact page
             
             <!-- Main body begins here -->
             <div id="body">
-                <h1>About Us</h1>
                 <div class="row style about">
                     <div class="col-xs-12 col-sm-10 col-md-10">
                         <img src="img/logo2.png"><br>

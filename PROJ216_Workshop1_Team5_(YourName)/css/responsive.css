@@ -72,6 +72,11 @@ Description: A responsive stylesheet for the entire Travel Experts website
         display: inline-block;
         height: auto;
     }
+    .pkg_table {
+        width: 100%;
+        margin-top: 40px;
+        margin-bottom: -35px;
+    }
     .pkg_table table {
         width: 100%;
         border: 0px;
@@ -80,7 +85,6 @@ Description: A responsive stylesheet for the entire Travel Experts website
         border-bottom-left-radius: 28px;
     }
     .pkg_price {
-        left: 118px;
         top: 16px;
         padding: 5px;
         background-color: rgba(255, 255, 255, 0.7);
@@ -88,18 +92,10 @@ Description: A responsive stylesheet for the entire Travel Experts website
         border: 1px solid #ccc;
     }
     .pkg_book {
-        top: 108px;
-        right: 12px;
+        top: -104px;
+        right: 10px;
         font-size: 14px;
         font-weight: 600;
-        background-color: rgba(255, 255, 255, 0.85);
-        color: #333;
-    }
-    .pkg_book:hover {
-        color: #fff;
-        -moz-box-shadow:    0 0 5px 1px rgba(255, 255, 255, 0.5);
-        -webkit-box-shadow: 0 0 5px 1px rgba(255, 255, 255, 0.5);
-        box-shadow:         0 0 5px 1px rgba(255, 255, 255, 0.5);
     }
     span.book_arrow {
         border-left: 1px solid rgba(51, 51, 51, 0.9); 

@@ -484,7 +484,7 @@ p.label {
 }
 .pkg_image {
     display: inline-block;
-    width: auto;
+    width: 296px;
     height: auto;
     padding: 0px;
     margin: 0px;
@@ -492,25 +492,27 @@ p.label {
     border-right: 3px solid #fff;
 }
 .pkg_image img {
-    width: 300px;
+    width: inherit;
+    height: auto;
     border-bottom-left-radius: 28px;
 }
 .pkg_desc {
     display: block;
+    position: relative;
     padding: 0;
-    margin-left: 300px;
-    width: 40%;
-    height: 300px;
+    margin-left: 296px;
 }
 .pkg_desc_box {
-    display: block;
-    width: 100%;
-    height: 80px;
-    padding: 5px 0 5px 10px;
+    height: 70px;
+    padding: 5px 20px 5px 10px;
+    margin-bottom: 10px;
+    text-overflow: ellipsis;
+    text-overflow: hidden;
 }
 .pkg_table {
     display: block;
     padding: 0;
+    width: 60%;
 }
 .pkg_table table {
     width: 99%;
@@ -540,8 +542,9 @@ p.label {
     position: relative;
     float: right;
     top: 22px;
-    right: -114px;
+    right: 20px;
     text-align: center;
+    margin-left: 40px;
 }
 .pkg_price span {
     font-size: 52px;  
@@ -550,8 +553,8 @@ p.label {
 }
 .pkg_book {
     position: relative;
-    right: 26px;
-    top: 120px;
+    right: 20px;
+    top: -64px;
     width: auto;
     height: auto;
     float: right;
@@ -569,7 +572,6 @@ p.label {
 .pkg_book:hover {
     cursor: pointer;
     background-color: rgb(39, 85, 142);
-    right: 24px;
 }
 .book_arrow {
     border-left: 1px solid rgba(255, 255, 255, 0.5);   

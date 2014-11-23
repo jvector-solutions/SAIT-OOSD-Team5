@@ -7,6 +7,7 @@ Description: Displaying dynamic information for the customer that lists current 
 
 <?php
     session_start();
+    // The next few lines of code will take the email from the session variable (assigned after login or registration) and SELECT the customers information from the database
     $cust_email = $_SESSION['cust_email'];
     $link = mysqli_connect("localhost","root","","travelexperts") or die("Connection Error: " . mysqli_error());
 	$sql1 = "select * from customers where CustEmail = '$cust_email'";
@@ -14,6 +15,7 @@ Description: Displaying dynamic information for the customer that lists current 
 	while ($row1 = mysqli_fetch_array($result1)) {
         extract($row1);          // extract() will assign each row as a variable
     }
+    // This SELECT will retrieve any bookings the customer has made previously from the database
     $sql2 ="SELECT BookingDate, BookingNo, BookingId FROM bookings WHERE CustomerId='$CustomerId' ORDER BY BookingDate";
     $result2 = mysqli_query($link,$sql2);
 
@@ -39,6 +41,7 @@ Description: Displaying dynamic information for the customer that lists current 
                                     <th><strong>Details</strong></th>
                                 </tr>
                                 <tr>
+                                <!-- These cells will be dynamically populated with any of the customers current bookings (ie. the start date is later than today's date) //-->
                                     <td>&nbsp;</td>
                                     <td>&nbsp;</td>
                                     <td>&nbsp;</td>
@@ -59,6 +62,7 @@ Description: Displaying dynamic information for the customer that lists current 
                                     <th><strong>Total Price</strong></th>
                                 </tr>";
                                 while ($row2 = mysqli_fetch_array($result2)) {
+                                    // This loop will SELECT the booking details for every booking ID the customer has in the database
                                     if ($row2['BookingId']>0) {
                                         extract($row2);
                                         $sql3 ="SELECT TripEnd, Destination, BasePrice, BookingId FROM bookingdetails WHERE BookingId='$BookingId'";
@@ -106,7 +110,10 @@ Description: Displaying dynamic information for the customer that lists current 
                             </table>
                             <table class='book_prof_num'>
                             <tr>
-                                <td style='width: 130px;'><strong>Home Phone:</strong></td>
+                                <td style='width: 130px;'><strong>Email:</strong></td>
+                                <td>$cust_email</td>
+                            <tr>
+                                <td><strong>Home Phone:</strong></td>
                                 <td>(".substr($CustHomePhone, 0, 3).") ".substr($CustHomePhone, 3, 3)."-".substr($CustHomePhone,6)."</td>
                             </tr><tr>
                                 <td><strong>Business Phone:</strong></td>

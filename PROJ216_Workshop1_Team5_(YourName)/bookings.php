@@ -130,7 +130,10 @@ Description: Displaying dynamic information for the booking that uses the GET pa
                             </table>
                             <table class='book_prof_num'>
                             <tr>
-                                <td style='width: 130px;'><strong>Home Phone:</strong></td>
+                                <td style='width: 130px;'><strong>Email:</strong></td>
+                                <td>$cust_email</td>
+                            <tr>
+                                <td><strong>Home Phone:</strong></td>
                                 <td>(".substr($CustHomePhone, 0, 3).") ".substr($CustHomePhone, 3, 3)."-".substr($CustHomePhone,6)."</td>
                             </tr><tr>
                                 <td><strong>Business Phone:</strong></td>

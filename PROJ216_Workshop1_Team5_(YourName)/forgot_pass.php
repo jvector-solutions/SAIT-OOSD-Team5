@@ -1,62 +1,85 @@
-<?php
-include("conn.php");
-?>
-<?php
-$er="";
-if(isset($_POST['submit']))
-{
-	$er="";
-	$sql="select * from login where uname='$_POST[uname]' and sec_que='$_POST[sec_que]' and sec_ans='$_POST[sec_ans]'";
-	$res=mysql_query($sql);
-	if($row=mysql_fetch_array($res))
-	{
-		$er="Your Password is : ".$row['pass'];
-	}
-	else
-	{
-		$er="Invalid User";
-	}
-}
-?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>Untitled Document</title>
-</head>
+<!-- forgot_pass.php page 
+Author Name: Megha Patel
+Creation Date: November 14th, 2014
+Course: OOSD Fall 2014
+Description: A php function where the user can change their password
+//-->
 
-<body>
-<form method="post">
-<table width="450" border="1" cellspacing="4" cellpadding="4">
-<tr>
-<th colspan="2"><?php echo $er; ?></th>
-</tr>
-  <tr>
-    <th colspan="2">Forgot Password </th>
-    </tr>
-  <tr>
-    <th>Username</th>
-    <td><input type="text" name="uname" /></td>
-  </tr>
-  <tr>
-    <th>Security Question</th>
-    <td>
-	<select name="sec_que">
-	<option value="What is your favouraite food?">What is your favouraite food?</option>
-	<option value="What is your favouraite subject?">What is your favouraite subject?</option>
-	</select>
-	</td>
-  </tr>
-  <tr>
-    <th>Security Answer </th>
-    <td><input type="text" name="sec_ans" /></td>
-  </tr>
-  <tr>
-    <th>&nbsp;</th>
-    <td><input type="submit" name="submit" value="Retrive" /></td>
-  </tr>
-</table>
+<?php
+    include("functions.php");
+    session_start();
 
-</form>
-</body>
-</html>
+    $title = "Forgot Password";
+    $display = "Login <i class='fa fa-angle-double-right'></i> Forgot Password";
+    $slider = "02";
+	$conn = mysqli_connect("localhost","root","","travelexperts") or die("MYSQL CONNECTION ERROR");	
+
+    if(isset($_POST['submit'])) {
+        $er="";
+        $sql="select * from login where uname='$_POST[uname]' and sec_que='$_POST[sec_que]' and sec_ans='$_POST[sec_ans]'";
+        $res=mysqli_query($sql);
+        if($row=mysqli_fetch_array($res))
+        {
+            $er="Your Password is : ".$row['pass'];
+        }
+        else
+        {
+            $er="Invalid User";
+        }
+    } else {
+        $er="";
+    }
+    mysqli_close($conn);
+    include('header.php');
+?>
+    <div class='container-fluid'> <!-- Start of Container -->
+            <!-- Main body begins here -->
+            <div id='body'>
+                <div class="row">
+                    <div class="style col-xs-11 col-md-5 col-sm-6" style="float: none; margin: 0 auto;">
+                    <!-- BEGIN Login Form //-->
+                    <h1><i class="fa fa-question-circle"></i> Forgot Password</h1><hr class="style-one">
+                    <?php
+                        if (isset($er)) {
+                            print("$er");	// It displays a message when the user does not put in their proper login information
+                        }
+                    ?>
+                    <!-- this from access from user table -->
+                    <form name="forgotpass" method="post" class="form-horizontal" role="form" >
+                        <div class="form-group">
+                            <label for="uname" class="col-sm-4 control-label">Email</label>
+                            <div class="col-sm-8">
+                                <input type="text" name="uname" class="form-control" id="uname" placeholder="Email Address">
+                                <span id="loginemailError" style="display: none">You must enter your Email address.</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="login_password" class="col-sm-4 control-label">Security Question</label>
+                            <div class="col-sm-8">
+                                <select name="sec_que" class="form-control">
+                                   <option value="What is your favorite food?">What is your favorite food?</option>
+                                   <option value="What is your favorite subject?">What is your favorite subject?</option>
+                               </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="sec_ans" class="col-sm-4 control-label">Security Answer</label>
+                            <div class="col-sm-8">
+                                <input type="password" name="sec_ans" class="form-control" id="sec_ans" placeholder="Password">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-4 col-sm-8">
+                                <button type="submit" class="btn btn-primary">Retrieve Password</button>
+                            </div>
+                        </div>
+                    </form>
+                    <!-- END Login Form //-->
+                    </div>
+                </div>
+            </div> <!-- End of body -->
+        </div> <!-- End of Container -->
+        </div>
+<?php
+    include("footer.php");
+?>
